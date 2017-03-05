@@ -1,0 +1,32 @@
+/*
+ *Auteur : E.Ramos, J.Bidet, J.Ramsamy
+ *Description : Ce module definie la structure des "dessins" ainsi que le designe du serveur
+ */
+
+module PetitPrince{
+
+    struct Draw{
+        long id;
+        long id_author;
+        long value;
+    };
+
+    struct MarkedDraw{
+        long id;
+        long mark;
+    }
+
+    interface Server{
+
+        exception ServerException {
+            string message;
+        };
+
+        long pushDraw(in Draw draw)
+            raises (ServerException);
+
+        long replyDraw(in MarkedDraw marked_draw)
+            raises (ServerException);
+    };
+
+};
