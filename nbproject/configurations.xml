@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="100">
+<configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Client.h</itemPath>
+      <itemPath>ServiceDraw.hh</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>ServiceDraw.idl</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>ServiceDrawSK.cc</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -26,6 +30,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
     <itemPath>.gitignore</itemPath>
+    <itemPath>README.md</itemPath>
+    <itemPath>Serveur.cpp</itemPath>
+    <itemPath>Serveur.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -41,6 +48,20 @@
         </ccTool>
       </compileType>
       <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="README.md" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Serveur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Serveur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ServiceDraw.hh" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ServiceDraw.idl" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ServiceDrawSK.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -67,6 +88,20 @@
         </asmTool>
       </compileType>
       <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="README.md" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Serveur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Serveur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ServiceDraw.hh" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ServiceDraw.idl" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ServiceDrawSK.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

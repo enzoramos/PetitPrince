@@ -5,54 +5,54 @@
 #ifndef PETITPRINCE_SERVEUR_H
 #define PETITPRINCE_SERVEUR_H
 
-
-#include <iostream>
 #include <vector>
+#include <iostream>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <mutex>
+
 #include "Client.h"
-#include "ServiceDraw.hh"
+//#include "ServiceDraw.hh"
 
 using namespace std;
 
 
 class Serveur {
 
-    private:
-        //param serveur
-        int socket;
-        int port;
-        struct sockaddr_in adress;
-        socklen_t size;
-
-        // liste des clients
-        vector<Client&> clients;
-
-        mutex mutex;
-
     public:
-        Serveur(int port):port(port){
-            clients = vector<Client&>();
-            socket = socket(AF_INET, SOCK_STREAM, 0);
+        Serveur(int port): _port(port){
+            _clients = vector<Client>();
+            _socket = socket(AF_INET, SOCK_STREAM, 0);
 
             if( socket < 0 ){
                 cerr << "Error establishing socket..." << endl;
                 exit(1);
             }
 
-            adress.sin_family = AF_INET;
-            adress.sin_addr.s_addr = htons(INADDR_ANY);
-            adress.sin_port = htons(port);
+            _address.sin_family = AF_INET;
+            _address.sin_addr.s_addr = htons(INADDR_ANY);
+            _address.sin_port = htons(port);
         }
         ~Serveur();
 
         void Start();
         void Stop();
         void accept();
-        Draw getDraw(int id);
+        /*Draw getDraw(int id);
         void pushDraw(Draw d);
-        void markDraw(MarkedDraw d);
+        void markDraw(MarkedDraw d);*/
 
+    private:
+        //param serveur
+        int _socket;
+        int _port;
+        struct sockaddr_in _address;
+        socklen_t _size;
+
+        // liste des clients
+        vector<Client> _clients;
+
+        mutex _mutex;
 };
 
 

@@ -11,13 +11,12 @@ using namespace std;
 
 class Client {
     private :
-        int role;
-        string name;
+        int _role;
+        string _name;
 
     public :
-        Client(int role, string name): name(name),role(role){};
-
-        ~Client();
+        Client(int role, string name): _name(name), _role(role) {};
+        
         int getRole();
 
 };

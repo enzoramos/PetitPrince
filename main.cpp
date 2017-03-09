@@ -19,8 +19,18 @@ using namespace std;
 /*
  * 
  */
+int test() {
+    return 0;
+}
+
 int main(int argc, char** argv) {
-    std::cout << true << endl;
+    int _int = 1;
+    bool b = false;
+    std::cout << _int << endl;
+    int a = 0;
+    if(!test()) {
+        cout << "ok" << endl;
+    }
     return 0;
 }
 
