@@ -54,7 +54,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=`pkg-config --libs omniCOS4` `pkg-config --libs omniCOSDynamic4` `pkg-config --libs omniConnectionMgmt4` `pkg-config --libs omniDynamic4` `pkg-config --libs omniEvents` `pkg-config --libs omniORB4` `pkg-config --libs omnithread3`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -67,17 +67,17 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince: ${OBJECTFILES}
 ${OBJECTDIR}/Serveur.o: Serveur.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Serveur.o Serveur.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Serveur.o Serveur.cpp
 
 ${OBJECTDIR}/ServiceDrawSK.o: ServiceDrawSK.cc 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ServiceDrawSK.o ServiceDrawSK.cc
+	$(COMPILE.cc) -g `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ServiceDrawSK.o ServiceDrawSK.cc
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

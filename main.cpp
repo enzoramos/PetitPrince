@@ -26,7 +26,7 @@ int test() {
 int main(int argc, char** argv) {
     int _int = 1;
     bool b = false;
-    std::cout << _int << endl;
+    cout << _int << endl;
     int a = 0;
     if(!test()) {
         cout << "ok" << endl;
