@@ -12,6 +12,7 @@
                    displayName="Resource Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="lib" projectFiles="true">
+        <itemPath>lib/libomni.tar.gz</itemPath>
         <itemPath>lib/libomniCodeSets4.so</itemPath>
         <itemPath>lib/libomniConnectionMgmt4.so</itemPath>
         <itemPath>lib/libomniDynamic4.so</itemPath>
@@ -86,6 +87,8 @@
       </item>
       <item path="ServiceDrawSK.cc" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="lib/libomni.tar.gz" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="lib/libomniCodeSets4.so" ex="false" tool="3" flavor2="0">
       </item>
       <item path="lib/libomniConnectionMgmt4.so" ex="false" tool="3" flavor2="0">
@@ -139,6 +142,8 @@
       <item path="ServiceDraw.idl" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ServiceDrawSK.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="lib/libomni.tar.gz" ex="false" tool="3" flavor2="0">
       </item>
       <item path="lib/libomniCodeSets4.so" ex="false" tool="3" flavor2="0">
       </item>
