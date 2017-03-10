@@ -9,7 +9,9 @@
 
 using namespace std;
 
-class Client {
+namespace PetitPrince {
+
+    class Client {
     private :
         int _role;
         string _name;
@@ -19,6 +21,8 @@ class Client {
         
         int getRole();
 
-};
+    };
+
+}
 
 #endif //PETITPRINCE_Client_H

@@ -78,6 +78,8 @@ _CORBA_MODULE_BEG
 
   typedef _CORBA_ConstrType_Variable_OUT_arg< Draw,Draw_var > Draw_out;
 
+  _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_Draw;
+
   struct MarkedDraw {
     typedef _CORBA_ConstrType_Fix_Var<MarkedDraw> _var_type;
 
@@ -95,6 +97,8 @@ _CORBA_MODULE_BEG
   typedef MarkedDraw::_var_type MarkedDraw_var;
 
   typedef MarkedDraw& MarkedDraw_out;
+
+  _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_MarkedDraw;
 
 #ifndef __PetitPrince_mDrawingService__
 #define __PetitPrince_mDrawingService__
@@ -188,6 +192,8 @@ _CORBA_MODULE_BEG
       virtual void _NP_marshal(cdrStream&) const;
     };
 
+    static _dyn_attr const ::CORBA::TypeCode_ptr _tc_ServiceException;
+
   
   };
 
@@ -244,6 +250,8 @@ _CORBA_MODULE_BEG
   };
 
 
+  _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_DrawingService;
+
 _CORBA_MODULE_END
 
 
@@ -278,6 +286,24 @@ _CORBA_MODULE_END
 
 #undef _core_attr
 #undef _dyn_attr
+
+extern void operator<<=(::CORBA::Any& _a, const PetitPrince::Draw& _s);
+extern void operator<<=(::CORBA::Any& _a, PetitPrince::Draw* _sp);
+extern _CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Draw*& _sp);
+extern _CORBA_Boolean operator>>=(const ::CORBA::Any& _a, const PetitPrince::Draw*& _sp);
+
+extern void operator<<=(::CORBA::Any& _a, const PetitPrince::MarkedDraw& _s);
+extern void operator<<=(::CORBA::Any& _a, PetitPrince::MarkedDraw* _sp);
+extern _CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::MarkedDraw*& _sp);
+extern _CORBA_Boolean operator>>=(const ::CORBA::Any& _a, const PetitPrince::MarkedDraw*& _sp);
+
+void operator<<=(::CORBA::Any& _a, const PetitPrince::DrawingService::ServiceException& _s);
+void operator<<=(::CORBA::Any& _a, const PetitPrince::DrawingService::ServiceException* _sp);
+_CORBA_Boolean operator>>=(const ::CORBA::Any& _a, const PetitPrince::DrawingService::ServiceException*& _sp);
+
+void operator<<=(::CORBA::Any& _a, PetitPrince::DrawingService_ptr _s);
+void operator<<=(::CORBA::Any& _a, PetitPrince::DrawingService_ptr* _s);
+_CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::DrawingService_ptr& _s);
 
 
 

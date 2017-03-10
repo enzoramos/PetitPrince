@@ -11,6 +11,9 @@
  * Created on 6 mars 2017, 20:06
  */
 
+#include "Server.h"
+#include "Client.h"
+
 #include <cstdlib>
 #include <iostream>
 
@@ -31,6 +34,11 @@ int main(int argc, char** argv) {
     if(!test()) {
         cout << "ok" << endl;
     }
+    
+    PetitPrince::Server s(10001);
+    s.start();
+    s.stop();
+    
     return 0;
 }
 

@@ -5,8 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>hdr/Client.h</itemPath>
-      <itemPath>hdr/Serveur.h</itemPath>
-      <itemPath>hdr/ServiceDraw.hh</itemPath>
+      <itemPath>hdr/Server.h</itemPath>
+      <itemPath>hdr/ServiceDraw.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -27,8 +27,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>src/Serveur.cpp</itemPath>
-      <itemPath>src/ServiceDrawSK.cc</itemPath>
+      <itemPath>src/Server.cpp</itemPath>
+      <itemPath>src/ServiceDraw_DynStub.cpp</itemPath>
+      <itemPath>src/ServiceDraw_Stub.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -59,6 +60,9 @@
       <compileType>
         <ccTool>
           <standard>8</standard>
+          <incDir>
+            <pElem>hdr</pElem>
+          </incDir>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
@@ -74,21 +78,17 @@
       </compileType>
       <item path=".gitignore" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/Client.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="DessineMoiUnMouton.pdf" ex="false" tool="3" flavor2="0">
       </item>
       <item path="README.md" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/Serveur.cpp" ex="false" tool="1" flavor2="0">
+      <item path="hdr/Client.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/Serveur.h" ex="false" tool="3" flavor2="0">
+      <item path="hdr/Server.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/ServiceDraw.hh" ex="false" tool="3" flavor2="0">
+      <item path="hdr/ServiceDraw.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="idl/ServiceDraw.idl" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/ServiceDrawSK.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="lib/libomni.tar.gz" ex="false" tool="3" flavor2="0">
       </item>
@@ -107,6 +107,12 @@
       <item path="lib/libomnithread.so" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ServiceDraw_DynStub.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ServiceDraw_Stub.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -122,6 +128,9 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <standard>8</standard>
+          <incDir>
+            <pElem>hdr</pElem>
+          </incDir>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -132,21 +141,17 @@
       </compileType>
       <item path=".gitignore" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/Client.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="DessineMoiUnMouton.pdf" ex="false" tool="3" flavor2="0">
       </item>
       <item path="README.md" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/Serveur.cpp" ex="false" tool="1" flavor2="0">
+      <item path="hdr/Client.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/Serveur.h" ex="false" tool="3" flavor2="0">
+      <item path="hdr/Server.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/ServiceDraw.hh" ex="false" tool="3" flavor2="0">
+      <item path="hdr/ServiceDraw.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="idl/ServiceDraw.idl" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/ServiceDrawSK.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="lib/libomni.tar.gz" ex="false" tool="3" flavor2="0">
       </item>
@@ -165,6 +170,12 @@
       <item path="lib/libomnithread.so" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ServiceDraw_DynStub.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ServiceDraw_Stub.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
