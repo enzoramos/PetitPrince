@@ -74,7 +74,8 @@ Open a new command prompt and type these commands:
 
 ```shell
 $ cd %ROOT/
-$ ./server -p %PORT
+$ nameserv -OAhost %HOST -OAport %PORT
+$ ./server -ORBInitRef NameService=corbaloc:iiop:%HOST:%PORT/NameService
 ```
 
 Then, we are able to invoke the client(s).
@@ -82,5 +83,5 @@ Open a new command prompt for each client, and type these commands:
 
 ```shell
 $ cd %ROOT/
-$ ./client -h %HOST -p %PORT
+$ ./client -ORBInitRef NameService=corbaloc:iiop:%HOST:%PORT/NameService
 ```

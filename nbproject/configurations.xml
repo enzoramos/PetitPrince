@@ -7,6 +7,7 @@
       <itemPath>hdr/Client.h</itemPath>
       <itemPath>hdr/Server.h</itemPath>
       <itemPath>hdr/ServiceDraw.hpp</itemPath>
+      <itemPath>hdr/ServiceDrawImpl.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -28,9 +29,11 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>src/Server.cpp</itemPath>
+      <itemPath>src/ServiceDrawImpl.cpp</itemPath>
       <itemPath>src/ServiceDraw_DynStub.cpp</itemPath>
       <itemPath>src/ServiceDraw_Stub.cpp</itemPath>
-      <itemPath>main.cpp</itemPath>
+      <itemPath>main_client.cpp</itemPath>
+      <itemPath>main_server.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -88,6 +91,8 @@
       </item>
       <item path="hdr/ServiceDraw.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="hdr/ServiceDrawImpl.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="idl/ServiceDraw.idl" ex="false" tool="3" flavor2="0">
       </item>
       <item path="lib/libomni.tar.gz" ex="false" tool="3" flavor2="0">
@@ -106,9 +111,13 @@
       </item>
       <item path="lib/libomnithread.so" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="main_client.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="main_server.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ServiceDrawImpl.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ServiceDraw_DynStub.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -151,6 +160,8 @@
       </item>
       <item path="hdr/ServiceDraw.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="hdr/ServiceDrawImpl.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="idl/ServiceDraw.idl" ex="false" tool="3" flavor2="0">
       </item>
       <item path="lib/libomni.tar.gz" ex="false" tool="3" flavor2="0">
@@ -169,9 +180,13 @@
       </item>
       <item path="lib/libomnithread.so" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="main_client.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="main_server.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ServiceDrawImpl.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ServiceDraw_DynStub.cpp" ex="false" tool="1" flavor2="0">
       </item>

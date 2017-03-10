@@ -35,8 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/main_client.o \
+	${OBJECTDIR}/main_server.o \
 	${OBJECTDIR}/src/Server.o \
+	${OBJECTDIR}/src/ServiceDrawImpl.o \
 	${OBJECTDIR}/src/ServiceDraw_DynStub.o \
 	${OBJECTDIR}/src/ServiceDraw_Stub.o
 
@@ -65,15 +67,25 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/main_client.o: main_client.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_client.o main_client.cpp
+
+${OBJECTDIR}/main_server.o: main_server.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_server.o main_server.cpp
 
 ${OBJECTDIR}/src/Server.o: src/Server.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Server.o src/Server.cpp
+
+${OBJECTDIR}/src/ServiceDrawImpl.o: src/ServiceDrawImpl.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ServiceDrawImpl.o src/ServiceDrawImpl.cpp
 
 ${OBJECTDIR}/src/ServiceDraw_DynStub.o: src/ServiceDraw_DynStub.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
