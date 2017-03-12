@@ -5,28 +5,47 @@
 
 module PetitPrince{
 
-    struct Draw{
-        long id;
-        string id_author;
-        long value;
+    struct Point{
+        long x;
+        long y;
     };
 
-    struct MarkedDraw{
-        long id;
-        long mark;
+    interface Draw {
+        attribute long id;
+        attribute long author;
+        attribute Draw inner_draw;
+
+        exception non_applicable{string msg;};
+        exception unexpected_draw{string msg;};
+
+        long area()
+            raises(non_applicable);
+        long perimeter()
+            raises(non_applicable);
+        void homothetie(in long indice);
+        void translation(in long x, in long y);
+        void rotation(in long angle);
+        void symCenter();
+        void symAxial();
+        void addDraw(in Draw d)
+            raises(unexpected_draw);
+    
     };
 
-    interface DrawingService{
+    interface Line : Draw {
+        attribute Point start;
+        attribute Point end;
+    };
 
-        exception ServiceException {
-            string message;
-        };
-
-        long pushDraw(in Draw d)
-            raises (ServiceException);
-
-        long replyDraw(in MarkedDraw marked_draw)
-            raises (ServiceException);
+    interface Cercle : Draw {
+        attribute Point center;
+        attribute long ray;
+    };
+    
+    interface Ellipses : Draw{
+        attribute Point center1;
+        attribute Point center2;
+        attribute long ray;
     };
 
 };
