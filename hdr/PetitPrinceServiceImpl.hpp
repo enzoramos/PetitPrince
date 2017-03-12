@@ -19,7 +19,7 @@
 namespace PetitPrince {
     
     class DrawingServiceImpl:
-            virtual public POA_PetitPrince::DrawingService,
+            virtual public POA_PetitPrince::PetitPrinceService,
             virtual public PortableServer::RefCountServantBase {
         
     public:

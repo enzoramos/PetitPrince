@@ -3,65 +3,76 @@
  *Description : Ce module definie la structure des "dessins" ainsi que le designe du service
  */
 
-module PetitPrince{
+module PetitPrince {
 
-  
-
-    struct Point{
+    struct Point {
         long x;
         long y;
     };
 
-    
+    valuetype Draw;
 
-    interface Draw {
-        attribute long id;
-        attribute long author;
-        attribute Draw inner_draw;
+    typedef sequence<Draw> DrawSeq;
+
+    valuetype Draw {
+
+        readonly attribute long id;
+        readonly attribute string author;
+        attribute DrawSeq inner_draws;
         attribute long mark;
 
-        exception non_applicable{string msg;};
-        exception unexpected_draw{string msg;};
-
-        long area()
-            raises(non_applicable);
-        long perimeter()
-            raises(non_applicable);
+        long area();
+        long perimeter();
         void homothetie(in long indice);
         void translation(in long x, in long y);
         void rotation(in long angle);
         void symCenter();
         void symAxial();
-        void addDraw(in Draw d)
-            raises(unexpected_draw);
-    
+
+        string toString();
     };
 
-    interface Line : Draw {
+    valuetype Line : Draw {
         attribute Point start;
         attribute Point end;
     };
 
-    interface Cercle : Draw {
+    valuetype Cercle : Draw {
         attribute Point center;
         attribute long ray;
     };
     
-    interface Ellipses : Draw{
+    valuetype Ellipses : Draw {
         attribute Point center1;
         attribute Point center2;
         attribute long ray;
     };
 
-    typedef sequence<Draw> DrawList;
+    interface DrawService {
+        exception non_applicable{string msg;};
+        exception unexpected_draw{string msg;};
 
-    interface PetitPrinceService{
-        attribute DrawList draw_list;
+        long area(in Draw d)
+            raises(non_applicable);
+        long perimeter(in Draw d)
+            raises(non_applicable);
+        void homothetie(in Draw d, in long indice);
+        void translation(in Draw d, in long x, in long y);
+        void rotation(in Draw d, in long angle);
+        void symCenter(in Draw d);
+        void symAxial(in Draw d);
+        void addDraw(in Draw parent, in Draw child)
+            raises(unexpected_draw);
+
+        string toString(in Draw d);
+    };
+
+    interface PetitPrinceService {
+        attribute DrawSeq draw_list;
 
         void pushDraw(in Draw d);
-        void getDraw(in long id);
+        Draw getDraw(in long id);
         void markDraw(in long mark, in long id);
- 
     };
 
 };

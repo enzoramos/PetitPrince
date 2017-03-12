@@ -11,7 +11,7 @@
  * Created on 10 mars 2017, 16:00
  */
 
-#include "ServiceDrawImpl.hpp"
+#include "PetitPrinceServiceImpl.hpp"
 
 namespace PetitPrince {
 
@@ -28,11 +28,11 @@ namespace PetitPrince {
         _orb->shutdown(false);
     }
     
-    DrawingServiceImpl::pushDraw(const ::PetitPrince::Draw& d) {
+    ::CORBA::Long DrawingServiceImpl::pushDraw(const ::PetitPrince::Draw& d) {
         // TODO: code
     }
     
-    DrawingServiceImpl::replyDraw(const ::PetitPrince::MarkedDraw& marked_draw) {
+    ::CORBA::Long DrawingServiceImpl::replyDraw(const ::PetitPrince::MarkedDraw& marked_draw) {
         // TODO: code
     }
 

@@ -15,146 +15,812 @@ static const char* _0RL_library_version = omniORB_4_1;
 
 
 void
-PetitPrince::Draw::operator>>= (cdrStream &_n) const
+PetitPrince::Point::operator>>= (cdrStream &_n) const
 {
-  id >>= _n;
-  _n.marshalString(id_author,0);
-  value >>= _n;
+  x >>= _n;
+  y >>= _n;
 
 }
 
 void
-PetitPrince::Draw::operator<<= (cdrStream &_n)
+PetitPrince::Point::operator<<= (cdrStream &_n)
 {
-  (::CORBA::Long&)id <<= _n;
-  id_author = _n.unmarshalString(0);
-  (::CORBA::Long&)value <<= _n;
+  (::CORBA::Long&)x <<= _n;
+  (::CORBA::Long&)y <<= _n;
+
+}
+
+// valuetype Draw
+
+void
+PetitPrince::Draw_Helper::add_ref(::PetitPrince::Draw* _v)
+{
+  if (_v) _v->_add_ref();
+}
+
+void
+PetitPrince::Draw_Helper::remove_ref(::PetitPrince::Draw* _v)
+{
+  if (_v) _v->_remove_ref();
+}
+
+PetitPrince::Draw*
+PetitPrince::Draw::_downcast(::CORBA::ValueBase* _b)
+{
+  return _b ? (PetitPrince::Draw*)_b->_ptrToValue(_PD_repoId) : 0;
+}
+
+const char* PetitPrince::Draw::_PD_repoId = "IDL:PetitPrince/Draw:1.0";
+
+const char*
+PetitPrince::Draw::_NP_repositoryId() const
+{
+  return _PD_repoId;
+}
+
+const char*
+PetitPrince::Draw::_NP_repositoryId(::CORBA::ULong& hash) const
+{
+  hash = 2069783463U;
+  return _PD_repoId;
+}
+
+::CORBA::Boolean
+PetitPrince::Draw::_NP_custom() const
+{
+  return 0;
+}
+
+void*
+PetitPrince::Draw::_ptrToValue(const char* _id)
+{
+  if (_id == ::PetitPrince::Draw::_PD_repoId)
+    return (::PetitPrince::Draw*) this;
+  
+  
+
+  if (_id == ::CORBA::ValueBase::_PD_repoId)
+    return (::CORBA::ValueBase*) this;
+  
+  if (omni::strMatch(_id, ::PetitPrince::Draw::_PD_repoId))
+    return (::PetitPrince::Draw*) this;
+  
+  
+
+  if (omni::strMatch(_id, ::CORBA::ValueBase::_PD_repoId))
+    return (::CORBA::ValueBase*) this;
+
+  return 0;
+}
+
+void
+PetitPrince::Draw::_NP_marshal(PetitPrince::Draw* _v, cdrStream& _0s)
+{
+  omniValueType::marshal(_v, PetitPrince::Draw::_PD_repoId, _0s);
+}
+
+void
+PetitPrince::Draw_Helper::marshal(::PetitPrince::Draw* _v, cdrStream& _0s)
+{
+  PetitPrince::Draw::_NP_marshal(_v,_0s);
+}
+
+PetitPrince::Draw*
+PetitPrince::Draw::_NP_unmarshal(cdrStream& _0s)
+{
+  ::CORBA::ValueBase* _b = omniValueType::unmarshal(PetitPrince::Draw::_PD_repoId,
+						    2069783463U, 0, _0s);
+  PetitPrince::Draw* _d = PetitPrince::Draw::_downcast(_b);
+  if (_b && !_d) {
+    _b = omniValueType::handleIncompatibleValue(
+           PetitPrince::Draw::_PD_repoId,
+           2069783463U, _b, (::CORBA::CompletionStatus)_0s.completion());
+    _d = PetitPrince::Draw::_downcast(_b);
+  }
+  return _d;
+}
+
+PetitPrince::Draw*
+PetitPrince::Draw_Helper::unmarshal(cdrStream& _0s)
+{
+  return PetitPrince::Draw::_NP_unmarshal(_0s);
+}
+
+void
+PetitPrince::Draw::_PR_marshal_state(cdrStream& _0s) const
+{
+  
+}
+
+void
+PetitPrince::Draw::_PR_unmarshal_state(cdrStream& _0s)
+{
+  
+}
+
+#ifdef OMNI_HAVE_COVARIANT_RETURNS
+PetitPrince::Draw*
+#else
+::CORBA::ValueBase*
+#endif
+PetitPrince::Draw::_copy_value()
+{
+  ::CORBA::ValueBase* _b;
+  _b = _omni_ValueFactoryManager::create_for_unmarshal(_PD_repoId, 2069783463U);
+  PetitPrince::Draw* _v = PetitPrince::Draw::_downcast(_b);
+  if (!_v) {
+    ::CORBA::remove_ref(_b);
+    OMNIORB_THROW(BAD_PARAM, BAD_PARAM_ValueFactoryFailure,
+		  ::CORBA::COMPLETED_NO);
+  }
+  _v->_PR_copy_state(this);
+  return _v;
+}
+
+void
+PetitPrince::Draw::_PR_copy_state(PetitPrince::Draw* _v)
+{
+  
+}
+
+
+PetitPrince::Draw::Draw()  {}
+PetitPrince::Draw::~Draw() {}
+
+OBV_PetitPrince::Draw::Draw() {}
+OBV_PetitPrince::Draw::~Draw() {}
+
+const _omni_ValueIds*
+PetitPrince::Draw::_NP_truncatableIds() const
+{
+  return 0;
+}
+
+// valuetype Line
+
+void
+PetitPrince::Line_Helper::add_ref(::PetitPrince::Line* _v)
+{
+  if (_v) _v->_add_ref();
+}
+
+void
+PetitPrince::Line_Helper::remove_ref(::PetitPrince::Line* _v)
+{
+  if (_v) _v->_remove_ref();
+}
+
+PetitPrince::Line*
+PetitPrince::Line::_downcast(::CORBA::ValueBase* _b)
+{
+  return _b ? (PetitPrince::Line*)_b->_ptrToValue(_PD_repoId) : 0;
+}
+
+const char* PetitPrince::Line::_PD_repoId = "IDL:PetitPrince/Line:1.0";
+
+const char*
+PetitPrince::Line::_NP_repositoryId() const
+{
+  return _PD_repoId;
+}
+
+const char*
+PetitPrince::Line::_NP_repositoryId(::CORBA::ULong& hash) const
+{
+  hash = 2759746529U;
+  return _PD_repoId;
+}
+
+::CORBA::Boolean
+PetitPrince::Line::_NP_custom() const
+{
+  return 0;
+}
+
+void*
+PetitPrince::Line::_ptrToValue(const char* _id)
+{
+  if (_id == ::PetitPrince::Line::_PD_repoId)
+    return (::PetitPrince::Line*) this;
+  
+  if (_id == ::PetitPrince::Draw::_PD_repoId)
+    return (::PetitPrince::Draw*) this;
+
+
+
+  if (_id == ::CORBA::ValueBase::_PD_repoId)
+    return (::CORBA::ValueBase*) this;
+  
+  if (omni::strMatch(_id, ::PetitPrince::Line::_PD_repoId))
+    return (::PetitPrince::Line*) this;
+  
+  if (omni::strMatch(_id, ::PetitPrince::Draw::_PD_repoId))
+    return (::PetitPrince::Draw*) this;
+
+
+
+  if (omni::strMatch(_id, ::CORBA::ValueBase::_PD_repoId))
+    return (::CORBA::ValueBase*) this;
+
+  return 0;
+}
+
+void
+PetitPrince::Line::_NP_marshal(PetitPrince::Line* _v, cdrStream& _0s)
+{
+  omniValueType::marshal(_v, PetitPrince::Line::_PD_repoId, _0s);
+}
+
+void
+PetitPrince::Line_Helper::marshal(::PetitPrince::Line* _v, cdrStream& _0s)
+{
+  PetitPrince::Line::_NP_marshal(_v,_0s);
+}
+
+PetitPrince::Line*
+PetitPrince::Line::_NP_unmarshal(cdrStream& _0s)
+{
+  ::CORBA::ValueBase* _b = omniValueType::unmarshal(PetitPrince::Line::_PD_repoId,
+						    2759746529U, 0, _0s);
+  PetitPrince::Line* _d = PetitPrince::Line::_downcast(_b);
+  if (_b && !_d) {
+    _b = omniValueType::handleIncompatibleValue(
+           PetitPrince::Line::_PD_repoId,
+           2759746529U, _b, (::CORBA::CompletionStatus)_0s.completion());
+    _d = PetitPrince::Line::_downcast(_b);
+  }
+  return _d;
+}
+
+PetitPrince::Line*
+PetitPrince::Line_Helper::unmarshal(cdrStream& _0s)
+{
+  return PetitPrince::Line::_NP_unmarshal(_0s);
+}
+
+void
+PetitPrince::Line::_PR_marshal_state(cdrStream& _0s) const
+{
+  ::PetitPrince::Draw::_PR_marshal_state(_0s);
 
 }
 
 void
-PetitPrince::MarkedDraw::operator>>= (cdrStream &_n) const
+PetitPrince::Line::_PR_unmarshal_state(cdrStream& _0s)
 {
-  id >>= _n;
-  mark >>= _n;
+  ::PetitPrince::Draw::_PR_unmarshal_state(_0s);
+
+}
+
+#ifdef OMNI_HAVE_COVARIANT_RETURNS
+PetitPrince::Line*
+#else
+::CORBA::ValueBase*
+#endif
+PetitPrince::Line::_copy_value()
+{
+  ::CORBA::ValueBase* _b;
+  _b = _omni_ValueFactoryManager::create_for_unmarshal(_PD_repoId, 2759746529U);
+  PetitPrince::Line* _v = PetitPrince::Line::_downcast(_b);
+  if (!_v) {
+    ::CORBA::remove_ref(_b);
+    OMNIORB_THROW(BAD_PARAM, BAD_PARAM_ValueFactoryFailure,
+		  ::CORBA::COMPLETED_NO);
+  }
+  _v->_PR_copy_state(this);
+  return _v;
+}
+
+void
+PetitPrince::Line::_PR_copy_state(PetitPrince::Line* _v)
+{
+  ::PetitPrince::Draw::_PR_copy_state(_v);
+
+}
+
+
+PetitPrince::Line::Line()  {}
+PetitPrince::Line::~Line() {}
+
+OBV_PetitPrince::Line::Line() {}
+OBV_PetitPrince::Line::~Line() {}
+
+const _omni_ValueIds*
+PetitPrince::Line::_NP_truncatableIds() const
+{
+  return 0;
+}
+
+// valuetype Cercle
+
+void
+PetitPrince::Cercle_Helper::add_ref(::PetitPrince::Cercle* _v)
+{
+  if (_v) _v->_add_ref();
+}
+
+void
+PetitPrince::Cercle_Helper::remove_ref(::PetitPrince::Cercle* _v)
+{
+  if (_v) _v->_remove_ref();
+}
+
+PetitPrince::Cercle*
+PetitPrince::Cercle::_downcast(::CORBA::ValueBase* _b)
+{
+  return _b ? (PetitPrince::Cercle*)_b->_ptrToValue(_PD_repoId) : 0;
+}
+
+const char* PetitPrince::Cercle::_PD_repoId = "IDL:PetitPrince/Cercle:1.0";
+
+const char*
+PetitPrince::Cercle::_NP_repositoryId() const
+{
+  return _PD_repoId;
+}
+
+const char*
+PetitPrince::Cercle::_NP_repositoryId(::CORBA::ULong& hash) const
+{
+  hash = 3502533504U;
+  return _PD_repoId;
+}
+
+::CORBA::Boolean
+PetitPrince::Cercle::_NP_custom() const
+{
+  return 0;
+}
+
+void*
+PetitPrince::Cercle::_ptrToValue(const char* _id)
+{
+  if (_id == ::PetitPrince::Cercle::_PD_repoId)
+    return (::PetitPrince::Cercle*) this;
+  
+  if (_id == ::PetitPrince::Draw::_PD_repoId)
+    return (::PetitPrince::Draw*) this;
+
+
+
+  if (_id == ::CORBA::ValueBase::_PD_repoId)
+    return (::CORBA::ValueBase*) this;
+  
+  if (omni::strMatch(_id, ::PetitPrince::Cercle::_PD_repoId))
+    return (::PetitPrince::Cercle*) this;
+  
+  if (omni::strMatch(_id, ::PetitPrince::Draw::_PD_repoId))
+    return (::PetitPrince::Draw*) this;
+
+
+
+  if (omni::strMatch(_id, ::CORBA::ValueBase::_PD_repoId))
+    return (::CORBA::ValueBase*) this;
+
+  return 0;
+}
+
+void
+PetitPrince::Cercle::_NP_marshal(PetitPrince::Cercle* _v, cdrStream& _0s)
+{
+  omniValueType::marshal(_v, PetitPrince::Cercle::_PD_repoId, _0s);
+}
+
+void
+PetitPrince::Cercle_Helper::marshal(::PetitPrince::Cercle* _v, cdrStream& _0s)
+{
+  PetitPrince::Cercle::_NP_marshal(_v,_0s);
+}
+
+PetitPrince::Cercle*
+PetitPrince::Cercle::_NP_unmarshal(cdrStream& _0s)
+{
+  ::CORBA::ValueBase* _b = omniValueType::unmarshal(PetitPrince::Cercle::_PD_repoId,
+						    3502533504U, 0, _0s);
+  PetitPrince::Cercle* _d = PetitPrince::Cercle::_downcast(_b);
+  if (_b && !_d) {
+    _b = omniValueType::handleIncompatibleValue(
+           PetitPrince::Cercle::_PD_repoId,
+           3502533504U, _b, (::CORBA::CompletionStatus)_0s.completion());
+    _d = PetitPrince::Cercle::_downcast(_b);
+  }
+  return _d;
+}
+
+PetitPrince::Cercle*
+PetitPrince::Cercle_Helper::unmarshal(cdrStream& _0s)
+{
+  return PetitPrince::Cercle::_NP_unmarshal(_0s);
+}
+
+void
+PetitPrince::Cercle::_PR_marshal_state(cdrStream& _0s) const
+{
+  ::PetitPrince::Draw::_PR_marshal_state(_0s);
 
 }
 
 void
-PetitPrince::MarkedDraw::operator<<= (cdrStream &_n)
+PetitPrince::Cercle::_PR_unmarshal_state(cdrStream& _0s)
 {
-  (::CORBA::Long&)id <<= _n;
-  (::CORBA::Long&)mark <<= _n;
+  ::PetitPrince::Draw::_PR_unmarshal_state(_0s);
 
 }
 
-::CORBA::Exception::insertExceptionToAny PetitPrince::DrawingService::ServiceException::insertToAnyFn = 0;
-::CORBA::Exception::insertExceptionToAnyNCP PetitPrince::DrawingService::ServiceException::insertToAnyFnNCP = 0;
-
-PetitPrince::DrawingService::ServiceException::ServiceException(const PetitPrince::DrawingService::ServiceException& _s) : ::CORBA::UserException(_s)
+#ifdef OMNI_HAVE_COVARIANT_RETURNS
+PetitPrince::Cercle*
+#else
+::CORBA::ValueBase*
+#endif
+PetitPrince::Cercle::_copy_value()
 {
-  message = _s.message;
+  ::CORBA::ValueBase* _b;
+  _b = _omni_ValueFactoryManager::create_for_unmarshal(_PD_repoId, 3502533504U);
+  PetitPrince::Cercle* _v = PetitPrince::Cercle::_downcast(_b);
+  if (!_v) {
+    ::CORBA::remove_ref(_b);
+    OMNIORB_THROW(BAD_PARAM, BAD_PARAM_ValueFactoryFailure,
+		  ::CORBA::COMPLETED_NO);
+  }
+  _v->_PR_copy_state(this);
+  return _v;
+}
+
+void
+PetitPrince::Cercle::_PR_copy_state(PetitPrince::Cercle* _v)
+{
+  ::PetitPrince::Draw::_PR_copy_state(_v);
 
 }
 
-PetitPrince::DrawingService::ServiceException::ServiceException(const char* _message)
+
+PetitPrince::Cercle::Cercle()  {}
+PetitPrince::Cercle::~Cercle() {}
+
+OBV_PetitPrince::Cercle::Cercle() {}
+OBV_PetitPrince::Cercle::~Cercle() {}
+
+const _omni_ValueIds*
+PetitPrince::Cercle::_NP_truncatableIds() const
 {
-  pd_insertToAnyFn    = PetitPrince::DrawingService::ServiceException::insertToAnyFn;
-  pd_insertToAnyFnNCP = PetitPrince::DrawingService::ServiceException::insertToAnyFnNCP;
-  message = _message;
+  return 0;
+}
+
+// valuetype Ellipses
+
+void
+PetitPrince::Ellipses_Helper::add_ref(::PetitPrince::Ellipses* _v)
+{
+  if (_v) _v->_add_ref();
+}
+
+void
+PetitPrince::Ellipses_Helper::remove_ref(::PetitPrince::Ellipses* _v)
+{
+  if (_v) _v->_remove_ref();
+}
+
+PetitPrince::Ellipses*
+PetitPrince::Ellipses::_downcast(::CORBA::ValueBase* _b)
+{
+  return _b ? (PetitPrince::Ellipses*)_b->_ptrToValue(_PD_repoId) : 0;
+}
+
+const char* PetitPrince::Ellipses::_PD_repoId = "IDL:PetitPrince/Ellipses:1.0";
+
+const char*
+PetitPrince::Ellipses::_NP_repositoryId() const
+{
+  return _PD_repoId;
+}
+
+const char*
+PetitPrince::Ellipses::_NP_repositoryId(::CORBA::ULong& hash) const
+{
+  hash = 681822294U;
+  return _PD_repoId;
+}
+
+::CORBA::Boolean
+PetitPrince::Ellipses::_NP_custom() const
+{
+  return 0;
+}
+
+void*
+PetitPrince::Ellipses::_ptrToValue(const char* _id)
+{
+  if (_id == ::PetitPrince::Ellipses::_PD_repoId)
+    return (::PetitPrince::Ellipses*) this;
+  
+  if (_id == ::PetitPrince::Draw::_PD_repoId)
+    return (::PetitPrince::Draw*) this;
+
+
+
+  if (_id == ::CORBA::ValueBase::_PD_repoId)
+    return (::CORBA::ValueBase*) this;
+  
+  if (omni::strMatch(_id, ::PetitPrince::Ellipses::_PD_repoId))
+    return (::PetitPrince::Ellipses*) this;
+  
+  if (omni::strMatch(_id, ::PetitPrince::Draw::_PD_repoId))
+    return (::PetitPrince::Draw*) this;
+
+
+
+  if (omni::strMatch(_id, ::CORBA::ValueBase::_PD_repoId))
+    return (::CORBA::ValueBase*) this;
+
+  return 0;
+}
+
+void
+PetitPrince::Ellipses::_NP_marshal(PetitPrince::Ellipses* _v, cdrStream& _0s)
+{
+  omniValueType::marshal(_v, PetitPrince::Ellipses::_PD_repoId, _0s);
+}
+
+void
+PetitPrince::Ellipses_Helper::marshal(::PetitPrince::Ellipses* _v, cdrStream& _0s)
+{
+  PetitPrince::Ellipses::_NP_marshal(_v,_0s);
+}
+
+PetitPrince::Ellipses*
+PetitPrince::Ellipses::_NP_unmarshal(cdrStream& _0s)
+{
+  ::CORBA::ValueBase* _b = omniValueType::unmarshal(PetitPrince::Ellipses::_PD_repoId,
+						    681822294U, 0, _0s);
+  PetitPrince::Ellipses* _d = PetitPrince::Ellipses::_downcast(_b);
+  if (_b && !_d) {
+    _b = omniValueType::handleIncompatibleValue(
+           PetitPrince::Ellipses::_PD_repoId,
+           681822294U, _b, (::CORBA::CompletionStatus)_0s.completion());
+    _d = PetitPrince::Ellipses::_downcast(_b);
+  }
+  return _d;
+}
+
+PetitPrince::Ellipses*
+PetitPrince::Ellipses_Helper::unmarshal(cdrStream& _0s)
+{
+  return PetitPrince::Ellipses::_NP_unmarshal(_0s);
+}
+
+void
+PetitPrince::Ellipses::_PR_marshal_state(cdrStream& _0s) const
+{
+  ::PetitPrince::Draw::_PR_marshal_state(_0s);
+
+}
+
+void
+PetitPrince::Ellipses::_PR_unmarshal_state(cdrStream& _0s)
+{
+  ::PetitPrince::Draw::_PR_unmarshal_state(_0s);
+
+}
+
+#ifdef OMNI_HAVE_COVARIANT_RETURNS
+PetitPrince::Ellipses*
+#else
+::CORBA::ValueBase*
+#endif
+PetitPrince::Ellipses::_copy_value()
+{
+  ::CORBA::ValueBase* _b;
+  _b = _omni_ValueFactoryManager::create_for_unmarshal(_PD_repoId, 681822294U);
+  PetitPrince::Ellipses* _v = PetitPrince::Ellipses::_downcast(_b);
+  if (!_v) {
+    ::CORBA::remove_ref(_b);
+    OMNIORB_THROW(BAD_PARAM, BAD_PARAM_ValueFactoryFailure,
+		  ::CORBA::COMPLETED_NO);
+  }
+  _v->_PR_copy_state(this);
+  return _v;
+}
+
+void
+PetitPrince::Ellipses::_PR_copy_state(PetitPrince::Ellipses* _v)
+{
+  ::PetitPrince::Draw::_PR_copy_state(_v);
+
+}
+
+
+PetitPrince::Ellipses::Ellipses()  {}
+PetitPrince::Ellipses::~Ellipses() {}
+
+OBV_PetitPrince::Ellipses::Ellipses() {}
+OBV_PetitPrince::Ellipses::~Ellipses() {}
+
+const _omni_ValueIds*
+PetitPrince::Ellipses::_NP_truncatableIds() const
+{
+  return 0;
+}
+
+::CORBA::Exception::insertExceptionToAny PetitPrince::DrawService::non_applicable::insertToAnyFn = 0;
+::CORBA::Exception::insertExceptionToAnyNCP PetitPrince::DrawService::non_applicable::insertToAnyFnNCP = 0;
+
+PetitPrince::DrawService::non_applicable::non_applicable(const PetitPrince::DrawService::non_applicable& _s) : ::CORBA::UserException(_s)
+{
+  msg = _s.msg;
+
+}
+
+PetitPrince::DrawService::non_applicable::non_applicable(const char* _msg)
+{
+  pd_insertToAnyFn    = PetitPrince::DrawService::non_applicable::insertToAnyFn;
+  pd_insertToAnyFnNCP = PetitPrince::DrawService::non_applicable::insertToAnyFnNCP;
+  msg = _msg;
 
 }
 
 
 
-PetitPrince::DrawingService::ServiceException& PetitPrince::DrawingService::ServiceException::operator=(const PetitPrince::DrawingService::ServiceException& _s)
+PetitPrince::DrawService::non_applicable& PetitPrince::DrawService::non_applicable::operator=(const PetitPrince::DrawService::non_applicable& _s)
 {
   ((::CORBA::UserException*) this)->operator=(_s);
-  message = _s.message;
+  msg = _s.msg;
 
   return *this;
 }
 
-PetitPrince::DrawingService::ServiceException::~ServiceException() {}
+PetitPrince::DrawService::non_applicable::~non_applicable() {}
 
-void PetitPrince::DrawingService::ServiceException::_raise() const { throw *this; }
+void PetitPrince::DrawService::non_applicable::_raise() const { throw *this; }
 
-const char* PetitPrince::DrawingService::ServiceException::_PD_repoId = "IDL:PetitPrince/DrawingService/ServiceException:1.0";
-const char* PetitPrince::DrawingService::ServiceException::_PD_typeId = "Exception/UserException/PetitPrince::DrawingService::ServiceException";
+const char* PetitPrince::DrawService::non_applicable::_PD_repoId = "IDL:PetitPrince/DrawService/non_applicable:1.0";
+const char* PetitPrince::DrawService::non_applicable::_PD_typeId = "Exception/UserException/PetitPrince::DrawService::non_applicable";
 
-PetitPrince::DrawingService::ServiceException* PetitPrince::DrawingService::ServiceException::_downcast(::CORBA::Exception* _e) {
-  return (ServiceException*) _NP_is_a(_e, _PD_typeId);
+PetitPrince::DrawService::non_applicable* PetitPrince::DrawService::non_applicable::_downcast(::CORBA::Exception* _e) {
+  return (non_applicable*) _NP_is_a(_e, _PD_typeId);
 }
 
-const PetitPrince::DrawingService::ServiceException* PetitPrince::DrawingService::ServiceException::_downcast(const ::CORBA::Exception* _e) {
-  return (const ServiceException*) _NP_is_a(_e, _PD_typeId);
+const PetitPrince::DrawService::non_applicable* PetitPrince::DrawService::non_applicable::_downcast(const ::CORBA::Exception* _e) {
+  return (const non_applicable*) _NP_is_a(_e, _PD_typeId);
 }
 
-::CORBA::Exception* PetitPrince::DrawingService::ServiceException::_NP_duplicate() const {
-  return new ServiceException(*this);
+::CORBA::Exception* PetitPrince::DrawService::non_applicable::_NP_duplicate() const {
+  return new non_applicable(*this);
 }
 
-const char* PetitPrince::DrawingService::ServiceException::_NP_typeId() const {
+const char* PetitPrince::DrawService::non_applicable::_NP_typeId() const {
   return _PD_typeId;
 }
 
-const char* PetitPrince::DrawingService::ServiceException::_NP_repoId(int* _size) const {
-  *_size = sizeof("IDL:PetitPrince/DrawingService/ServiceException:1.0");
+const char* PetitPrince::DrawService::non_applicable::_NP_repoId(int* _size) const {
+  *_size = sizeof("IDL:PetitPrince/DrawService/non_applicable:1.0");
   return _PD_repoId;
 }
  
-void PetitPrince::DrawingService::ServiceException::_NP_marshal(cdrStream& _s) const {
+void PetitPrince::DrawService::non_applicable::_NP_marshal(cdrStream& _s) const {
   *this >>= _s;
 }
 
 void
-PetitPrince::DrawingService::ServiceException::operator>>= (cdrStream& _n) const
+PetitPrince::DrawService::non_applicable::operator>>= (cdrStream& _n) const
 {
-  _n.marshalString(message,0);
+  _n.marshalString(msg,0);
 
 }
 
 void
-PetitPrince::DrawingService::ServiceException::operator<<= (cdrStream& _n)
+PetitPrince::DrawService::non_applicable::operator<<= (cdrStream& _n)
 {
-  message = _n.unmarshalString(0);
+  msg = _n.unmarshalString(0);
 
 }
 
-PetitPrince::DrawingService_ptr PetitPrince::DrawingService_Helper::_nil() {
-  return ::PetitPrince::DrawingService::_nil();
+::CORBA::Exception::insertExceptionToAny PetitPrince::DrawService::unexpected_draw::insertToAnyFn = 0;
+::CORBA::Exception::insertExceptionToAnyNCP PetitPrince::DrawService::unexpected_draw::insertToAnyFnNCP = 0;
+
+PetitPrince::DrawService::unexpected_draw::unexpected_draw(const PetitPrince::DrawService::unexpected_draw& _s) : ::CORBA::UserException(_s)
+{
+  msg = _s.msg;
+
 }
 
-::CORBA::Boolean PetitPrince::DrawingService_Helper::is_nil(::PetitPrince::DrawingService_ptr p) {
+PetitPrince::DrawService::unexpected_draw::unexpected_draw(const char* _msg)
+{
+  pd_insertToAnyFn    = PetitPrince::DrawService::unexpected_draw::insertToAnyFn;
+  pd_insertToAnyFnNCP = PetitPrince::DrawService::unexpected_draw::insertToAnyFnNCP;
+  msg = _msg;
+
+}
+
+
+
+PetitPrince::DrawService::unexpected_draw& PetitPrince::DrawService::unexpected_draw::operator=(const PetitPrince::DrawService::unexpected_draw& _s)
+{
+  ((::CORBA::UserException*) this)->operator=(_s);
+  msg = _s.msg;
+
+  return *this;
+}
+
+PetitPrince::DrawService::unexpected_draw::~unexpected_draw() {}
+
+void PetitPrince::DrawService::unexpected_draw::_raise() const { throw *this; }
+
+const char* PetitPrince::DrawService::unexpected_draw::_PD_repoId = "IDL:PetitPrince/DrawService/unexpected_draw:1.0";
+const char* PetitPrince::DrawService::unexpected_draw::_PD_typeId = "Exception/UserException/PetitPrince::DrawService::unexpected_draw";
+
+PetitPrince::DrawService::unexpected_draw* PetitPrince::DrawService::unexpected_draw::_downcast(::CORBA::Exception* _e) {
+  return (unexpected_draw*) _NP_is_a(_e, _PD_typeId);
+}
+
+const PetitPrince::DrawService::unexpected_draw* PetitPrince::DrawService::unexpected_draw::_downcast(const ::CORBA::Exception* _e) {
+  return (const unexpected_draw*) _NP_is_a(_e, _PD_typeId);
+}
+
+::CORBA::Exception* PetitPrince::DrawService::unexpected_draw::_NP_duplicate() const {
+  return new unexpected_draw(*this);
+}
+
+const char* PetitPrince::DrawService::unexpected_draw::_NP_typeId() const {
+  return _PD_typeId;
+}
+
+const char* PetitPrince::DrawService::unexpected_draw::_NP_repoId(int* _size) const {
+  *_size = sizeof("IDL:PetitPrince/DrawService/unexpected_draw:1.0");
+  return _PD_repoId;
+}
+ 
+void PetitPrince::DrawService::unexpected_draw::_NP_marshal(cdrStream& _s) const {
+  *this >>= _s;
+}
+
+void
+PetitPrince::DrawService::unexpected_draw::operator>>= (cdrStream& _n) const
+{
+  _n.marshalString(msg,0);
+
+}
+
+void
+PetitPrince::DrawService::unexpected_draw::operator<<= (cdrStream& _n)
+{
+  msg = _n.unmarshalString(0);
+
+}
+
+PetitPrince::DrawService_ptr PetitPrince::DrawService_Helper::_nil() {
+  return ::PetitPrince::DrawService::_nil();
+}
+
+::CORBA::Boolean PetitPrince::DrawService_Helper::is_nil(::PetitPrince::DrawService_ptr p) {
   return ::CORBA::is_nil(p);
 
 }
 
-void PetitPrince::DrawingService_Helper::release(::PetitPrince::DrawingService_ptr p) {
+void PetitPrince::DrawService_Helper::release(::PetitPrince::DrawService_ptr p) {
   ::CORBA::release(p);
 }
 
-void PetitPrince::DrawingService_Helper::marshalObjRef(::PetitPrince::DrawingService_ptr obj, cdrStream& s) {
-  ::PetitPrince::DrawingService::_marshalObjRef(obj, s);
+void PetitPrince::DrawService_Helper::marshalObjRef(::PetitPrince::DrawService_ptr obj, cdrStream& s) {
+  ::PetitPrince::DrawService::_marshalObjRef(obj, s);
 }
 
-PetitPrince::DrawingService_ptr PetitPrince::DrawingService_Helper::unmarshalObjRef(cdrStream& s) {
-  return ::PetitPrince::DrawingService::_unmarshalObjRef(s);
+PetitPrince::DrawService_ptr PetitPrince::DrawService_Helper::unmarshalObjRef(cdrStream& s) {
+  return ::PetitPrince::DrawService::_unmarshalObjRef(s);
 }
 
-void PetitPrince::DrawingService_Helper::duplicate(::PetitPrince::DrawingService_ptr obj) {
+void PetitPrince::DrawService_Helper::duplicate(::PetitPrince::DrawService_ptr obj) {
   if( obj && !obj->_NP_is_nil() )  omni::duplicateObjRef(obj);
 }
 
-PetitPrince::DrawingService_ptr
-PetitPrince::DrawingService::_duplicate(::PetitPrince::DrawingService_ptr obj)
+PetitPrince::DrawService_ptr
+PetitPrince::DrawService::_duplicate(::PetitPrince::DrawService_ptr obj)
 {
   if( obj && !obj->_NP_is_nil() )  omni::duplicateObjRef(obj);
   return obj;
 }
 
-PetitPrince::DrawingService_ptr
-PetitPrince::DrawingService::_narrow(::CORBA::Object_ptr obj)
+PetitPrince::DrawService_ptr
+PetitPrince::DrawService::_narrow(::CORBA::Object_ptr obj)
 {
   if( !obj || obj->_NP_is_nil() || obj->_NP_is_pseudo() ) return _nil();
   _ptr_type e = (_ptr_type) obj->_PR_getobj()->_realNarrow(_PD_repoId);
@@ -162,26 +828,26 @@ PetitPrince::DrawingService::_narrow(::CORBA::Object_ptr obj)
 }
 
 
-PetitPrince::DrawingService_ptr
-PetitPrince::DrawingService::_unchecked_narrow(::CORBA::Object_ptr obj)
+PetitPrince::DrawService_ptr
+PetitPrince::DrawService::_unchecked_narrow(::CORBA::Object_ptr obj)
 {
   if( !obj || obj->_NP_is_nil() || obj->_NP_is_pseudo() ) return _nil();
   _ptr_type e = (_ptr_type) obj->_PR_getobj()->_uncheckedNarrow(_PD_repoId);
   return e ? e : _nil();
 }
 
-PetitPrince::DrawingService_ptr
-PetitPrince::DrawingService::_nil()
+PetitPrince::DrawService_ptr
+PetitPrince::DrawService::_nil()
 {
 #ifdef OMNI_UNLOADABLE_STUBS
-  static _objref_DrawingService _the_nil_obj;
+  static _objref_DrawService _the_nil_obj;
   return &_the_nil_obj;
 #else
-  static _objref_DrawingService* _the_nil_ptr = 0;
+  static _objref_DrawService* _the_nil_ptr = 0;
   if( !_the_nil_ptr ) {
     omni::nilRefLock().lock();
     if( !_the_nil_ptr ) {
-      _the_nil_ptr = new _objref_DrawingService;
+      _the_nil_ptr = new _objref_DrawService;
       registerNilCorbaObject(_the_nil_ptr);
     }
     omni::nilRefLock().unlock();
@@ -190,16 +856,16 @@ PetitPrince::DrawingService::_nil()
 #endif
 }
 
-const char* PetitPrince::DrawingService::_PD_repoId = "IDL:PetitPrince/DrawingService:1.0";
+const char* PetitPrince::DrawService::_PD_repoId = "IDL:PetitPrince/DrawService:1.0";
 
 
-PetitPrince::_objref_DrawingService::~_objref_DrawingService() {
+PetitPrince::_objref_DrawService::~_objref_DrawService() {
   
 }
 
 
-PetitPrince::_objref_DrawingService::_objref_DrawingService(omniIOR* ior, omniIdentity* id) :
-   omniObjRef(::PetitPrince::DrawingService::_PD_repoId, ior, id, 1)
+PetitPrince::_objref_DrawService::_objref_DrawService(omniIOR* ior, omniIdentity* id) :
+   omniObjRef(::PetitPrince::DrawService::_PD_repoId, ior, id, 1)
    
    
 {
@@ -207,16 +873,16 @@ PetitPrince::_objref_DrawingService::_objref_DrawingService(omniIOR* ior, omniId
 }
 
 void*
-PetitPrince::_objref_DrawingService::_ptrToObjRef(const char* id)
+PetitPrince::_objref_DrawService::_ptrToObjRef(const char* id)
 {
-  if( id == ::PetitPrince::DrawingService::_PD_repoId )
-    return (::PetitPrince::DrawingService_ptr) this;
+  if( id == ::PetitPrince::DrawService::_PD_repoId )
+    return (::PetitPrince::DrawService_ptr) this;
   
   if( id == ::CORBA::Object::_PD_repoId )
     return (::CORBA::Object_ptr) this;
 
-  if( omni::strMatch(id, ::PetitPrince::DrawingService::_PD_repoId) )
-    return (::PetitPrince::DrawingService_ptr) this;
+  if( omni::strMatch(id, ::PetitPrince::DrawService::_PD_repoId) )
+    return (::PetitPrince::DrawService_ptr) this;
   
   if( omni::strMatch(id, ::CORBA::Object::_PD_repoId) )
     return (::CORBA::Object_ptr) this;
@@ -225,12 +891,12 @@ PetitPrince::_objref_DrawingService::_ptrToObjRef(const char* id)
 }
 
 // Proxy call descriptor class. Mangled signature:
-//  _clong_i_cPetitPrince_mDraw_e_cPetitPrince_mDrawingService_mServiceException
-class _0RL_cd_825c0eb2a4af4c45_00000000
+//  _clong_i_cPetitPrince_mDraw_e_cPetitPrince_mDrawService_mnon__applicable
+class _0RL_cd_c93297503b4b476c_00000000
   : public omniCallDescriptor
 {
 public:
-  inline _0RL_cd_825c0eb2a4af4c45_00000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+  inline _0RL_cd_c93297503b4b476c_00000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
      omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 1, upcall)
   {
     
@@ -246,44 +912,43 @@ public:
   static const char* const _user_exns[];
 
   PetitPrince::Draw_var arg_0_;
-  const PetitPrince::Draw* arg_0;
+  PetitPrince::Draw* arg_0;
   ::CORBA::Long result;
 };
 
-void _0RL_cd_825c0eb2a4af4c45_00000000::marshalArguments(cdrStream& _n)
+void _0RL_cd_c93297503b4b476c_00000000::marshalArguments(cdrStream& _n)
 {
-  (const PetitPrince::Draw&) *arg_0 >>= _n;
+  PetitPrince::Draw_Helper::marshal(arg_0,_n);
 
 }
 
-void _0RL_cd_825c0eb2a4af4c45_00000000::unmarshalArguments(cdrStream& _n)
+void _0RL_cd_c93297503b4b476c_00000000::unmarshalArguments(cdrStream& _n)
 {
-  arg_0_ = new PetitPrince::Draw;
-  (PetitPrince::Draw&)arg_0_ <<= _n;
-  arg_0 = &arg_0_.in();
+  arg_0_ = PetitPrince::Draw_Helper::unmarshal(_n);
+  arg_0 = arg_0_.in();
 
 }
 
-void _0RL_cd_825c0eb2a4af4c45_00000000::marshalReturnedValues(cdrStream& _n)
+void _0RL_cd_c93297503b4b476c_00000000::marshalReturnedValues(cdrStream& _n)
 {
   result >>= _n;
 
 }
 
-void _0RL_cd_825c0eb2a4af4c45_00000000::unmarshalReturnedValues(cdrStream& _n)
+void _0RL_cd_c93297503b4b476c_00000000::unmarshalReturnedValues(cdrStream& _n)
 {
   (::CORBA::Long&)result <<= _n;
 
 }
 
-const char* const _0RL_cd_825c0eb2a4af4c45_00000000::_user_exns[] = {
-  PetitPrince::DrawingService::ServiceException::_PD_repoId
+const char* const _0RL_cd_c93297503b4b476c_00000000::_user_exns[] = {
+  PetitPrince::DrawService::non_applicable::_PD_repoId
 };
 
-void _0RL_cd_825c0eb2a4af4c45_00000000::userException(cdrStream& s, _OMNI_NS(IOP_C)* iop_client, const char* repoId)
+void _0RL_cd_c93297503b4b476c_00000000::userException(cdrStream& s, _OMNI_NS(IOP_C)* iop_client, const char* repoId)
 {
-  if ( omni::strMatch(repoId, PetitPrince::DrawingService::ServiceException::_PD_repoId) ) {
-    PetitPrince::DrawingService::ServiceException _ex;
+  if ( omni::strMatch(repoId, PetitPrince::DrawService::non_applicable::_PD_repoId) ) {
+    PetitPrince::DrawService::non_applicable _ex;
     _ex <<= s;
     if (iop_client) iop_client->RequestCompleted();
     throw _ex;
@@ -299,20 +964,20 @@ void _0RL_cd_825c0eb2a4af4c45_00000000::userException(cdrStream& s, _OMNI_NS(IOP
 
 // Local call call-back function.
 static void
-_0RL_lcfn_825c0eb2a4af4c45_10000000(omniCallDescriptor* cd, omniServant* svnt)
+_0RL_lcfn_c93297503b4b476c_10000000(omniCallDescriptor* cd, omniServant* svnt)
 {
-  _0RL_cd_825c0eb2a4af4c45_00000000* tcd = (_0RL_cd_825c0eb2a4af4c45_00000000*)cd;
-  PetitPrince::_impl_DrawingService* impl = (PetitPrince::_impl_DrawingService*) svnt->_ptrToInterface(PetitPrince::DrawingService::_PD_repoId);
+  _0RL_cd_c93297503b4b476c_00000000* tcd = (_0RL_cd_c93297503b4b476c_00000000*)cd;
+  PetitPrince::_impl_DrawService* impl = (PetitPrince::_impl_DrawService*) svnt->_ptrToInterface(PetitPrince::DrawService::_PD_repoId);
 #ifdef HAS_Cplusplus_catch_exception_by_base
-  tcd->result = impl->pushDraw(*tcd->arg_0);
+  tcd->result = impl->area(tcd->arg_0);
 #else
   if (!cd->is_upcall())
-    tcd->result = impl->pushDraw(*tcd->arg_0);
+    tcd->result = impl->area(tcd->arg_0);
   else {
     try {
-      tcd->result = impl->pushDraw(*tcd->arg_0);
+      tcd->result = impl->area(tcd->arg_0);
     }
-    catch(PetitPrince::DrawingService::ServiceException& ex) {
+    catch(PetitPrince::DrawService::non_applicable& ex) {
       throw omniORB::StubUserException(ex._NP_duplicate());
     }
 
@@ -323,10 +988,46 @@ _0RL_lcfn_825c0eb2a4af4c45_10000000(omniCallDescriptor* cd, omniServant* svnt)
 
 }
 
-::CORBA::Long PetitPrince::_objref_DrawingService::pushDraw(const ::PetitPrince::Draw& d)
+::CORBA::Long PetitPrince::_objref_DrawService::area(::PetitPrince::Draw* d)
 {
-  _0RL_cd_825c0eb2a4af4c45_00000000 _call_desc(_0RL_lcfn_825c0eb2a4af4c45_10000000, "pushDraw", 9);
-  _call_desc.arg_0 = &(::PetitPrince::Draw&) d;
+  _0RL_cd_c93297503b4b476c_00000000 _call_desc(_0RL_lcfn_c93297503b4b476c_10000000, "area", 5);
+  _call_desc.arg_0 = d;
+
+  _invoke(_call_desc);
+  return _call_desc.result;
+
+
+}
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_20000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_00000000* tcd = (_0RL_cd_c93297503b4b476c_00000000*)cd;
+  PetitPrince::_impl_DrawService* impl = (PetitPrince::_impl_DrawService*) svnt->_ptrToInterface(PetitPrince::DrawService::_PD_repoId);
+#ifdef HAS_Cplusplus_catch_exception_by_base
+  tcd->result = impl->perimeter(tcd->arg_0);
+#else
+  if (!cd->is_upcall())
+    tcd->result = impl->perimeter(tcd->arg_0);
+  else {
+    try {
+      tcd->result = impl->perimeter(tcd->arg_0);
+    }
+    catch(PetitPrince::DrawService::non_applicable& ex) {
+      throw omniORB::StubUserException(ex._NP_duplicate());
+    }
+
+
+  }
+#endif
+
+
+}
+
+::CORBA::Long PetitPrince::_objref_DrawService::perimeter(::PetitPrince::Draw* d)
+{
+  _0RL_cd_c93297503b4b476c_00000000 _call_desc(_0RL_lcfn_c93297503b4b476c_20000000, "perimeter", 10);
+  _call_desc.arg_0 = d;
 
   _invoke(_call_desc);
   return _call_desc.result;
@@ -334,13 +1035,350 @@ _0RL_lcfn_825c0eb2a4af4c45_10000000(omniCallDescriptor* cd, omniServant* svnt)
 
 }
 // Proxy call descriptor class. Mangled signature:
-//  _clong_i_cPetitPrince_mMarkedDraw_e_cPetitPrince_mDrawingService_mServiceException
-class _0RL_cd_825c0eb2a4af4c45_20000000
+//  void_i_cPetitPrince_mDraw_i_clong
+class _0RL_cd_c93297503b4b476c_30000000
   : public omniCallDescriptor
 {
 public:
-  inline _0RL_cd_825c0eb2a4af4c45_20000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+  inline _0RL_cd_c93297503b4b476c_30000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+     omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+  {
+    
+  }
+  
+  void marshalArguments(cdrStream&);
+  void unmarshalArguments(cdrStream&);
+
+    
+  
+  static const char* const _user_exns[];
+
+  PetitPrince::Draw_var arg_0_;
+  PetitPrince::Draw* arg_0;
+  ::CORBA::Long arg_1;
+};
+
+void _0RL_cd_c93297503b4b476c_30000000::marshalArguments(cdrStream& _n)
+{
+  PetitPrince::Draw_Helper::marshal(arg_0,_n);
+  arg_1 >>= _n;
+
+}
+
+void _0RL_cd_c93297503b4b476c_30000000::unmarshalArguments(cdrStream& _n)
+{
+  arg_0_ = PetitPrince::Draw_Helper::unmarshal(_n);
+  arg_0 = arg_0_.in();
+  (::CORBA::Long&)arg_1 <<= _n;
+
+}
+
+const char* const _0RL_cd_c93297503b4b476c_30000000::_user_exns[] = {
+  0
+};
+
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_40000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_30000000* tcd = (_0RL_cd_c93297503b4b476c_30000000*)cd;
+  PetitPrince::_impl_DrawService* impl = (PetitPrince::_impl_DrawService*) svnt->_ptrToInterface(PetitPrince::DrawService::_PD_repoId);
+  impl->homothetie(tcd->arg_0, tcd->arg_1);
+
+
+}
+
+void PetitPrince::_objref_DrawService::homothetie(::PetitPrince::Draw* d, ::CORBA::Long indice)
+{
+  _0RL_cd_c93297503b4b476c_30000000 _call_desc(_0RL_lcfn_c93297503b4b476c_40000000, "homothetie", 11);
+  _call_desc.arg_0 = d;
+  _call_desc.arg_1 = indice;
+
+  _invoke(_call_desc);
+
+
+
+}
+// Proxy call descriptor class. Mangled signature:
+//  void_i_cPetitPrince_mDraw_i_clong_i_clong
+class _0RL_cd_c93297503b4b476c_50000000
+  : public omniCallDescriptor
+{
+public:
+  inline _0RL_cd_c93297503b4b476c_50000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+     omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+  {
+    
+  }
+  
+  void marshalArguments(cdrStream&);
+  void unmarshalArguments(cdrStream&);
+
+    
+  
+  static const char* const _user_exns[];
+
+  PetitPrince::Draw_var arg_0_;
+  PetitPrince::Draw* arg_0;
+  ::CORBA::Long arg_1;
+  ::CORBA::Long arg_2;
+};
+
+void _0RL_cd_c93297503b4b476c_50000000::marshalArguments(cdrStream& _n)
+{
+  PetitPrince::Draw_Helper::marshal(arg_0,_n);
+  arg_1 >>= _n;
+  arg_2 >>= _n;
+
+}
+
+void _0RL_cd_c93297503b4b476c_50000000::unmarshalArguments(cdrStream& _n)
+{
+  arg_0_ = PetitPrince::Draw_Helper::unmarshal(_n);
+  arg_0 = arg_0_.in();
+  (::CORBA::Long&)arg_1 <<= _n;
+  (::CORBA::Long&)arg_2 <<= _n;
+
+}
+
+const char* const _0RL_cd_c93297503b4b476c_50000000::_user_exns[] = {
+  0
+};
+
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_60000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_50000000* tcd = (_0RL_cd_c93297503b4b476c_50000000*)cd;
+  PetitPrince::_impl_DrawService* impl = (PetitPrince::_impl_DrawService*) svnt->_ptrToInterface(PetitPrince::DrawService::_PD_repoId);
+  impl->translation(tcd->arg_0, tcd->arg_1, tcd->arg_2);
+
+
+}
+
+void PetitPrince::_objref_DrawService::translation(::PetitPrince::Draw* d, ::CORBA::Long x, ::CORBA::Long y)
+{
+  _0RL_cd_c93297503b4b476c_50000000 _call_desc(_0RL_lcfn_c93297503b4b476c_60000000, "translation", 12);
+  _call_desc.arg_0 = d;
+  _call_desc.arg_1 = x;
+  _call_desc.arg_2 = y;
+
+  _invoke(_call_desc);
+
+
+
+}
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_70000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_30000000* tcd = (_0RL_cd_c93297503b4b476c_30000000*)cd;
+  PetitPrince::_impl_DrawService* impl = (PetitPrince::_impl_DrawService*) svnt->_ptrToInterface(PetitPrince::DrawService::_PD_repoId);
+  impl->rotation(tcd->arg_0, tcd->arg_1);
+
+
+}
+
+void PetitPrince::_objref_DrawService::rotation(::PetitPrince::Draw* d, ::CORBA::Long angle)
+{
+  _0RL_cd_c93297503b4b476c_30000000 _call_desc(_0RL_lcfn_c93297503b4b476c_70000000, "rotation", 9);
+  _call_desc.arg_0 = d;
+  _call_desc.arg_1 = angle;
+
+  _invoke(_call_desc);
+
+
+
+}
+// Proxy call descriptor class. Mangled signature:
+//  void_i_cPetitPrince_mDraw
+class _0RL_cd_c93297503b4b476c_80000000
+  : public omniCallDescriptor
+{
+public:
+  inline _0RL_cd_c93297503b4b476c_80000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+     omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+  {
+    
+  }
+  
+  void marshalArguments(cdrStream&);
+  void unmarshalArguments(cdrStream&);
+
+    
+  
+  static const char* const _user_exns[];
+
+  PetitPrince::Draw_var arg_0_;
+  PetitPrince::Draw* arg_0;
+};
+
+void _0RL_cd_c93297503b4b476c_80000000::marshalArguments(cdrStream& _n)
+{
+  PetitPrince::Draw_Helper::marshal(arg_0,_n);
+
+}
+
+void _0RL_cd_c93297503b4b476c_80000000::unmarshalArguments(cdrStream& _n)
+{
+  arg_0_ = PetitPrince::Draw_Helper::unmarshal(_n);
+  arg_0 = arg_0_.in();
+
+}
+
+const char* const _0RL_cd_c93297503b4b476c_80000000::_user_exns[] = {
+  0
+};
+
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_90000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_80000000* tcd = (_0RL_cd_c93297503b4b476c_80000000*)cd;
+  PetitPrince::_impl_DrawService* impl = (PetitPrince::_impl_DrawService*) svnt->_ptrToInterface(PetitPrince::DrawService::_PD_repoId);
+  impl->symCenter(tcd->arg_0);
+
+
+}
+
+void PetitPrince::_objref_DrawService::symCenter(::PetitPrince::Draw* d)
+{
+  _0RL_cd_c93297503b4b476c_80000000 _call_desc(_0RL_lcfn_c93297503b4b476c_90000000, "symCenter", 10);
+  _call_desc.arg_0 = d;
+
+  _invoke(_call_desc);
+
+
+
+}
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_a0000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_80000000* tcd = (_0RL_cd_c93297503b4b476c_80000000*)cd;
+  PetitPrince::_impl_DrawService* impl = (PetitPrince::_impl_DrawService*) svnt->_ptrToInterface(PetitPrince::DrawService::_PD_repoId);
+  impl->symAxial(tcd->arg_0);
+
+
+}
+
+void PetitPrince::_objref_DrawService::symAxial(::PetitPrince::Draw* d)
+{
+  _0RL_cd_c93297503b4b476c_80000000 _call_desc(_0RL_lcfn_c93297503b4b476c_a0000000, "symAxial", 9);
+  _call_desc.arg_0 = d;
+
+  _invoke(_call_desc);
+
+
+
+}
+// Proxy call descriptor class. Mangled signature:
+//  void_i_cPetitPrince_mDraw_i_cPetitPrince_mDraw_e_cPetitPrince_mDrawService_munexpected__draw
+class _0RL_cd_c93297503b4b476c_b0000000
+  : public omniCallDescriptor
+{
+public:
+  inline _0RL_cd_c93297503b4b476c_b0000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
      omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 1, upcall)
+  {
+    
+  }
+  
+  void marshalArguments(cdrStream&);
+  void unmarshalArguments(cdrStream&);
+
+    
+  void userException(cdrStream&,_OMNI_NS(IOP_C)*,const char*);
+  static const char* const _user_exns[];
+
+  PetitPrince::Draw_var arg_0_;
+  PetitPrince::Draw* arg_0;
+  PetitPrince::Draw_var arg_1_;
+  PetitPrince::Draw* arg_1;
+};
+
+void _0RL_cd_c93297503b4b476c_b0000000::marshalArguments(cdrStream& _n)
+{
+  PetitPrince::Draw_Helper::marshal(arg_0,_n);
+  PetitPrince::Draw_Helper::marshal(arg_1,_n);
+
+}
+
+void _0RL_cd_c93297503b4b476c_b0000000::unmarshalArguments(cdrStream& _n)
+{
+  arg_0_ = PetitPrince::Draw_Helper::unmarshal(_n);
+  arg_0 = arg_0_.in();
+  arg_1_ = PetitPrince::Draw_Helper::unmarshal(_n);
+  arg_1 = arg_1_.in();
+
+}
+
+const char* const _0RL_cd_c93297503b4b476c_b0000000::_user_exns[] = {
+  PetitPrince::DrawService::unexpected_draw::_PD_repoId
+};
+
+void _0RL_cd_c93297503b4b476c_b0000000::userException(cdrStream& s, _OMNI_NS(IOP_C)* iop_client, const char* repoId)
+{
+  if ( omni::strMatch(repoId, PetitPrince::DrawService::unexpected_draw::_PD_repoId) ) {
+    PetitPrince::DrawService::unexpected_draw _ex;
+    _ex <<= s;
+    if (iop_client) iop_client->RequestCompleted();
+    throw _ex;
+  }
+
+
+  else {
+    if (iop_client) iop_client->RequestCompleted(1);
+    OMNIORB_THROW(UNKNOWN,UNKNOWN_UserException,
+                  (::CORBA::CompletionStatus)s.completion());
+  }
+}
+
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_c0000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_b0000000* tcd = (_0RL_cd_c93297503b4b476c_b0000000*)cd;
+  PetitPrince::_impl_DrawService* impl = (PetitPrince::_impl_DrawService*) svnt->_ptrToInterface(PetitPrince::DrawService::_PD_repoId);
+#ifdef HAS_Cplusplus_catch_exception_by_base
+  impl->addDraw(tcd->arg_0, tcd->arg_1);
+#else
+  if (!cd->is_upcall())
+    impl->addDraw(tcd->arg_0, tcd->arg_1);
+  else {
+    try {
+      impl->addDraw(tcd->arg_0, tcd->arg_1);
+    }
+    catch(PetitPrince::DrawService::unexpected_draw& ex) {
+      throw omniORB::StubUserException(ex._NP_duplicate());
+    }
+
+
+  }
+#endif
+
+
+}
+
+void PetitPrince::_objref_DrawService::addDraw(::PetitPrince::Draw* parent, ::PetitPrince::Draw* child)
+{
+  _0RL_cd_c93297503b4b476c_b0000000 _call_desc(_0RL_lcfn_c93297503b4b476c_c0000000, "addDraw", 8);
+  _call_desc.arg_0 = parent;
+  _call_desc.arg_1 = child;
+
+  _invoke(_call_desc);
+
+
+
+}
+// Proxy call descriptor class. Mangled signature:
+//  _cstring_i_cPetitPrince_mDraw
+class _0RL_cd_c93297503b4b476c_d0000000
+  : public omniCallDescriptor
+{
+public:
+  inline _0RL_cd_c93297503b4b476c_d0000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+     omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
   {
     
   }
@@ -351,136 +1389,160 @@ public:
   void unmarshalReturnedValues(cdrStream&);
   void marshalReturnedValues(cdrStream&);
   
-  void userException(cdrStream&,_OMNI_NS(IOP_C)*,const char*);
+  
   static const char* const _user_exns[];
 
-  PetitPrince::MarkedDraw arg_0_;
-  const PetitPrince::MarkedDraw* arg_0;
-  ::CORBA::Long result;
+  PetitPrince::Draw_var arg_0_;
+  PetitPrince::Draw* arg_0;
+  ::CORBA::String_var result;
 };
 
-void _0RL_cd_825c0eb2a4af4c45_20000000::marshalArguments(cdrStream& _n)
+void _0RL_cd_c93297503b4b476c_d0000000::marshalArguments(cdrStream& _n)
 {
-  (const PetitPrince::MarkedDraw&) *arg_0 >>= _n;
+  PetitPrince::Draw_Helper::marshal(arg_0,_n);
 
 }
 
-void _0RL_cd_825c0eb2a4af4c45_20000000::unmarshalArguments(cdrStream& _n)
+void _0RL_cd_c93297503b4b476c_d0000000::unmarshalArguments(cdrStream& _n)
 {
-  (PetitPrince::MarkedDraw&)arg_0_ <<= _n;
-  arg_0 = &arg_0_;
+  arg_0_ = PetitPrince::Draw_Helper::unmarshal(_n);
+  arg_0 = arg_0_.in();
 
 }
 
-void _0RL_cd_825c0eb2a4af4c45_20000000::marshalReturnedValues(cdrStream& _n)
+void _0RL_cd_c93297503b4b476c_d0000000::marshalReturnedValues(cdrStream& _n)
 {
-  result >>= _n;
+  _n.marshalString(result,0);
 
 }
 
-void _0RL_cd_825c0eb2a4af4c45_20000000::unmarshalReturnedValues(cdrStream& _n)
+void _0RL_cd_c93297503b4b476c_d0000000::unmarshalReturnedValues(cdrStream& _n)
 {
-  (::CORBA::Long&)result <<= _n;
+  result = _n.unmarshalString(0);
 
 }
 
-const char* const _0RL_cd_825c0eb2a4af4c45_20000000::_user_exns[] = {
-  PetitPrince::DrawingService::ServiceException::_PD_repoId
+const char* const _0RL_cd_c93297503b4b476c_d0000000::_user_exns[] = {
+  0
 };
-
-void _0RL_cd_825c0eb2a4af4c45_20000000::userException(cdrStream& s, _OMNI_NS(IOP_C)* iop_client, const char* repoId)
-{
-  if ( omni::strMatch(repoId, PetitPrince::DrawingService::ServiceException::_PD_repoId) ) {
-    PetitPrince::DrawingService::ServiceException _ex;
-    _ex <<= s;
-    if (iop_client) iop_client->RequestCompleted();
-    throw _ex;
-  }
-
-
-  else {
-    if (iop_client) iop_client->RequestCompleted(1);
-    OMNIORB_THROW(UNKNOWN,UNKNOWN_UserException,
-                  (::CORBA::CompletionStatus)s.completion());
-  }
-}
 
 // Local call call-back function.
 static void
-_0RL_lcfn_825c0eb2a4af4c45_30000000(omniCallDescriptor* cd, omniServant* svnt)
+_0RL_lcfn_c93297503b4b476c_e0000000(omniCallDescriptor* cd, omniServant* svnt)
 {
-  _0RL_cd_825c0eb2a4af4c45_20000000* tcd = (_0RL_cd_825c0eb2a4af4c45_20000000*)cd;
-  PetitPrince::_impl_DrawingService* impl = (PetitPrince::_impl_DrawingService*) svnt->_ptrToInterface(PetitPrince::DrawingService::_PD_repoId);
-#ifdef HAS_Cplusplus_catch_exception_by_base
-  tcd->result = impl->replyDraw(*tcd->arg_0);
-#else
-  if (!cd->is_upcall())
-    tcd->result = impl->replyDraw(*tcd->arg_0);
-  else {
-    try {
-      tcd->result = impl->replyDraw(*tcd->arg_0);
-    }
-    catch(PetitPrince::DrawingService::ServiceException& ex) {
-      throw omniORB::StubUserException(ex._NP_duplicate());
-    }
-
-
-  }
-#endif
+  _0RL_cd_c93297503b4b476c_d0000000* tcd = (_0RL_cd_c93297503b4b476c_d0000000*)cd;
+  PetitPrince::_impl_DrawService* impl = (PetitPrince::_impl_DrawService*) svnt->_ptrToInterface(PetitPrince::DrawService::_PD_repoId);
+  tcd->result = impl->toString(tcd->arg_0);
 
 
 }
 
-::CORBA::Long PetitPrince::_objref_DrawingService::replyDraw(const ::PetitPrince::MarkedDraw& marked_draw)
+char* PetitPrince::_objref_DrawService::toString(::PetitPrince::Draw* d)
 {
-  _0RL_cd_825c0eb2a4af4c45_20000000 _call_desc(_0RL_lcfn_825c0eb2a4af4c45_30000000, "replyDraw", 10);
-  _call_desc.arg_0 = &(::PetitPrince::MarkedDraw&) marked_draw;
+  _0RL_cd_c93297503b4b476c_d0000000 _call_desc(_0RL_lcfn_c93297503b4b476c_e0000000, "toString", 9);
+  _call_desc.arg_0 = d;
 
   _invoke(_call_desc);
-  return _call_desc.result;
+  return _call_desc.result._retn();
 
 
 }
-PetitPrince::_pof_DrawingService::~_pof_DrawingService() {}
+PetitPrince::_pof_DrawService::~_pof_DrawService() {}
 
 
 omniObjRef*
-PetitPrince::_pof_DrawingService::newObjRef(omniIOR* ior, omniIdentity* id)
+PetitPrince::_pof_DrawService::newObjRef(omniIOR* ior, omniIdentity* id)
 {
-  return new ::PetitPrince::_objref_DrawingService(ior, id);
+  return new ::PetitPrince::_objref_DrawService(ior, id);
 }
 
 
 ::CORBA::Boolean
-PetitPrince::_pof_DrawingService::is_a(const char* id) const
+PetitPrince::_pof_DrawService::is_a(const char* id) const
 {
-  if( omni::ptrStrMatch(id, ::PetitPrince::DrawingService::_PD_repoId) )
+  if( omni::ptrStrMatch(id, ::PetitPrince::DrawService::_PD_repoId) )
     return 1;
   
   return 0;
 }
 
-const PetitPrince::_pof_DrawingService _the_pof_PetitPrince_mDrawingService;
+const PetitPrince::_pof_DrawService _the_pof_PetitPrince_mDrawService;
 
-PetitPrince::_impl_DrawingService::~_impl_DrawingService() {}
+PetitPrince::_impl_DrawService::~_impl_DrawService() {}
 
 
 ::CORBA::Boolean
-PetitPrince::_impl_DrawingService::_dispatch(omniCallHandle& _handle)
+PetitPrince::_impl_DrawService::_dispatch(omniCallHandle& _handle)
 {
   const char* op = _handle.operation_name();
 
-  if( omni::strMatch(op, "pushDraw") ) {
+  if( omni::strMatch(op, "area") ) {
 
-    _0RL_cd_825c0eb2a4af4c45_00000000 _call_desc(_0RL_lcfn_825c0eb2a4af4c45_10000000, "pushDraw", 9, 1);
+    _0RL_cd_c93297503b4b476c_00000000 _call_desc(_0RL_lcfn_c93297503b4b476c_10000000, "area", 5, 1);
     
     _handle.upcall(this,_call_desc);
     return 1;
   }
 
-  if( omni::strMatch(op, "replyDraw") ) {
+  if( omni::strMatch(op, "perimeter") ) {
 
-    _0RL_cd_825c0eb2a4af4c45_20000000 _call_desc(_0RL_lcfn_825c0eb2a4af4c45_30000000, "replyDraw", 10, 1);
+    _0RL_cd_c93297503b4b476c_00000000 _call_desc(_0RL_lcfn_c93297503b4b476c_20000000, "perimeter", 10, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "homothetie") ) {
+
+    _0RL_cd_c93297503b4b476c_30000000 _call_desc(_0RL_lcfn_c93297503b4b476c_40000000, "homothetie", 11, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "translation") ) {
+
+    _0RL_cd_c93297503b4b476c_50000000 _call_desc(_0RL_lcfn_c93297503b4b476c_60000000, "translation", 12, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "rotation") ) {
+
+    _0RL_cd_c93297503b4b476c_30000000 _call_desc(_0RL_lcfn_c93297503b4b476c_70000000, "rotation", 9, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "symCenter") ) {
+
+    _0RL_cd_c93297503b4b476c_80000000 _call_desc(_0RL_lcfn_c93297503b4b476c_90000000, "symCenter", 10, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "symAxial") ) {
+
+    _0RL_cd_c93297503b4b476c_80000000 _call_desc(_0RL_lcfn_c93297503b4b476c_a0000000, "symAxial", 9, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "addDraw") ) {
+
+    _0RL_cd_c93297503b4b476c_b0000000 _call_desc(_0RL_lcfn_c93297503b4b476c_c0000000, "addDraw", 8, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "toString") ) {
+
+    _0RL_cd_c93297503b4b476c_d0000000 _call_desc(_0RL_lcfn_c93297503b4b476c_e0000000, "toString", 9, 1);
     
     _handle.upcall(this,_call_desc);
     return 1;
@@ -491,16 +1553,16 @@ PetitPrince::_impl_DrawingService::_dispatch(omniCallHandle& _handle)
 }
 
 void*
-PetitPrince::_impl_DrawingService::_ptrToInterface(const char* id)
+PetitPrince::_impl_DrawService::_ptrToInterface(const char* id)
 {
-  if( id == ::PetitPrince::DrawingService::_PD_repoId )
-    return (::PetitPrince::_impl_DrawingService*) this;
+  if( id == ::PetitPrince::DrawService::_PD_repoId )
+    return (::PetitPrince::_impl_DrawService*) this;
   
   if( id == ::CORBA::Object::_PD_repoId )
     return (void*) 1;
 
-  if( omni::strMatch(id, ::PetitPrince::DrawingService::_PD_repoId) )
-    return (::PetitPrince::_impl_DrawingService*) this;
+  if( omni::strMatch(id, ::PetitPrince::DrawService::_PD_repoId) )
+    return (::PetitPrince::_impl_DrawService*) this;
   
   if( omni::strMatch(id, ::CORBA::Object::_PD_repoId) )
     return (void*) 1;
@@ -508,10 +1570,491 @@ PetitPrince::_impl_DrawingService::_ptrToInterface(const char* id)
 }
 
 const char*
-PetitPrince::_impl_DrawingService::_mostDerivedRepoId()
+PetitPrince::_impl_DrawService::_mostDerivedRepoId()
 {
-  return ::PetitPrince::DrawingService::_PD_repoId;
+  return ::PetitPrince::DrawService::_PD_repoId;
 }
 
-POA_PetitPrince::DrawingService::~DrawingService() {}
+PetitPrince::PetitPrinceService_ptr PetitPrince::PetitPrinceService_Helper::_nil() {
+  return ::PetitPrince::PetitPrinceService::_nil();
+}
+
+::CORBA::Boolean PetitPrince::PetitPrinceService_Helper::is_nil(::PetitPrince::PetitPrinceService_ptr p) {
+  return ::CORBA::is_nil(p);
+
+}
+
+void PetitPrince::PetitPrinceService_Helper::release(::PetitPrince::PetitPrinceService_ptr p) {
+  ::CORBA::release(p);
+}
+
+void PetitPrince::PetitPrinceService_Helper::marshalObjRef(::PetitPrince::PetitPrinceService_ptr obj, cdrStream& s) {
+  ::PetitPrince::PetitPrinceService::_marshalObjRef(obj, s);
+}
+
+PetitPrince::PetitPrinceService_ptr PetitPrince::PetitPrinceService_Helper::unmarshalObjRef(cdrStream& s) {
+  return ::PetitPrince::PetitPrinceService::_unmarshalObjRef(s);
+}
+
+void PetitPrince::PetitPrinceService_Helper::duplicate(::PetitPrince::PetitPrinceService_ptr obj) {
+  if( obj && !obj->_NP_is_nil() )  omni::duplicateObjRef(obj);
+}
+
+PetitPrince::PetitPrinceService_ptr
+PetitPrince::PetitPrinceService::_duplicate(::PetitPrince::PetitPrinceService_ptr obj)
+{
+  if( obj && !obj->_NP_is_nil() )  omni::duplicateObjRef(obj);
+  return obj;
+}
+
+PetitPrince::PetitPrinceService_ptr
+PetitPrince::PetitPrinceService::_narrow(::CORBA::Object_ptr obj)
+{
+  if( !obj || obj->_NP_is_nil() || obj->_NP_is_pseudo() ) return _nil();
+  _ptr_type e = (_ptr_type) obj->_PR_getobj()->_realNarrow(_PD_repoId);
+  return e ? e : _nil();
+}
+
+
+PetitPrince::PetitPrinceService_ptr
+PetitPrince::PetitPrinceService::_unchecked_narrow(::CORBA::Object_ptr obj)
+{
+  if( !obj || obj->_NP_is_nil() || obj->_NP_is_pseudo() ) return _nil();
+  _ptr_type e = (_ptr_type) obj->_PR_getobj()->_uncheckedNarrow(_PD_repoId);
+  return e ? e : _nil();
+}
+
+PetitPrince::PetitPrinceService_ptr
+PetitPrince::PetitPrinceService::_nil()
+{
+#ifdef OMNI_UNLOADABLE_STUBS
+  static _objref_PetitPrinceService _the_nil_obj;
+  return &_the_nil_obj;
+#else
+  static _objref_PetitPrinceService* _the_nil_ptr = 0;
+  if( !_the_nil_ptr ) {
+    omni::nilRefLock().lock();
+    if( !_the_nil_ptr ) {
+      _the_nil_ptr = new _objref_PetitPrinceService;
+      registerNilCorbaObject(_the_nil_ptr);
+    }
+    omni::nilRefLock().unlock();
+  }
+  return _the_nil_ptr;
+#endif
+}
+
+const char* PetitPrince::PetitPrinceService::_PD_repoId = "IDL:PetitPrince/PetitPrinceService:1.0";
+
+
+PetitPrince::_objref_PetitPrinceService::~_objref_PetitPrinceService() {
+  
+}
+
+
+PetitPrince::_objref_PetitPrinceService::_objref_PetitPrinceService(omniIOR* ior, omniIdentity* id) :
+   omniObjRef(::PetitPrince::PetitPrinceService::_PD_repoId, ior, id, 1)
+   
+   
+{
+  _PR_setobj(this);
+}
+
+void*
+PetitPrince::_objref_PetitPrinceService::_ptrToObjRef(const char* id)
+{
+  if( id == ::PetitPrince::PetitPrinceService::_PD_repoId )
+    return (::PetitPrince::PetitPrinceService_ptr) this;
+  
+  if( id == ::CORBA::Object::_PD_repoId )
+    return (::CORBA::Object_ptr) this;
+
+  if( omni::strMatch(id, ::PetitPrince::PetitPrinceService::_PD_repoId) )
+    return (::PetitPrince::PetitPrinceService_ptr) this;
+  
+  if( omni::strMatch(id, ::CORBA::Object::_PD_repoId) )
+    return (::CORBA::Object_ptr) this;
+
+  return 0;
+}
+
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_f0000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_80000000* tcd = (_0RL_cd_c93297503b4b476c_80000000*)cd;
+  PetitPrince::_impl_PetitPrinceService* impl = (PetitPrince::_impl_PetitPrinceService*) svnt->_ptrToInterface(PetitPrince::PetitPrinceService::_PD_repoId);
+  impl->pushDraw(tcd->arg_0);
+
+
+}
+
+void PetitPrince::_objref_PetitPrinceService::pushDraw(::PetitPrince::Draw* d)
+{
+  _0RL_cd_c93297503b4b476c_80000000 _call_desc(_0RL_lcfn_c93297503b4b476c_f0000000, "pushDraw", 9);
+  _call_desc.arg_0 = d;
+
+  _invoke(_call_desc);
+
+
+
+}
+// Proxy call descriptor class. Mangled signature:
+//  _cPetitPrince_mDraw_i_clong
+class _0RL_cd_c93297503b4b476c_01000000
+  : public omniCallDescriptor
+{
+public:
+  inline _0RL_cd_c93297503b4b476c_01000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+     omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+  {
+    
+  }
+  
+  void marshalArguments(cdrStream&);
+  void unmarshalArguments(cdrStream&);
+
+  void unmarshalReturnedValues(cdrStream&);
+  void marshalReturnedValues(cdrStream&);
+  
+  
+  static const char* const _user_exns[];
+
+  ::CORBA::Long arg_0;
+  PetitPrince::Draw_var result;
+};
+
+void _0RL_cd_c93297503b4b476c_01000000::marshalArguments(cdrStream& _n)
+{
+  arg_0 >>= _n;
+
+}
+
+void _0RL_cd_c93297503b4b476c_01000000::unmarshalArguments(cdrStream& _n)
+{
+  (::CORBA::Long&)arg_0 <<= _n;
+
+}
+
+void _0RL_cd_c93297503b4b476c_01000000::marshalReturnedValues(cdrStream& _n)
+{
+  PetitPrince::Draw_Helper::marshal(result,_n);
+
+}
+
+void _0RL_cd_c93297503b4b476c_01000000::unmarshalReturnedValues(cdrStream& _n)
+{
+  result = PetitPrince::Draw_Helper::unmarshal(_n);
+
+}
+
+const char* const _0RL_cd_c93297503b4b476c_01000000::_user_exns[] = {
+  0
+};
+
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_11000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_01000000* tcd = (_0RL_cd_c93297503b4b476c_01000000*)cd;
+  PetitPrince::_impl_PetitPrinceService* impl = (PetitPrince::_impl_PetitPrinceService*) svnt->_ptrToInterface(PetitPrince::PetitPrinceService::_PD_repoId);
+  tcd->result = impl->getDraw(tcd->arg_0);
+
+
+}
+
+PetitPrince::Draw* PetitPrince::_objref_PetitPrinceService::getDraw(::CORBA::Long id)
+{
+  _0RL_cd_c93297503b4b476c_01000000 _call_desc(_0RL_lcfn_c93297503b4b476c_11000000, "getDraw", 8);
+  _call_desc.arg_0 = id;
+
+  _invoke(_call_desc);
+  return _call_desc.result._retn();
+
+
+}
+// Proxy call descriptor class. Mangled signature:
+//  void_i_clong_i_clong
+class _0RL_cd_c93297503b4b476c_21000000
+  : public omniCallDescriptor
+{
+public:
+  inline _0RL_cd_c93297503b4b476c_21000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+     omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+  {
+    
+  }
+  
+  void marshalArguments(cdrStream&);
+  void unmarshalArguments(cdrStream&);
+
+    
+  
+  static const char* const _user_exns[];
+
+  ::CORBA::Long arg_0;
+  ::CORBA::Long arg_1;
+};
+
+void _0RL_cd_c93297503b4b476c_21000000::marshalArguments(cdrStream& _n)
+{
+  arg_0 >>= _n;
+  arg_1 >>= _n;
+
+}
+
+void _0RL_cd_c93297503b4b476c_21000000::unmarshalArguments(cdrStream& _n)
+{
+  (::CORBA::Long&)arg_0 <<= _n;
+  (::CORBA::Long&)arg_1 <<= _n;
+
+}
+
+const char* const _0RL_cd_c93297503b4b476c_21000000::_user_exns[] = {
+  0
+};
+
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_31000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_21000000* tcd = (_0RL_cd_c93297503b4b476c_21000000*)cd;
+  PetitPrince::_impl_PetitPrinceService* impl = (PetitPrince::_impl_PetitPrinceService*) svnt->_ptrToInterface(PetitPrince::PetitPrinceService::_PD_repoId);
+  impl->markDraw(tcd->arg_0, tcd->arg_1);
+
+
+}
+
+void PetitPrince::_objref_PetitPrinceService::markDraw(::CORBA::Long mark, ::CORBA::Long id)
+{
+  _0RL_cd_c93297503b4b476c_21000000 _call_desc(_0RL_lcfn_c93297503b4b476c_31000000, "markDraw", 9);
+  _call_desc.arg_0 = mark;
+  _call_desc.arg_1 = id;
+
+  _invoke(_call_desc);
+
+
+
+}
+// Proxy call descriptor class. Mangled signature:
+//  _cPetitPrince_mDrawSeq
+class _0RL_cd_c93297503b4b476c_41000000
+  : public omniCallDescriptor
+{
+public:
+  inline _0RL_cd_c93297503b4b476c_41000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+     omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+  {
+    
+  }
+  
+  
+  void unmarshalReturnedValues(cdrStream&);
+  void marshalReturnedValues(cdrStream&);
+  
+  
+  static const char* const _user_exns[];
+
+  PetitPrince::DrawSeq_var result;
+};
+
+void _0RL_cd_c93297503b4b476c_41000000::marshalReturnedValues(cdrStream& _n)
+{
+  (const PetitPrince::DrawSeq&) result >>= _n;
+
+}
+
+void _0RL_cd_c93297503b4b476c_41000000::unmarshalReturnedValues(cdrStream& _n)
+{
+  result = new PetitPrince::DrawSeq;
+  (PetitPrince::DrawSeq&)result <<= _n;
+
+}
+
+const char* const _0RL_cd_c93297503b4b476c_41000000::_user_exns[] = {
+  0
+};
+
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_51000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_41000000* tcd = (_0RL_cd_c93297503b4b476c_41000000*)cd;
+  PetitPrince::_impl_PetitPrinceService* impl = (PetitPrince::_impl_PetitPrinceService*) svnt->_ptrToInterface(PetitPrince::PetitPrinceService::_PD_repoId);
+  tcd->result = impl->draw_list();
+
+
+}
+
+PetitPrince::DrawSeq* PetitPrince::_objref_PetitPrinceService::draw_list()
+{
+  _0RL_cd_c93297503b4b476c_41000000 _call_desc(_0RL_lcfn_c93297503b4b476c_51000000, "_get_draw_list", 15);
+
+
+  _invoke(_call_desc);
+  return _call_desc.result._retn();
+
+
+}
+// Proxy call descriptor class. Mangled signature:
+//  void_i_cPetitPrince_mDrawSeq
+class _0RL_cd_c93297503b4b476c_61000000
+  : public omniCallDescriptor
+{
+public:
+  inline _0RL_cd_c93297503b4b476c_61000000(LocalCallFn lcfn,const char* op_,size_t oplen,_CORBA_Boolean upcall=0):
+     omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+  {
+    
+  }
+  
+  void marshalArguments(cdrStream&);
+  void unmarshalArguments(cdrStream&);
+
+    
+  
+  static const char* const _user_exns[];
+
+  PetitPrince::DrawSeq_var arg_0_;
+  const PetitPrince::DrawSeq* arg_0;
+};
+
+void _0RL_cd_c93297503b4b476c_61000000::marshalArguments(cdrStream& _n)
+{
+  (const PetitPrince::DrawSeq&) *arg_0 >>= _n;
+
+}
+
+void _0RL_cd_c93297503b4b476c_61000000::unmarshalArguments(cdrStream& _n)
+{
+  arg_0_ = new PetitPrince::DrawSeq;
+  (PetitPrince::DrawSeq&)arg_0_ <<= _n;
+  arg_0 = &arg_0_.in();
+
+}
+
+const char* const _0RL_cd_c93297503b4b476c_61000000::_user_exns[] = {
+  0
+};
+
+// Local call call-back function.
+static void
+_0RL_lcfn_c93297503b4b476c_71000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_c93297503b4b476c_61000000* tcd = (_0RL_cd_c93297503b4b476c_61000000*)cd;
+  PetitPrince::_impl_PetitPrinceService* impl = (PetitPrince::_impl_PetitPrinceService*) svnt->_ptrToInterface(PetitPrince::PetitPrinceService::_PD_repoId);
+  impl->draw_list(*tcd->arg_0);
+
+
+}
+
+void PetitPrince::_objref_PetitPrinceService::draw_list(const ::PetitPrince::DrawSeq& _v)
+{
+  _0RL_cd_c93297503b4b476c_61000000 _call_desc(_0RL_lcfn_c93297503b4b476c_71000000, "_set_draw_list", 15);
+  _call_desc.arg_0 = &(::PetitPrince::DrawSeq&) _v;
+
+  _invoke(_call_desc);
+
+
+
+}
+PetitPrince::_pof_PetitPrinceService::~_pof_PetitPrinceService() {}
+
+
+omniObjRef*
+PetitPrince::_pof_PetitPrinceService::newObjRef(omniIOR* ior, omniIdentity* id)
+{
+  return new ::PetitPrince::_objref_PetitPrinceService(ior, id);
+}
+
+
+::CORBA::Boolean
+PetitPrince::_pof_PetitPrinceService::is_a(const char* id) const
+{
+  if( omni::ptrStrMatch(id, ::PetitPrince::PetitPrinceService::_PD_repoId) )
+    return 1;
+  
+  return 0;
+}
+
+const PetitPrince::_pof_PetitPrinceService _the_pof_PetitPrince_mPetitPrinceService;
+
+PetitPrince::_impl_PetitPrinceService::~_impl_PetitPrinceService() {}
+
+
+::CORBA::Boolean
+PetitPrince::_impl_PetitPrinceService::_dispatch(omniCallHandle& _handle)
+{
+  const char* op = _handle.operation_name();
+
+  if( omni::strMatch(op, "pushDraw") ) {
+
+    _0RL_cd_c93297503b4b476c_80000000 _call_desc(_0RL_lcfn_c93297503b4b476c_f0000000, "pushDraw", 9, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "getDraw") ) {
+
+    _0RL_cd_c93297503b4b476c_01000000 _call_desc(_0RL_lcfn_c93297503b4b476c_11000000, "getDraw", 8, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "markDraw") ) {
+
+    _0RL_cd_c93297503b4b476c_21000000 _call_desc(_0RL_lcfn_c93297503b4b476c_31000000, "markDraw", 9, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "_get_draw_list") ) {
+
+    _0RL_cd_c93297503b4b476c_41000000 _call_desc(_0RL_lcfn_c93297503b4b476c_51000000, "_get_draw_list", 15, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+  if( omni::strMatch(op, "_set_draw_list") ) {
+
+    _0RL_cd_c93297503b4b476c_61000000 _call_desc(_0RL_lcfn_c93297503b4b476c_71000000, "_set_draw_list", 15, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
+
+  return 0;
+}
+
+void*
+PetitPrince::_impl_PetitPrinceService::_ptrToInterface(const char* id)
+{
+  if( id == ::PetitPrince::PetitPrinceService::_PD_repoId )
+    return (::PetitPrince::_impl_PetitPrinceService*) this;
+  
+  if( id == ::CORBA::Object::_PD_repoId )
+    return (void*) 1;
+
+  if( omni::strMatch(id, ::PetitPrince::PetitPrinceService::_PD_repoId) )
+    return (::PetitPrince::_impl_PetitPrinceService*) this;
+  
+  if( omni::strMatch(id, ::CORBA::Object::_PD_repoId) )
+    return (void*) 1;
+  return 0;
+}
+
+const char*
+PetitPrince::_impl_PetitPrinceService::_mostDerivedRepoId()
+{
+  return ::PetitPrince::PetitPrinceService::_PD_repoId;
+}
+
+POA_PetitPrince::DrawService::~DrawService() {}
+
+POA_PetitPrince::PetitPrinceService::~PetitPrinceService() {}
 

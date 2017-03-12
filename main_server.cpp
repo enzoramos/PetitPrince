@@ -13,10 +13,11 @@
 
 #include "Server.h"
 #include "Client.h"
-#include "ServiceDrawImpl.hpp"
+#include "PetitPrinceServiceImpl.hpp"
 
 #include <cstdlib>
 #include <iostream>
+#include <omniORB4/CORBA.h>
 
 using namespace std;
 
@@ -25,6 +26,7 @@ int test() {
     return 0;
 }
 */
+
 
 int main(int argc, char** argv) {
     /*
@@ -83,7 +85,7 @@ int main(int argc, char** argv) {
         
         orb->run();
     } catch(const CORBA::Exception& e) {
-        cerr << e << endl;
+//        cerr << e << endl;
     }
     
     if(sdImpl)
@@ -94,11 +96,10 @@ int main(int argc, char** argv) {
             orb->destroy();
             cout << "Ending CORBA..." << endl;
         } catch (const CORBA::Exception& e) {
-            cout << "orb->destroy() failed:" << e << endl;
+//            cout << "orb->destroy() failed:" << e << endl;
             return 1;
         }
     }
     
     return 0;
 }
-

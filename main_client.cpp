@@ -13,10 +13,11 @@
 
 #include "Server.h"
 #include "Client.h"
-#include "ServiceDrawImpl.hpp"
+#include "PetitPrinceServiceImpl.hpp"
 
 #include <cstdlib>
 #include <iostream>
+#include <omniORB4/CORBA.h>
 
 using namespace std;
 
@@ -67,7 +68,7 @@ int main(int argc, char** argv) {
                 cout << "----------------------------" << endl;
                 
                 // Invoke first remote method
-                res = manager->pushDraw(draw)
+                res = manager->pushDraw(draw);
                 cout << "Push result long is: " << res << endl;
                 cout << "------------------------------------------" << endl;
                 
@@ -80,14 +81,14 @@ int main(int argc, char** argv) {
                 cin >> exit;
             } while(exit!='y');
             
-            // Shutdown server message
-            delete manager;
+            //TODO: Shutdown server message
+            
         } catch(const std::exception& std_e) {
             cerr << std_e.what() << endl;
         }
     } catch(const CORBA::Exception& e) {
         // Handles CORBA exceptions
-        cerr << e << endl;
+        //cerr << e << endl;
     }
     
     // End CORBA
@@ -96,7 +97,7 @@ int main(int argc, char** argv) {
             orb->destroy();
             cout << "Ending CORBA..." << endl;
         } catch(const CORBA::Exception& e) {
-            cout << "orb->destroy failed:" << e << endl;
+            //cerr << "orb->destroy failed:" << e << endl;
             return 1;
         }
     }
