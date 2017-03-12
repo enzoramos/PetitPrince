@@ -5,15 +5,20 @@
 
 module PetitPrince{
 
+  
+
     struct Point{
         long x;
         long y;
     };
 
+    
+
     interface Draw {
         attribute long id;
         attribute long author;
         attribute Draw inner_draw;
+        attribute long mark;
 
         exception non_applicable{string msg;};
         exception unexpected_draw{string msg;};
@@ -46,6 +51,17 @@ module PetitPrince{
         attribute Point center1;
         attribute Point center2;
         attribute long ray;
+    };
+
+    typedef sequence<Draw> DrawList;
+
+    interface PetitPrinceService{
+        attribute DrawList draw_list;
+
+        void pushDraw(in Draw d);
+        void getDraw(in long id);
+        void markDraw(in long mark, in long id);
+ 
     };
 
 };
