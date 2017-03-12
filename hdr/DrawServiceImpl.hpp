@@ -17,8 +17,6 @@
 #include "ServiceDraw.hpp"
 
 
-namespace PetitPrince{
-
 class DrawServiceImpl : virtual public POA_PetitPrince::DrawService,
                         virtual public PortableServer::RefCountServantBase{
 public:
@@ -37,9 +35,9 @@ public:
     void translation(::PetitPrince::Draw* d, ::CORBA::Long x, ::CORBA::Long y) override;
 
 private:
-
+    CORBA::ORB_var _orb;
+    
 };
-}
 
 #endif /* DRAWSERVICEIMPL_HPP */
 

@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     //s.stop();
     
     CORBA::ORB_var orb;
-    PetitPrince::DrawingServiceImpl* sdImpl = nullptr;
+    PetitPrinceServiceImpl* sdImpl = nullptr;
     
     try {
         orb = CORBA::ORB_init(argc, argv);
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
         
         CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow(rootContextObj.in());
 
-        sdImpl = new PetitPrince::DrawingServiceImpl(orb);
+        sdImpl = new PetitPrince::PetitPrinceServiceImpl(orb);
         PortableServer::ObjectId_var myObjID = myPOA->activate_object(sdImpl);
         CORBA::Object_var o = myPOA->servant_to_reference(sdImpl);
         CORBA::String_var s = orb->object_to_string(o);

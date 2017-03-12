@@ -62,9 +62,9 @@ _CORBA_MODULE_BEG
     typedef _CORBA_ConstrType_Fix_Var<Point> _var_type;
 
     
-    ::CORBA::Long x;
+    ::CORBA::Double x;
 
-    ::CORBA::Long y;
+    ::CORBA::Double y;
 
   
 
@@ -208,6 +208,117 @@ _CORBA_MODULE_BEG
     DrawSeq_out& operator=(const DrawSeq_var&);
   };
 
+  _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_PointSeq;
+
+  class PointSeq_var;
+
+  class PointSeq : public _CORBA_Unbounded_Sequence< Point >  {
+  public:
+    typedef PointSeq_var _var_type;
+    inline PointSeq() {}
+    inline PointSeq(const PointSeq& _s)
+      : _CORBA_Unbounded_Sequence< Point > (_s) {}
+
+    inline PointSeq(_CORBA_ULong _max)
+      : _CORBA_Unbounded_Sequence< Point > (_max) {}
+    inline PointSeq(_CORBA_ULong _max, _CORBA_ULong _len, Point* _val, _CORBA_Boolean _rel=0)
+      : _CORBA_Unbounded_Sequence< Point > (_max, _len, _val, _rel) {}
+
+  
+
+    inline PointSeq& operator = (const PointSeq& _s) {
+      _CORBA_Unbounded_Sequence< Point > ::operator=(_s);
+      return *this;
+    }
+  };
+
+  class PointSeq_out;
+
+  class PointSeq_var {
+  public:
+    inline PointSeq_var() : _pd_seq(0) {}
+    inline PointSeq_var(PointSeq* _s) : _pd_seq(_s) {}
+    inline PointSeq_var(const PointSeq_var& _s) {
+      if( _s._pd_seq )  _pd_seq = new PointSeq(*_s._pd_seq);
+      else              _pd_seq = 0;
+    }
+    inline ~PointSeq_var() { if( _pd_seq )  delete _pd_seq; }
+      
+    inline PointSeq_var& operator = (PointSeq* _s) {
+      if( _pd_seq )  delete _pd_seq;
+      _pd_seq = _s;
+      return *this;
+    }
+    inline PointSeq_var& operator = (const PointSeq_var& _s) {
+      if( _s._pd_seq ) {
+        if( !_pd_seq )  _pd_seq = new PointSeq;
+        *_pd_seq = *_s._pd_seq;
+      } else if( _pd_seq ) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
+      return *this;
+    }
+    inline Point& operator [] (_CORBA_ULong _s) {
+      return (*_pd_seq)[_s];
+    }
+
+  
+
+    inline PointSeq* operator -> () { return _pd_seq; }
+    inline const PointSeq* operator -> () const { return _pd_seq; }
+#if defined(__GNUG__)
+    inline operator PointSeq& () const { return *_pd_seq; }
+#else
+    inline operator const PointSeq& () const { return *_pd_seq; }
+    inline operator PointSeq& () { return *_pd_seq; }
+#endif
+      
+    inline const PointSeq& in() const { return *_pd_seq; }
+    inline PointSeq&       inout()    { return *_pd_seq; }
+    inline PointSeq*&      out() {
+      if( _pd_seq ) { delete _pd_seq; _pd_seq = 0; }
+      return _pd_seq;
+    }
+    inline PointSeq* _retn() { PointSeq* tmp = _pd_seq; _pd_seq = 0; return tmp; }
+      
+    friend class PointSeq_out;
+    
+  private:
+    PointSeq* _pd_seq;
+  };
+
+  class PointSeq_out {
+  public:
+    inline PointSeq_out(PointSeq*& _s) : _data(_s) { _data = 0; }
+    inline PointSeq_out(PointSeq_var& _s)
+      : _data(_s._pd_seq) { _s = (PointSeq*) 0; }
+    inline PointSeq_out(const PointSeq_out& _s) : _data(_s._data) {}
+    inline PointSeq_out& operator = (const PointSeq_out& _s) {
+      _data = _s._data;
+      return *this;
+    }
+    inline PointSeq_out& operator = (PointSeq* _s) {
+      _data = _s;
+      return *this;
+    }
+    inline operator PointSeq*&()  { return _data; }
+    inline PointSeq*& ptr()       { return _data; }
+    inline PointSeq* operator->() { return _data; }
+
+    inline Point& operator [] (_CORBA_ULong _i) {
+      return (*_data)[_i];
+    }
+
+  
+
+    PointSeq*& _data;
+
+  private:
+    PointSeq_out();
+    PointSeq_out& operator=(const PointSeq_var&);
+  };
+
 #ifndef __PetitPrince_mDraw__
 #define __PetitPrince_mDraw__
 
@@ -252,13 +363,13 @@ _CORBA_MODULE_BEG
     virtual char* author() = 0;
     virtual DrawSeq* inner_draws() = 0;
     virtual void inner_draws(const ::PetitPrince::DrawSeq& _v) = 0;
-    virtual ::CORBA::Long mark() = 0;
-    virtual void mark(::CORBA::Long _v) = 0;
-    virtual ::CORBA::Long area() = 0;
-    virtual ::CORBA::Long perimeter() = 0;
-    virtual void homothetie(::CORBA::Long indice) = 0;
-    virtual void translation(::CORBA::Long x, ::CORBA::Long y) = 0;
-    virtual void rotation(::CORBA::Long angle) = 0;
+    virtual ::CORBA::Double mark() = 0;
+    virtual void mark(::CORBA::Double _v) = 0;
+    virtual ::CORBA::Double area() = 0;
+    virtual ::CORBA::Double perimeter() = 0;
+    virtual void homothetie(::CORBA::Double indice) = 0;
+    virtual void translation(::CORBA::Double x, ::CORBA::Double y) = 0;
+    virtual void rotation(::CORBA::Double angle) = 0;
     virtual void symCenter() = 0;
     virtual void symAxial() = 0;
     virtual char* toString() = 0;
@@ -388,38 +499,38 @@ _CORBA_MODULE_BEG
 
   _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_Line;
 
-#ifndef __PetitPrince_mCercle__
-#define __PetitPrince_mCercle__
+#ifndef __PetitPrince_mCircle__
+#define __PetitPrince_mCircle__
 
-  class Cercle;
+  class Circle;
 
-  class Cercle_Helper {
+  class Circle_Helper {
   public:
-    static void add_ref(Cercle*);
-    static void remove_ref(Cercle*);
-    static void marshal(Cercle*, cdrStream&);
-    static Cercle* unmarshal(cdrStream&);
+    static void add_ref(Circle*);
+    static void remove_ref(Circle*);
+    static void marshal(Circle*, cdrStream&);
+    static Circle* unmarshal(cdrStream&);
   };
 
-  typedef _CORBA_Value_Var    <Cercle,Cercle_Helper> Cercle_var;
-  typedef _CORBA_Value_Member <Cercle,Cercle_Helper> Cercle_member;
-  typedef _CORBA_Value_OUT_arg<Cercle,Cercle_Helper> Cercle_out;
+  typedef _CORBA_Value_Var    <Circle,Circle_Helper> Circle_var;
+  typedef _CORBA_Value_Member <Circle,Circle_Helper> Circle_member;
+  typedef _CORBA_Value_OUT_arg<Circle,Circle_Helper> Circle_out;
 
-#endif // __PetitPrince_mCercle__
+#endif // __PetitPrince_mCircle__
 
-  class Cercle : 
+  class Circle : 
     public virtual Draw
   {
   public:  
     // Standard mapping
-    typedef Cercle*    _ptr_type;
-    typedef Cercle_var _var_type;
+    typedef Circle*    _ptr_type;
+    typedef Circle_var _var_type;
 
     static _ptr_type _downcast(::CORBA::ValueBase*);
     
 
 #ifdef OMNI_HAVE_COVARIANT_RETURNS
-    virtual Cercle* _copy_value();
+    virtual Circle* _copy_value();
 #else
     virtual ::CORBA::ValueBase* _copy_value();
 #endif
@@ -430,8 +541,8 @@ _CORBA_MODULE_BEG
     // Operations and attributes
     virtual Point center() = 0;
     virtual void center(const ::PetitPrince::Point& _v) = 0;
-    virtual ::CORBA::Long ray() = 0;
-    virtual void ray(::CORBA::Long _v) = 0;
+    virtual ::CORBA::Double ray() = 0;
+    virtual void ray(::CORBA::Double _v) = 0;
 
     // Accessors for public members
     
@@ -451,60 +562,60 @@ _CORBA_MODULE_BEG
 
     virtual void* _ptrToValue(const char* id);
 
-    static void _NP_marshal(Cercle*, cdrStream&);
-    static Cercle* _NP_unmarshal(cdrStream&);
+    static void _NP_marshal(Circle*, cdrStream&);
+    static Circle* _NP_unmarshal(cdrStream&);
     
 
     virtual void _PR_marshal_state(cdrStream&) const;
     virtual void _PR_unmarshal_state(cdrStream&);
-    virtual void _PR_copy_state(Cercle*);
+    virtual void _PR_copy_state(Circle*);
 
     static _core_attr const char* _PD_repoId;
 
   protected:
-    Cercle();
-    virtual ~Cercle();
+    Circle();
+    virtual ~Circle();
 
   private:
     // Not implemented
-    Cercle(const Cercle &);
-    void operator=(const Cercle &);
+    Circle(const Circle &);
+    void operator=(const Circle &);
   };
 
-  _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_Cercle;
+  _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_Circle;
 
-#ifndef __PetitPrince_mEllipses__
-#define __PetitPrince_mEllipses__
+#ifndef __PetitPrince_mEllipse__
+#define __PetitPrince_mEllipse__
 
-  class Ellipses;
+  class Ellipse;
 
-  class Ellipses_Helper {
+  class Ellipse_Helper {
   public:
-    static void add_ref(Ellipses*);
-    static void remove_ref(Ellipses*);
-    static void marshal(Ellipses*, cdrStream&);
-    static Ellipses* unmarshal(cdrStream&);
+    static void add_ref(Ellipse*);
+    static void remove_ref(Ellipse*);
+    static void marshal(Ellipse*, cdrStream&);
+    static Ellipse* unmarshal(cdrStream&);
   };
 
-  typedef _CORBA_Value_Var    <Ellipses,Ellipses_Helper> Ellipses_var;
-  typedef _CORBA_Value_Member <Ellipses,Ellipses_Helper> Ellipses_member;
-  typedef _CORBA_Value_OUT_arg<Ellipses,Ellipses_Helper> Ellipses_out;
+  typedef _CORBA_Value_Var    <Ellipse,Ellipse_Helper> Ellipse_var;
+  typedef _CORBA_Value_Member <Ellipse,Ellipse_Helper> Ellipse_member;
+  typedef _CORBA_Value_OUT_arg<Ellipse,Ellipse_Helper> Ellipse_out;
 
-#endif // __PetitPrince_mEllipses__
+#endif // __PetitPrince_mEllipse__
 
-  class Ellipses : 
+  class Ellipse : 
     public virtual Draw
   {
   public:  
     // Standard mapping
-    typedef Ellipses*    _ptr_type;
-    typedef Ellipses_var _var_type;
+    typedef Ellipse*    _ptr_type;
+    typedef Ellipse_var _var_type;
 
     static _ptr_type _downcast(::CORBA::ValueBase*);
     
 
 #ifdef OMNI_HAVE_COVARIANT_RETURNS
-    virtual Ellipses* _copy_value();
+    virtual Ellipse* _copy_value();
 #else
     virtual ::CORBA::ValueBase* _copy_value();
 #endif
@@ -517,8 +628,8 @@ _CORBA_MODULE_BEG
     virtual void center1(const ::PetitPrince::Point& _v) = 0;
     virtual Point center2() = 0;
     virtual void center2(const ::PetitPrince::Point& _v) = 0;
-    virtual ::CORBA::Long ray() = 0;
-    virtual void ray(::CORBA::Long _v) = 0;
+    virtual ::CORBA::Double ray() = 0;
+    virtual void ray(::CORBA::Double _v) = 0;
 
     // Accessors for public members
     
@@ -538,27 +649,110 @@ _CORBA_MODULE_BEG
 
     virtual void* _ptrToValue(const char* id);
 
-    static void _NP_marshal(Ellipses*, cdrStream&);
-    static Ellipses* _NP_unmarshal(cdrStream&);
+    static void _NP_marshal(Ellipse*, cdrStream&);
+    static Ellipse* _NP_unmarshal(cdrStream&);
     
 
     virtual void _PR_marshal_state(cdrStream&) const;
     virtual void _PR_unmarshal_state(cdrStream&);
-    virtual void _PR_copy_state(Ellipses*);
+    virtual void _PR_copy_state(Ellipse*);
 
     static _core_attr const char* _PD_repoId;
 
   protected:
-    Ellipses();
-    virtual ~Ellipses();
+    Ellipse();
+    virtual ~Ellipse();
 
   private:
     // Not implemented
-    Ellipses(const Ellipses &);
-    void operator=(const Ellipses &);
+    Ellipse(const Ellipse &);
+    void operator=(const Ellipse &);
   };
 
-  _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_Ellipses;
+  _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_Ellipse;
+
+#ifndef __PetitPrince_mPolygon__
+#define __PetitPrince_mPolygon__
+
+  class Polygon;
+
+  class Polygon_Helper {
+  public:
+    static void add_ref(Polygon*);
+    static void remove_ref(Polygon*);
+    static void marshal(Polygon*, cdrStream&);
+    static Polygon* unmarshal(cdrStream&);
+  };
+
+  typedef _CORBA_Value_Var    <Polygon,Polygon_Helper> Polygon_var;
+  typedef _CORBA_Value_Member <Polygon,Polygon_Helper> Polygon_member;
+  typedef _CORBA_Value_OUT_arg<Polygon,Polygon_Helper> Polygon_out;
+
+#endif // __PetitPrince_mPolygon__
+
+  class Polygon : 
+    public virtual Draw
+  {
+  public:  
+    // Standard mapping
+    typedef Polygon*    _ptr_type;
+    typedef Polygon_var _var_type;
+
+    static _ptr_type _downcast(::CORBA::ValueBase*);
+    
+
+#ifdef OMNI_HAVE_COVARIANT_RETURNS
+    virtual Polygon* _copy_value();
+#else
+    virtual ::CORBA::ValueBase* _copy_value();
+#endif
+
+    // Definitions in this scope
+    
+
+    // Operations and attributes
+    virtual PointSeq* points_list() = 0;
+    virtual void points_list(const ::PetitPrince::PointSeq& _v) = 0;
+
+    // Accessors for public members
+    
+
+  protected:
+    // Accessors for private members
+    
+
+  public:
+    // omniORB internal
+    virtual const char* _NP_repositoryId() const;
+    virtual const char* _NP_repositoryId(::CORBA::ULong& _hashval) const;
+
+    virtual const _omni_ValueIds* _NP_truncatableIds() const;
+
+    virtual ::CORBA::Boolean _NP_custom() const;
+
+    virtual void* _ptrToValue(const char* id);
+
+    static void _NP_marshal(Polygon*, cdrStream&);
+    static Polygon* _NP_unmarshal(cdrStream&);
+    
+
+    virtual void _PR_marshal_state(cdrStream&) const;
+    virtual void _PR_unmarshal_state(cdrStream&);
+    virtual void _PR_copy_state(Polygon*);
+
+    static _core_attr const char* _PD_repoId;
+
+  protected:
+    Polygon();
+    virtual ~Polygon();
+
+  private:
+    // Not implemented
+    Polygon(const Polygon &);
+    void operator=(const Polygon &);
+  };
+
+  _CORBA_MODULE_VAR _dyn_attr const ::CORBA::TypeCode_ptr _tc_Polygon;
 
 #ifndef __PetitPrince_mDrawService__
 #define __PetitPrince_mDrawService__
@@ -703,11 +897,11 @@ _CORBA_MODULE_BEG
     public virtual omniObjRef
   {
   public:
-    ::CORBA::Long area(::PetitPrince::Draw* d);
-    ::CORBA::Long perimeter(::PetitPrince::Draw* d);
-    void homothetie(::PetitPrince::Draw* d, ::CORBA::Long indice);
-    void translation(::PetitPrince::Draw* d, ::CORBA::Long x, ::CORBA::Long y);
-    void rotation(::PetitPrince::Draw* d, ::CORBA::Long angle);
+    ::CORBA::Double area(::PetitPrince::Draw* d);
+    ::CORBA::Double perimeter(::PetitPrince::Draw* d);
+    void homothetie(::PetitPrince::Draw* d, ::CORBA::Double indice);
+    void translation(::PetitPrince::Draw* d, ::CORBA::Double x, ::CORBA::Double y);
+    void rotation(::PetitPrince::Draw* d, ::CORBA::Double angle);
     void symCenter(::PetitPrince::Draw* d);
     void symAxial(::PetitPrince::Draw* d);
     void addDraw(::PetitPrince::Draw* parent, ::PetitPrince::Draw* child);
@@ -745,11 +939,11 @@ _CORBA_MODULE_BEG
   public:
     virtual ~_impl_DrawService();
 
-    virtual ::CORBA::Long area(::PetitPrince::Draw* d) = 0;
-    virtual ::CORBA::Long perimeter(::PetitPrince::Draw* d) = 0;
-    virtual void homothetie(::PetitPrince::Draw* d, ::CORBA::Long indice) = 0;
-    virtual void translation(::PetitPrince::Draw* d, ::CORBA::Long x, ::CORBA::Long y) = 0;
-    virtual void rotation(::PetitPrince::Draw* d, ::CORBA::Long angle) = 0;
+    virtual ::CORBA::Double area(::PetitPrince::Draw* d) = 0;
+    virtual ::CORBA::Double perimeter(::PetitPrince::Draw* d) = 0;
+    virtual void homothetie(::PetitPrince::Draw* d, ::CORBA::Double indice) = 0;
+    virtual void translation(::PetitPrince::Draw* d, ::CORBA::Double x, ::CORBA::Double y) = 0;
+    virtual void rotation(::PetitPrince::Draw* d, ::CORBA::Double angle) = 0;
     virtual void symCenter(::PetitPrince::Draw* d) = 0;
     virtual void symAxial(::PetitPrince::Draw* d) = 0;
     virtual void addDraw(::PetitPrince::Draw* parent, ::PetitPrince::Draw* child) = 0;
@@ -830,7 +1024,7 @@ _CORBA_MODULE_BEG
   public:
     void pushDraw(::PetitPrince::Draw* d);
     Draw* getDraw(::CORBA::Long id);
-    void markDraw(::CORBA::Long mark, ::CORBA::Long id);
+    void markDraw(::CORBA::Double mark, ::CORBA::Long id);
     DrawSeq* draw_list();
     void draw_list(const ::PetitPrince::DrawSeq& _v);
 
@@ -868,7 +1062,7 @@ _CORBA_MODULE_BEG
 
     virtual void pushDraw(::PetitPrince::Draw* d) = 0;
     virtual Draw* getDraw(::CORBA::Long id) = 0;
-    virtual void markDraw(::CORBA::Long mark, ::CORBA::Long id) = 0;
+    virtual void markDraw(::CORBA::Double mark, ::CORBA::Long id) = 0;
     virtual DrawSeq* draw_list() = 0;
     virtual void draw_list(const ::PetitPrince::DrawSeq& _v) = 0;
     
@@ -959,14 +1153,14 @@ _CORBA_MODULE_BEG
     
   };
 
-  class Cercle :
-    public virtual PetitPrince::Cercle,
+  class Circle :
+    public virtual PetitPrince::Circle,
     public virtual Draw
   {
   protected:
-    Cercle();
+    Circle();
     
-    virtual ~Cercle();
+    virtual ~Circle();
 
   public:
     
@@ -978,14 +1172,33 @@ _CORBA_MODULE_BEG
     
   };
 
-  class Ellipses :
-    public virtual PetitPrince::Ellipses,
+  class Ellipse :
+    public virtual PetitPrince::Ellipse,
     public virtual Draw
   {
   protected:
-    Ellipses();
+    Ellipse();
     
-    virtual ~Ellipses();
+    virtual ~Ellipse();
+
+  public:
+    
+
+  protected:
+    
+
+  private:
+    
+  };
+
+  class Polygon :
+    public virtual PetitPrince::Polygon,
+    public virtual Draw
+  {
+  protected:
+    Polygon();
+    
+    virtual ~Polygon();
 
   public:
     
@@ -1016,6 +1229,11 @@ void operator<<=(::CORBA::Any& _a, PetitPrince::DrawSeq* _sp);
 _CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::DrawSeq*& _sp);
 _CORBA_Boolean operator>>=(const ::CORBA::Any& _a, const PetitPrince::DrawSeq*& _sp);
 
+void operator<<=(::CORBA::Any& _a, const PetitPrince::PointSeq& _s);
+void operator<<=(::CORBA::Any& _a, PetitPrince::PointSeq* _sp);
+_CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::PointSeq*& _sp);
+_CORBA_Boolean operator>>=(const ::CORBA::Any& _a, const PetitPrince::PointSeq*& _sp);
+
 void operator<<=(::CORBA::Any& _a, PetitPrince::Draw* _s);
 void operator<<=(::CORBA::Any& _a, PetitPrince::Draw** _s);
 _CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Draw*& _s);
@@ -1024,13 +1242,17 @@ void operator<<=(::CORBA::Any& _a, PetitPrince::Line* _s);
 void operator<<=(::CORBA::Any& _a, PetitPrince::Line** _s);
 _CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Line*& _s);
 
-void operator<<=(::CORBA::Any& _a, PetitPrince::Cercle* _s);
-void operator<<=(::CORBA::Any& _a, PetitPrince::Cercle** _s);
-_CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Cercle*& _s);
+void operator<<=(::CORBA::Any& _a, PetitPrince::Circle* _s);
+void operator<<=(::CORBA::Any& _a, PetitPrince::Circle** _s);
+_CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Circle*& _s);
 
-void operator<<=(::CORBA::Any& _a, PetitPrince::Ellipses* _s);
-void operator<<=(::CORBA::Any& _a, PetitPrince::Ellipses** _s);
-_CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Ellipses*& _s);
+void operator<<=(::CORBA::Any& _a, PetitPrince::Ellipse* _s);
+void operator<<=(::CORBA::Any& _a, PetitPrince::Ellipse** _s);
+_CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Ellipse*& _s);
+
+void operator<<=(::CORBA::Any& _a, PetitPrince::Polygon* _s);
+void operator<<=(::CORBA::Any& _a, PetitPrince::Polygon** _s);
+_CORBA_Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Polygon*& _s);
 
 void operator<<=(::CORBA::Any& _a, const PetitPrince::DrawService::non_applicable& _s);
 void operator<<=(::CORBA::Any& _a, const PetitPrince::DrawService::non_applicable* _sp);

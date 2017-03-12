@@ -9,8 +9,8 @@ static const char* _0RL_dyn_library_version = omniORB_4_1_dyn;
 static ::CORBA::TypeCode::_Tracker _0RL_tcTrack(__FILE__);
 
 static CORBA::PR_structMember _0RL_structmember_PetitPrince_mPoint[] = {
-  {"x", CORBA::TypeCode::PR_long_tc()},
-  {"y", CORBA::TypeCode::PR_long_tc()}
+  {"x", CORBA::TypeCode::PR_double_tc()},
+  {"y", CORBA::TypeCode::PR_double_tc()}
 };
 
 #ifdef _0RL_tc_PetitPrince_mPoint
@@ -41,6 +41,22 @@ namespace PetitPrince {
 } 
 #else
 const ::CORBA::TypeCode_ptr PetitPrince::_tc_DrawSeq = _0RL_tc_PetitPrince_mDrawSeq;
+#endif
+
+
+
+
+
+static CORBA::TypeCode_ptr _0RL_tc_PetitPrince_mPointSeq = CORBA::TypeCode::PR_alias_tc("IDL:PetitPrince/PointSeq:1.0", "PointSeq", CORBA::TypeCode::PR_sequence_tc(0, _0RL_tc_PetitPrince_mPoint, &_0RL_tcTrack), &_0RL_tcTrack);
+
+
+#if defined(HAS_Cplusplus_Namespace) && defined(_MSC_VER)
+// MSVC++ does not give the constant external linkage otherwise.
+namespace PetitPrince { 
+  const ::CORBA::TypeCode_ptr _tc_PointSeq = _0RL_tc_PetitPrince_mPointSeq;
+} 
+#else
+const ::CORBA::TypeCode_ptr PetitPrince::_tc_PointSeq = _0RL_tc_PetitPrince_mPointSeq;
 #endif
 
 static CORBA::PR_valueMember _0RL_valuemember_PetitPrince_mDraw[] = {
@@ -84,47 +100,69 @@ const ::CORBA::TypeCode_ptr PetitPrince::_tc_Line = _0RL_tc_PetitPrince_mLine;
 #endif
 
 
-static CORBA::TypeCode_ptr _0RL_ft_PetitPrince_mCercle = CORBA::TypeCode::PR_forward_tc("IDL:PetitPrince/Cercle:1.0", &_0RL_tcTrack);
-#define _0RL_tc_PetitPrince_mCercle _0RL_ft_PetitPrince_mCercle
+static CORBA::TypeCode_ptr _0RL_ft_PetitPrince_mCircle = CORBA::TypeCode::PR_forward_tc("IDL:PetitPrince/Circle:1.0", &_0RL_tcTrack);
+#define _0RL_tc_PetitPrince_mCircle _0RL_ft_PetitPrince_mCircle
 
-static CORBA::PR_valueMember _0RL_valuemember_PetitPrince_mCercle[] = {
+static CORBA::PR_valueMember _0RL_valuemember_PetitPrince_mCircle[] = {
   
 };
 
-#ifdef _0RL_tc_PetitPrince_mCercle
-#  undef _0RL_tc_PetitPrince_mCercle
+#ifdef _0RL_tc_PetitPrince_mCircle
+#  undef _0RL_tc_PetitPrince_mCircle
 #endif
-static CORBA::TypeCode_ptr _0RL_tc_PetitPrince_mCercle = CORBA::TypeCode::PR_value_tc("IDL:PetitPrince/Cercle:1.0", "Cercle", CORBA::VM_NONE, _0RL_tc_PetitPrince_mDraw, _0RL_valuemember_PetitPrince_mCercle, 0, &_0RL_tcTrack);
+static CORBA::TypeCode_ptr _0RL_tc_PetitPrince_mCircle = CORBA::TypeCode::PR_value_tc("IDL:PetitPrince/Circle:1.0", "Circle", CORBA::VM_NONE, _0RL_tc_PetitPrince_mDraw, _0RL_valuemember_PetitPrince_mCircle, 0, &_0RL_tcTrack);
 
 #if defined(HAS_Cplusplus_Namespace) && defined(_MSC_VER)
 // MSVC++ does not give the constant external linkage otherwise.
 namespace PetitPrince { 
-  const ::CORBA::TypeCode_ptr _tc_Cercle = _0RL_tc_PetitPrince_mCercle;
+  const ::CORBA::TypeCode_ptr _tc_Circle = _0RL_tc_PetitPrince_mCircle;
 } 
 #else
-const ::CORBA::TypeCode_ptr PetitPrince::_tc_Cercle = _0RL_tc_PetitPrince_mCercle;
+const ::CORBA::TypeCode_ptr PetitPrince::_tc_Circle = _0RL_tc_PetitPrince_mCircle;
 #endif
 
 
-static CORBA::TypeCode_ptr _0RL_ft_PetitPrince_mEllipses = CORBA::TypeCode::PR_forward_tc("IDL:PetitPrince/Ellipses:1.0", &_0RL_tcTrack);
-#define _0RL_tc_PetitPrince_mEllipses _0RL_ft_PetitPrince_mEllipses
+static CORBA::TypeCode_ptr _0RL_ft_PetitPrince_mEllipse = CORBA::TypeCode::PR_forward_tc("IDL:PetitPrince/Ellipse:1.0", &_0RL_tcTrack);
+#define _0RL_tc_PetitPrince_mEllipse _0RL_ft_PetitPrince_mEllipse
 
-static CORBA::PR_valueMember _0RL_valuemember_PetitPrince_mEllipses[] = {
+static CORBA::PR_valueMember _0RL_valuemember_PetitPrince_mEllipse[] = {
   
 };
 
-#ifdef _0RL_tc_PetitPrince_mEllipses
-#  undef _0RL_tc_PetitPrince_mEllipses
+#ifdef _0RL_tc_PetitPrince_mEllipse
+#  undef _0RL_tc_PetitPrince_mEllipse
 #endif
-static CORBA::TypeCode_ptr _0RL_tc_PetitPrince_mEllipses = CORBA::TypeCode::PR_value_tc("IDL:PetitPrince/Ellipses:1.0", "Ellipses", CORBA::VM_NONE, _0RL_tc_PetitPrince_mDraw, _0RL_valuemember_PetitPrince_mEllipses, 0, &_0RL_tcTrack);
+static CORBA::TypeCode_ptr _0RL_tc_PetitPrince_mEllipse = CORBA::TypeCode::PR_value_tc("IDL:PetitPrince/Ellipse:1.0", "Ellipse", CORBA::VM_NONE, _0RL_tc_PetitPrince_mDraw, _0RL_valuemember_PetitPrince_mEllipse, 0, &_0RL_tcTrack);
 
 #if defined(HAS_Cplusplus_Namespace) && defined(_MSC_VER)
 // MSVC++ does not give the constant external linkage otherwise.
 namespace PetitPrince { 
-  const ::CORBA::TypeCode_ptr _tc_Ellipses = _0RL_tc_PetitPrince_mEllipses;
+  const ::CORBA::TypeCode_ptr _tc_Ellipse = _0RL_tc_PetitPrince_mEllipse;
 } 
 #else
-const ::CORBA::TypeCode_ptr PetitPrince::_tc_Ellipses = _0RL_tc_PetitPrince_mEllipses;
+const ::CORBA::TypeCode_ptr PetitPrince::_tc_Ellipse = _0RL_tc_PetitPrince_mEllipse;
+#endif
+
+
+static CORBA::TypeCode_ptr _0RL_ft_PetitPrince_mPolygon = CORBA::TypeCode::PR_forward_tc("IDL:PetitPrince/Polygon:1.0", &_0RL_tcTrack);
+#define _0RL_tc_PetitPrince_mPolygon _0RL_ft_PetitPrince_mPolygon
+
+static CORBA::PR_valueMember _0RL_valuemember_PetitPrince_mPolygon[] = {
+  
+};
+
+#ifdef _0RL_tc_PetitPrince_mPolygon
+#  undef _0RL_tc_PetitPrince_mPolygon
+#endif
+static CORBA::TypeCode_ptr _0RL_tc_PetitPrince_mPolygon = CORBA::TypeCode::PR_value_tc("IDL:PetitPrince/Polygon:1.0", "Polygon", CORBA::VM_NONE, _0RL_tc_PetitPrince_mDraw, _0RL_valuemember_PetitPrince_mPolygon, 0, &_0RL_tcTrack);
+
+#if defined(HAS_Cplusplus_Namespace) && defined(_MSC_VER)
+// MSVC++ does not give the constant external linkage otherwise.
+namespace PetitPrince { 
+  const ::CORBA::TypeCode_ptr _tc_Polygon = _0RL_tc_PetitPrince_mPolygon;
+} 
+#else
+const ::CORBA::TypeCode_ptr PetitPrince::_tc_Polygon = _0RL_tc_PetitPrince_mPolygon;
 #endif
 
 
@@ -264,6 +302,57 @@ void operator<<=(::CORBA::Any& _a, PetitPrince::DrawSeq* _sp)
   return 0;
 }
 
+static void _0RL_PetitPrince_mPointSeq_marshal_fn(cdrStream& _s, void* _v)
+{
+  PetitPrince::PointSeq* _p = (PetitPrince::PointSeq*)_v;
+  *_p >>= _s;
+}
+static void _0RL_PetitPrince_mPointSeq_unmarshal_fn(cdrStream& _s, void*& _v)
+{
+  PetitPrince::PointSeq* _p = new PetitPrince::PointSeq;
+  *_p <<= _s;
+  _v = _p;
+}
+static void _0RL_PetitPrince_mPointSeq_destructor_fn(void* _v)
+{
+  PetitPrince::PointSeq* _p = (PetitPrince::PointSeq*)_v;
+  delete _p;
+}
+
+void operator<<=(::CORBA::Any& _a, const PetitPrince::PointSeq& _s)
+{
+  PetitPrince::PointSeq* _p = new PetitPrince::PointSeq(_s);
+  _a.PR_insert(_0RL_tc_PetitPrince_mPointSeq,
+               _0RL_PetitPrince_mPointSeq_marshal_fn,
+               _0RL_PetitPrince_mPointSeq_destructor_fn,
+               _p);
+}
+void operator<<=(::CORBA::Any& _a, PetitPrince::PointSeq* _sp)
+{
+  _a.PR_insert(_0RL_tc_PetitPrince_mPointSeq,
+               _0RL_PetitPrince_mPointSeq_marshal_fn,
+               _0RL_PetitPrince_mPointSeq_destructor_fn,
+               _sp);
+}
+
+::CORBA::Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::PointSeq*& _sp)
+{
+  return _a >>= (const PetitPrince::PointSeq*&) _sp;
+}
+::CORBA::Boolean operator>>=(const ::CORBA::Any& _a, const PetitPrince::PointSeq*& _sp)
+{
+  void* _v;
+  if (_a.PR_extract(_0RL_tc_PetitPrince_mPointSeq,
+                    _0RL_PetitPrince_mPointSeq_unmarshal_fn,
+                    _0RL_PetitPrince_mPointSeq_marshal_fn,
+                    _0RL_PetitPrince_mPointSeq_destructor_fn,
+                    _v)) {
+    _sp = (const PetitPrince::PointSeq*)_v;
+    return 1;
+  }
+  return 0;
+}
+
 static void _0RL_PetitPrince_mDraw_marshal_fn(cdrStream& _s, void* _v)
 {
   PetitPrince::Draw* _p = (PetitPrince::Draw*)_v;
@@ -358,95 +447,142 @@ void operator<<=(::CORBA::Any& _a, PetitPrince::Line** _vp)
   return 0;
 }
 
-static void _0RL_PetitPrince_mCercle_marshal_fn(cdrStream& _s, void* _v)
+static void _0RL_PetitPrince_mCircle_marshal_fn(cdrStream& _s, void* _v)
 {
-  PetitPrince::Cercle* _p = (PetitPrince::Cercle*)_v;
-  PetitPrince::Cercle::_NP_marshal(_p, _s);
+  PetitPrince::Circle* _p = (PetitPrince::Circle*)_v;
+  PetitPrince::Circle::_NP_marshal(_p, _s);
 }
-static void _0RL_PetitPrince_mCercle_unmarshal_fn(cdrStream& _s, void*& _v)
+static void _0RL_PetitPrince_mCircle_unmarshal_fn(cdrStream& _s, void*& _v)
 {
-  PetitPrince::Cercle* _p = PetitPrince::Cercle::_NP_unmarshal(_s);
+  PetitPrince::Circle* _p = PetitPrince::Circle::_NP_unmarshal(_s);
   _v = _p;
 }
-static void _0RL_PetitPrince_mCercle_destructor_fn(void* _v)
+static void _0RL_PetitPrince_mCircle_destructor_fn(void* _v)
 {
-  PetitPrince::Cercle* _p = (PetitPrince::Cercle*)_v;
+  PetitPrince::Circle* _p = (PetitPrince::Circle*)_v;
   ::CORBA::remove_ref(_p);
 }
 
-void operator<<=(::CORBA::Any& _a, PetitPrince::Cercle* _v)
+void operator<<=(::CORBA::Any& _a, PetitPrince::Circle* _v)
 {
   ::CORBA::add_ref(_v);
-  _a.PR_insert(_0RL_tc_PetitPrince_mCercle,
-               _0RL_PetitPrince_mCercle_marshal_fn,
-               _0RL_PetitPrince_mCercle_destructor_fn,
+  _a.PR_insert(_0RL_tc_PetitPrince_mCircle,
+               _0RL_PetitPrince_mCircle_marshal_fn,
+               _0RL_PetitPrince_mCircle_destructor_fn,
                _v);
 }
-void operator<<=(::CORBA::Any& _a, PetitPrince::Cercle** _vp)
+void operator<<=(::CORBA::Any& _a, PetitPrince::Circle** _vp)
 {
-  _a.PR_insert(_0RL_tc_PetitPrince_mCercle,
-               _0RL_PetitPrince_mCercle_marshal_fn,
-               _0RL_PetitPrince_mCercle_destructor_fn,
+  _a.PR_insert(_0RL_tc_PetitPrince_mCircle,
+               _0RL_PetitPrince_mCircle_marshal_fn,
+               _0RL_PetitPrince_mCircle_destructor_fn,
                *_vp);
   *_vp = 0;
 }
 
-::CORBA::Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Cercle*& _sp)
+::CORBA::Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Circle*& _sp)
 {
   void* _v;
-  if (_a.PR_extract(_0RL_tc_PetitPrince_mCercle,
-                    _0RL_PetitPrince_mCercle_unmarshal_fn,
-                    _0RL_PetitPrince_mCercle_marshal_fn,
-                    _0RL_PetitPrince_mCercle_destructor_fn,
+  if (_a.PR_extract(_0RL_tc_PetitPrince_mCircle,
+                    _0RL_PetitPrince_mCircle_unmarshal_fn,
+                    _0RL_PetitPrince_mCircle_marshal_fn,
+                    _0RL_PetitPrince_mCircle_destructor_fn,
                     _v)) {
-    _sp = (PetitPrince::Cercle*)_v;
+    _sp = (PetitPrince::Circle*)_v;
     return 1;
   }
   return 0;
 }
 
-static void _0RL_PetitPrince_mEllipses_marshal_fn(cdrStream& _s, void* _v)
+static void _0RL_PetitPrince_mEllipse_marshal_fn(cdrStream& _s, void* _v)
 {
-  PetitPrince::Ellipses* _p = (PetitPrince::Ellipses*)_v;
-  PetitPrince::Ellipses::_NP_marshal(_p, _s);
+  PetitPrince::Ellipse* _p = (PetitPrince::Ellipse*)_v;
+  PetitPrince::Ellipse::_NP_marshal(_p, _s);
 }
-static void _0RL_PetitPrince_mEllipses_unmarshal_fn(cdrStream& _s, void*& _v)
+static void _0RL_PetitPrince_mEllipse_unmarshal_fn(cdrStream& _s, void*& _v)
 {
-  PetitPrince::Ellipses* _p = PetitPrince::Ellipses::_NP_unmarshal(_s);
+  PetitPrince::Ellipse* _p = PetitPrince::Ellipse::_NP_unmarshal(_s);
   _v = _p;
 }
-static void _0RL_PetitPrince_mEllipses_destructor_fn(void* _v)
+static void _0RL_PetitPrince_mEllipse_destructor_fn(void* _v)
 {
-  PetitPrince::Ellipses* _p = (PetitPrince::Ellipses*)_v;
+  PetitPrince::Ellipse* _p = (PetitPrince::Ellipse*)_v;
   ::CORBA::remove_ref(_p);
 }
 
-void operator<<=(::CORBA::Any& _a, PetitPrince::Ellipses* _v)
+void operator<<=(::CORBA::Any& _a, PetitPrince::Ellipse* _v)
 {
   ::CORBA::add_ref(_v);
-  _a.PR_insert(_0RL_tc_PetitPrince_mEllipses,
-               _0RL_PetitPrince_mEllipses_marshal_fn,
-               _0RL_PetitPrince_mEllipses_destructor_fn,
+  _a.PR_insert(_0RL_tc_PetitPrince_mEllipse,
+               _0RL_PetitPrince_mEllipse_marshal_fn,
+               _0RL_PetitPrince_mEllipse_destructor_fn,
                _v);
 }
-void operator<<=(::CORBA::Any& _a, PetitPrince::Ellipses** _vp)
+void operator<<=(::CORBA::Any& _a, PetitPrince::Ellipse** _vp)
 {
-  _a.PR_insert(_0RL_tc_PetitPrince_mEllipses,
-               _0RL_PetitPrince_mEllipses_marshal_fn,
-               _0RL_PetitPrince_mEllipses_destructor_fn,
+  _a.PR_insert(_0RL_tc_PetitPrince_mEllipse,
+               _0RL_PetitPrince_mEllipse_marshal_fn,
+               _0RL_PetitPrince_mEllipse_destructor_fn,
                *_vp);
   *_vp = 0;
 }
 
-::CORBA::Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Ellipses*& _sp)
+::CORBA::Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Ellipse*& _sp)
 {
   void* _v;
-  if (_a.PR_extract(_0RL_tc_PetitPrince_mEllipses,
-                    _0RL_PetitPrince_mEllipses_unmarshal_fn,
-                    _0RL_PetitPrince_mEllipses_marshal_fn,
-                    _0RL_PetitPrince_mEllipses_destructor_fn,
+  if (_a.PR_extract(_0RL_tc_PetitPrince_mEllipse,
+                    _0RL_PetitPrince_mEllipse_unmarshal_fn,
+                    _0RL_PetitPrince_mEllipse_marshal_fn,
+                    _0RL_PetitPrince_mEllipse_destructor_fn,
                     _v)) {
-    _sp = (PetitPrince::Ellipses*)_v;
+    _sp = (PetitPrince::Ellipse*)_v;
+    return 1;
+  }
+  return 0;
+}
+
+static void _0RL_PetitPrince_mPolygon_marshal_fn(cdrStream& _s, void* _v)
+{
+  PetitPrince::Polygon* _p = (PetitPrince::Polygon*)_v;
+  PetitPrince::Polygon::_NP_marshal(_p, _s);
+}
+static void _0RL_PetitPrince_mPolygon_unmarshal_fn(cdrStream& _s, void*& _v)
+{
+  PetitPrince::Polygon* _p = PetitPrince::Polygon::_NP_unmarshal(_s);
+  _v = _p;
+}
+static void _0RL_PetitPrince_mPolygon_destructor_fn(void* _v)
+{
+  PetitPrince::Polygon* _p = (PetitPrince::Polygon*)_v;
+  ::CORBA::remove_ref(_p);
+}
+
+void operator<<=(::CORBA::Any& _a, PetitPrince::Polygon* _v)
+{
+  ::CORBA::add_ref(_v);
+  _a.PR_insert(_0RL_tc_PetitPrince_mPolygon,
+               _0RL_PetitPrince_mPolygon_marshal_fn,
+               _0RL_PetitPrince_mPolygon_destructor_fn,
+               _v);
+}
+void operator<<=(::CORBA::Any& _a, PetitPrince::Polygon** _vp)
+{
+  _a.PR_insert(_0RL_tc_PetitPrince_mPolygon,
+               _0RL_PetitPrince_mPolygon_marshal_fn,
+               _0RL_PetitPrince_mPolygon_destructor_fn,
+               *_vp);
+  *_vp = 0;
+}
+
+::CORBA::Boolean operator>>=(const ::CORBA::Any& _a, PetitPrince::Polygon*& _sp)
+{
+  void* _v;
+  if (_a.PR_extract(_0RL_tc_PetitPrince_mPolygon,
+                    _0RL_PetitPrince_mPolygon_unmarshal_fn,
+                    _0RL_PetitPrince_mPolygon_marshal_fn,
+                    _0RL_PetitPrince_mPolygon_destructor_fn,
+                    _v)) {
+    _sp = (PetitPrince::Polygon*)_v;
     return 1;
   }
   return 0;

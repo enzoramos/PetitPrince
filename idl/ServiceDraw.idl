@@ -6,26 +6,27 @@
 module PetitPrince {
 
     struct Point {
-        long x;
-        long y;
+        double x;
+        double y;
     };
 
     valuetype Draw;
 
     typedef sequence<Draw> DrawSeq;
+    typedef sequence<Point> PointSeq;
 
     valuetype Draw {
 
         readonly attribute long id;
         readonly attribute string author;
         attribute DrawSeq inner_draws;
-        attribute long mark;
+        attribute double mark;
 
-        long area();
-        long perimeter();
-        void homothetie(in long indice);
-        void translation(in long x, in long y);
-        void rotation(in long angle);
+        double area();
+        double perimeter();
+        void homothetie(in double indice);
+        void translation(in double x, in double y);
+        void rotation(in double angle);
         void symCenter();
         void symAxial();
 
@@ -37,28 +38,32 @@ module PetitPrince {
         attribute Point end;
     };
 
-    valuetype Cercle : Draw {
+    valuetype Circle : Draw {
         attribute Point center;
-        attribute long ray;
+        attribute double ray;
     };
     
-    valuetype Ellipses : Draw {
+    valuetype Ellipse : Draw {
         attribute Point center1;
         attribute Point center2;
-        attribute long ray;
+        attribute double ray;
+    };
+
+    valuetype Polygon : Draw {
+        attribute PointSeq points_list;
     };
 
     interface DrawService {
         exception non_applicable{string msg;};
         exception unexpected_draw{string msg;};
 
-        long area(in Draw d)
+        double area(in Draw d)
             raises(non_applicable);
-        long perimeter(in Draw d)
+        double perimeter(in Draw d)
             raises(non_applicable);
-        void homothetie(in Draw d, in long indice);
-        void translation(in Draw d, in long x, in long y);
-        void rotation(in Draw d, in long angle);
+        void homothetie(in Draw d, in double indice);
+        void translation(in Draw d, in double x, in double y);
+        void rotation(in Draw d, in double angle);
         void symCenter(in Draw d);
         void symAxial(in Draw d);
         void addDraw(in Draw parent, in Draw child)
@@ -72,7 +77,7 @@ module PetitPrince {
 
         void pushDraw(in Draw d);
         Draw getDraw(in long id);
-        void markDraw(in long mark, in long id);
+        void markDraw(in double mark, in long id);
     };
 
 };

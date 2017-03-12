@@ -16,26 +16,28 @@
 
 #include "ServiceDraw.hpp"
 
-namespace PetitPrince {
-    
-    class DrawingServiceImpl:
-            virtual public POA_PetitPrince::PetitPrinceService,
-            virtual public PortableServer::RefCountServantBase {
-        
-    public:
-        DrawingServiceImpl();
-        DrawingServiceImpl(const DrawingServiceImpl& orig);
-        DrawingServiceImpl(CORBA::ORB_var orb);
-        virtual ~DrawingServiceImpl();
-        
-        virtual ::CORBA::Long pushDraw(const ::PetitPrince::Draw& d) override;
-        virtual ::CORBA::Long replyDraw(const ::PetitPrince::MarkedDraw& marked_draw) override;
-        
-    private:
-        CORBA::ORB_var _orb;
-        
-    };
+class PetitPrinceServiceImpl:
+        virtual public POA_PetitPrince::PetitPrinceService,
+        virtual public PortableServer::RefCountServantBase {
 
-}
+public:
+    PetitPrinceServiceImpl();
+    PetitPrinceServiceImpl(const PetitPrinceServiceImpl& orig);
+    PetitPrinceServiceImpl(CORBA::ORB_var orb);
+    virtual ~PetitPrinceServiceImpl();
+
+
+    void pushDraw(::PetitPrince::Draw* d) override;
+    void markDraw(::CORBA::Long mark, ::CORBA::Long id) override;
+    ::PetitPrince::Draw* getDraw(::CORBA::Long id) override;
+    ::PetitPrince::DrawSeq* draw_list() override;
+    void draw_list(const ::PetitPrince::DrawSeq& _v) override;
+
+private:
+    CORBA::ORB_var _orb;
+
+};
+
+
 #endif /* SERVICEDRAWIMPL_HPP */
 

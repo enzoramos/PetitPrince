@@ -13,27 +13,41 @@
 
 #include "PetitPrinceServiceImpl.hpp"
 
-namespace PetitPrince {
 
-    DrawingServiceImpl::DrawingServiceImpl(CORBA::ORB_var orb): _orb(orb) {
-    }
+PetitPrinceServiceImpl::PetitPrinceServiceImpl() {
     
-    DrawingServiceImpl::DrawingServiceImpl() {
-    }
-
-    DrawingServiceImpl::DrawingServiceImpl(const DrawingServiceImpl& orig) {
-    }
-
-    DrawingServiceImpl::~DrawingServiceImpl() {
-        _orb->shutdown(false);
-    }
-    
-    ::CORBA::Long DrawingServiceImpl::pushDraw(const ::PetitPrince::Draw& d) {
-        // TODO: code
-    }
-    
-    ::CORBA::Long DrawingServiceImpl::replyDraw(const ::PetitPrince::MarkedDraw& marked_draw) {
-        // TODO: code
-    }
-
 }
+
+PetitPrinceServiceImpl::PetitPrinceServiceImpl(const PetitPrinceServiceImpl& orig) {
+    
+}
+
+PetitPrinceServiceImpl::PetitPrinceServiceImpl(CORBA::ORB_var orb) {
+    
+}
+
+virtual PetitPrinceServiceImpl::~PetitPrinceServiceImpl() {
+    _orb->shutdown(false);
+}
+
+
+void PetitPrinceServiceImpl::pushDraw(::PetitPrince::Draw* d) override {
+    
+}
+
+void PetitPrinceServiceImpl::markDraw(::CORBA::Long mark, ::CORBA::Long id) override {
+    
+}
+
+::PetitPrince::Draw* PetitPrinceServiceImpl::getDraw(::CORBA::Long id) override {
+    
+}
+
+::PetitPrince::DrawSeq* PetitPrinceServiceImpl::draw_list() override {
+    
+}
+
+void PetitPrinceServiceImpl::draw_list(const ::PetitPrince::DrawSeq& _v) override {
+    
+}
+

@@ -55,11 +55,10 @@ int main(int argc, char** argv) {
         name[0].kind = (const char *) "";
         
         CORBA::Object_var managerObj = nc->resolve(name);
-        PetitPrince::DrawingService_var manager = PetitPrince::DrawingService::_narrow(managerObj.in());
+        PetitPrince::DrawService_var manager = PetitPrince::DrawService::_narrow(managerObj.in());
         
         // TODO:
         PetitPrince::Draw draw;
-        PetitPrince::MarkedDraw mDraw;
         long res;
         char exit = 'n';
         try {
@@ -73,7 +72,7 @@ int main(int argc, char** argv) {
                 cout << "------------------------------------------" << endl;
                 
                 // Invoke second remote method
-                res = manager->replyDraw(mDraw);
+                res = manager->replyDraw(nullptr);
                 cout << "Reply result long is: " << res << endl;
                 cout << "-------------------------------------------" << endl;
                 

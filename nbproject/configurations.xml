@@ -6,6 +6,10 @@
                    projectFiles="true">
       <itemPath>hdr/Client.h</itemPath>
       <itemPath>hdr/DrawServiceImpl.hpp</itemPath>
+      <itemPath>hdr/OBV_Circle.hpp</itemPath>
+      <itemPath>hdr/OBV_Ellipse.hpp</itemPath>
+      <itemPath>hdr/OBV_Line.hpp</itemPath>
+      <itemPath>hdr/OBV_Polygon.hpp</itemPath>
       <itemPath>hdr/PetitPrinceServiceImpl.hpp</itemPath>
       <itemPath>hdr/Server.h</itemPath>
       <itemPath>hdr/ServiceDraw.hpp</itemPath>
@@ -91,6 +95,14 @@
       </item>
       <item path="hdr/DrawServiceImpl.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="hdr/OBV_Circle.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hdr/OBV_Ellipse.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hdr/OBV_Line.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hdr/OBV_Polygon.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="hdr/PetitPrinceServiceImpl.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hdr/Server.h" ex="false" tool="3" flavor2="0">
@@ -163,6 +175,14 @@
       <item path="hdr/Client.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hdr/DrawServiceImpl.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hdr/OBV_Circle.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hdr/OBV_Ellipse.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hdr/OBV_Line.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="hdr/OBV_Polygon.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hdr/PetitPrinceServiceImpl.hpp" ex="false" tool="3" flavor2="0">
       </item>
