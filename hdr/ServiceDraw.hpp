@@ -624,12 +624,12 @@ _CORBA_MODULE_BEG
     
 
     // Operations and attributes
-    virtual Point center1() = 0;
-    virtual void center1(const ::PetitPrince::Point& _v) = 0;
-    virtual Point center2() = 0;
-    virtual void center2(const ::PetitPrince::Point& _v) = 0;
-    virtual ::CORBA::Double ray() = 0;
-    virtual void ray(::CORBA::Double _v) = 0;
+    virtual Point center() = 0;
+    virtual void center(const ::PetitPrince::Point& _v) = 0;
+    virtual ::CORBA::Double long_ray() = 0;
+    virtual void long_ray(::CORBA::Double _v) = 0;
+    virtual ::CORBA::Double short_ray() = 0;
+    virtual void short_ray(::CORBA::Double _v) = 0;
 
     // Accessors for public members
     

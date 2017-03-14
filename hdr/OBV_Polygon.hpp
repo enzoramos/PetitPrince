@@ -19,55 +19,53 @@
 #include <cmath>
 
 
-class OBV_Polygon : public virtual ::PetitPrince::Polygon {
+class ::OBV_PetitPrince::Polygon : public virtual ::PetitPrince::Polygon {
+protected:
+    Polygon(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq* inner_draws, ::CORBA::Double mark,
+        ::PetitPrince::PointSeq& points_list)
+            : ::PetitPrince::Line(id, author, inner_draws, mark),
+              _points_list(points_list) {
+    }
+    virtual ~Polygon();
+    
 public:
-    OBV_Polygon();
-    OBV_Polygon(const OBV_Polygon& orig);
-    virtual ~OBV_Polygon();
-
-    CircleImpl(::CORBA::Long _id, char* _author, ::PetitPrince::DrawSeq* _inner_draws, ::CORBA::Double _mark,
-                ::PetitPrince::PointSeq _points_list)
-            : id(_id), author(_author), inner_draws(_inner_draws), mark(_mark),
-            points_list(_points_list) {
-    }
-
-    // attributes from Draw
-    ::CORBA::Long id() override {
-    }
-    char* author() override {
-    }
-    ::PetitPrince::DrawSeq* inner_draws() override {
-    }
-    void inner_draws(const ::PetitPrince::DrawSeq& _v) override {
-    }
-    ::CORBA::Double mark() override {
-    }
-    void mark(::CORBA::Double _v) override {
-    }
-
     // operations from Draw
     ::CORBA::Double area() override {
+        // TODO
     }
     ::CORBA::Double perimeter() override {
+        // TODO
     }
     void homothetie(::CORBA::Double indice) override {
+        // TODO
     }
     void translation(::CORBA::Double x, ::CORBA::Double y) override {
+        // TODO
     }
     void rotation(::CORBA::Double angle) override {
+        // TODO
     }
     void symCenter() override {
+        // TODO
     }
     void symAxial() override {
+        // TODO
     }
 
     char* toString() override {
+        // TODO
     }
 
-    // attributes from Line
-
-
+    // attributes from Polygon
+    ::PetitPrince::PointSeq* points_list() override {
+        return this->_points_list;
+    }
+    void points_list(const ::PetitPrince::PointSeq& _v) override {
+        this->_points_list = &_v;
+    }
+    
 private:
+    ::PetitPrince::PointSeq* _points_list;
 
 };
 

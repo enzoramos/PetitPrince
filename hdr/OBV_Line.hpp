@@ -19,32 +19,16 @@
 #include <cmath>
 
 
-class OBV_Line : public virtual ::PetitPrince::Line {
+class ::OBV_PetitPrince::Line : public virtual ::PetitPrince::Line {
+protected:
+    Line(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq* inner_draws, ::CORBA::Double mark,
+        ::PetitPrince::Point _start, ::PetitPrince::Point _end)
+            : ::PetitPrince::Line(id, author, inner_draws, mark),
+              _start(start), _end(end) {
+    }
+    virtual ~Line();
+    
 public:
-    OBV_Line();
-    OBV_Line(const OBV_Line& orig);
-    virtual ~OBV_Line();
-
-    OBV_Line(::CORBA::Long _id, char* _author, ::PetitPrince::DrawSeq* _inner_draws, ::CORBA::Double _mark,
-                ::PetitPrince::Point _start, ::PetitPrince::Point _end)
-            : id(_id), author(_author), inner_draws(_inner_draws), mark(_mark),
-            start(_start), end(_end) {
-    }
-
-    // attributes from Draw
-    ::CORBA::Long id() override {
-    }
-    char* author() override {
-    }
-    ::PetitPrince::DrawSeq* inner_draws() override {
-    }
-    void inner_draws(const ::PetitPrince::DrawSeq& _v) override {
-    }
-    ::CORBA::Double mark() override {
-    }
-    void mark(::CORBA::Double _v) override {
-    }
-
     // operations from Draw
     ::CORBA::Double area() override {
         throw(::PetitPrince::DrawService::non_applicable("A line does not have an area!"), ::CORBA::SystemException);
@@ -93,19 +77,21 @@ public:
 
     // attributes from Line
     ::PetitPrince::Point start() override {
-        return start;
+        return this->_start;
     }
     void start(const ::PetitPrince::Point& _v) override {
-        start = _v;
+        this->_start = _v;
     }
     ::PetitPrince::Point end() override {
-        return end;
+        return this->_end;
     }
     void end(const ::PetitPrince::Point& _v) override {
-        end = _v;
+        this->_end = _v;
     }
 
 private:
+    ::PetitPrince::Point _start;
+    ::PetitPrince::Point _end;
 
 };
 
