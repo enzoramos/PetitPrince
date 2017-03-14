@@ -34,16 +34,18 @@ protected:
 public:
     // operations from Draw
     ::CORBA::Double area() override {
-        // TODO
+        return M_PI*ray()*ray();
     }
     ::CORBA::Double perimeter() override {
-        // TODO
+        return 2*M_PI*ray();
     }
     void homothetie(::CORBA::Double indice) override {
-        // TODO
+        double tmp = ray();
+        ray(tmp*indice);
     }
     void translation(::CORBA::Double x, ::CORBA::Double y) override {
-        // TODO
+        ::PetitPrince::Point tmp = ::PetitPrince::Point(center().x+x,center().y+y)
+        center(tmp);
     }
     void rotation(::CORBA::Double angle) override {
         // TODO
@@ -56,7 +58,7 @@ public:
     }
 
     char* toString() override {
-        // TODO
+        return "rayon : " + ray() + "Centre : "center();
     }
 
     // attributes from Circle
