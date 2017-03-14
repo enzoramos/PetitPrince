@@ -15,8 +15,11 @@
 #define DRAWIMPL_HPP
 
 #include "ServiceDraw.hpp"
+#include "DrawServiceImpl.hpp"
 
 #include <cmath>
+#include <math.h>
+
 
 
 class OBV_Circle : public virtual ::PetitPrince::Circle {
@@ -47,12 +50,18 @@ public:
 
     // operations from Draw
     ::CORBA::Double area() override {
+        return M_PI*ray()*ray();
     }
     ::CORBA::Double perimeter() override {
+        return 2*M_PI*ray();
     }
     void homothetie(::CORBA::Double indice) override {
+        double tmp = ray();
+        ray(tmp*indice);
     }
     void translation(::CORBA::Double x, ::CORBA::Double y) override {
+        ::PetitPrince::Point tmp = ::PetitPrince::Point(center().x+x,center().y+y)
+        center(tmp);
     }
     void rotation(::CORBA::Double angle) override {
     }
@@ -62,6 +71,7 @@ public:
     }
 
     char* toString() override {
+        return "rayon : " + ray() + "Centre : "center();
     }
 
     // attributes from Line
