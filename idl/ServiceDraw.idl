@@ -44,9 +44,9 @@ module PetitPrince {
     };
     
     valuetype Ellipse : Draw {
-        attribute Point center1;
-        attribute Point center2;
-        attribute double ray;
+        attribute Point center;
+        attribute double long_ray;
+        attribute double short_ray;
     };
 
     valuetype Polygon : Draw {
