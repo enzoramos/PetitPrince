@@ -11,8 +11,8 @@
  * Created on 6 mars 2017, 20:06
  */
 
-#include "Server.h"
-#include "Client.h"
+#include "Server.hpp"
+#include "Client.hpp"
 #include "PetitPrinceServiceImpl.hpp"
 
 #include <cstdlib>
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
         
         CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow(rootContextObj.in());
 
-        sdImpl = new PetitPrince::PetitPrinceServiceImpl(orb);
+        sdImpl = new PetitPrinceServiceImpl(orb);
         PortableServer::ObjectId_var myObjID = myPOA->activate_object(sdImpl);
         CORBA::Object_var o = myPOA->servant_to_reference(sdImpl);
         CORBA::String_var s = orb->object_to_string(o);

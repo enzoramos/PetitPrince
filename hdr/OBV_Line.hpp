@@ -11,57 +11,70 @@
  * Created on 12 mars 2017, 17:08
  */
 
-#ifndef DRAWIMPL_HPP
-#define DRAWIMPL_HPP
+#ifndef OBV_LINE_HPP
+#define OBV_LINE_HPP
 
+#include "OBV_Draw.hpp"
 #include "ServiceDraw.hpp"
 
 #include <cmath>
 
+using namespace std;
 
-class ::OBV_PetitPrince::Line : public virtual ::PetitPrince::Line {
-protected:
-    Line(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq* inner_draws, ::CORBA::Double mark,
-        ::PetitPrince::Point _start, ::PetitPrince::Point _end)
-            : ::PetitPrince::Line(id, author, inner_draws, mark),
+class Line : public virtual Draw, public virtual ::OBV_PetitPrince::Line {
+
+public:
+    Line(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq& inner_draws, ::CORBA::Double mark,
+        ::PetitPrince::Point start, ::PetitPrince::Point end)
+            : Draw(id, author, inner_draws, mark),
               _start(start), _end(end) {
     }
-    virtual ~Line();
+    virtual ~Line() {
+
+    }
+    /*
+    char* author() override {}
+    ::CORBA::Long id() override {}
+    void inner_draws(const ::PetitPrince::DrawSeq& _v) override {}
+    ::PetitPrince::DrawSeq* inner_draws() override {}
+    ::CORBA::Double mark() override {}
+    void mark(::CORBA::Double _v) override {}
+    */    
     
 public:
     // operations from Draw
     ::CORBA::Double area() override {
-        throw(::PetitPrince::DrawService::non_applicable("A line does not have an area!"), ::CORBA::SystemException);
+        throw(::PetitPrince::DrawService::non_applicable("A line does not have an area!"));
     }
     ::CORBA::Double perimeter() override {
-        throw(::PetitPrince::DrawService::non_applicable("A line does not have a perimeter!"), ::CORBA::SystemException);
+        throw(::PetitPrince::DrawService::non_applicable("A line does not have a perimeter!"));
     }
     void homothetie(::CORBA::Double indice) override {
-        double x = start().x, y = start().y;
-        translation(-start().x, -start().y);
-        end().x *= indice;
-        end().y *= indice;
+        double x = _start.x, y = _start.y;
+        translation(-_start.x, -_start.y);
+        _end.x *= indice;
+        _end.y *= indice;
         translation(x, y);
     }
     void translation(::CORBA::Double x, ::CORBA::Double y) override {
-        start().x += x;
-        start().y += y;
+        _start.x += x;
+        _start.y += y;
 
-        end().x += x;
-        end().y += y;
+        _end.x += x;
+        _end.y += y;
     }
     void rotation(::CORBA::Double angle) override {
-        double x = start().x;
-        double y = start().y;
+        double x = _start.x;
+        double y = _start.y;
         double r = sqrt(x*x + y*y);
-        start().x = r * cos(angle);
-        start().y = r * sin(angle);
+        _start.x = r * cos(angle);
+        _start.y = r * sin(angle);
 
-        x = end().x;
-        y = end().y;
+        x = _end.x;
+        y = _end.y;
         r = sqrt(x*x + y*y);
-        end().x = r * cos(angle);
-        end().y = r * sin(angle);
+        _end.x = r * cos(angle);
+        _end.y = r * sin(angle);
     }
     void symCenter() override {
         rotation(180);
@@ -72,7 +85,9 @@ public:
     }
 
     char* toString() override {
-        return "((" + start().x + "," + start().y + "),(" + end().x + "," + end().y + "))";
+        stringstream stream;
+        stream << Draw::toString() << "(Line((" << _start.x << "," << _start.y << "),(" << _end.x << "," << _end.y << ")))";
+        return const_cast<char*>(stream.str().c_str());
     }
 
     // attributes from Line
@@ -95,5 +110,5 @@ private:
 
 };
 
-#endif /* DRAWIMPL_HPP */
+#endif /* OBV_LINE_HPP */
 

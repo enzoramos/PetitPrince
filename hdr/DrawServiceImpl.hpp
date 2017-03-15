@@ -25,15 +25,15 @@ public:
     virtual ~DrawServiceImpl();
     
     void addDraw(::PetitPrince::Draw* parent, ::PetitPrince::Draw* child) override;
-    void homothetie(::PetitPrince::Draw* d, ::CORBA::Long indice) override;
-    void rotation(::PetitPrince::Draw* d, ::CORBA::Long angle) override;
-    ::CORBA::Long area(::PetitPrince::Draw* d) override;
-    ::CORBA::Long perimeter(::PetitPrince::Draw* d) override;
+    void homothetie(::PetitPrince::Draw* d, ::CORBA::Double indice) override;
+    void rotation(::PetitPrince::Draw* d, ::CORBA::Double angle) override;
+    void translation(::PetitPrince::Draw* d, ::CORBA::Double x, ::CORBA::Double y) override;
+    ::CORBA::Double area(::PetitPrince::Draw* d) override;
+    ::CORBA::Double perimeter(::PetitPrince::Draw* d) override;
     void symAxial(::PetitPrince::Draw* d) override;
     void symCenter(::PetitPrince::Draw* d) override;
     char* toString(::PetitPrince::Draw* d) override;
-    void translation(::PetitPrince::Draw* d, ::CORBA::Long x, ::CORBA::Long y) override;
-
+    
 private:
     CORBA::ORB_var _orb;
     

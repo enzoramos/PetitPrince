@@ -13,6 +13,10 @@
 
 #include "DrawServiceImpl.hpp"
 
+#include <iostream>
+
+using namespace std;
+
 
 DrawServiceImpl::DrawServiceImpl(){
 
@@ -22,7 +26,7 @@ DrawServiceImpl::DrawServiceImpl(const DrawServiceImpl& orig){
 
 }
 
-virtual DrawServiceImpl::~DrawServiceImpl(){
+DrawServiceImpl::~DrawServiceImpl(){
 
 }
 
@@ -30,31 +34,33 @@ void DrawServiceImpl::addDraw(::PetitPrince::Draw* parent, ::PetitPrince::Draw* 
     if(parent->area() < child->area()){
        throw ::PetitPrince::DrawService::unexpected_draw("L'aire du dessin est plus grande que celle du parent");
     }
-    parent->inner_draws() = child;
+    ::CORBA::ULong l = parent->inner_draws()->length();
+    parent->inner_draws()->length(l+1);
+    (*parent->inner_draws())[l] = child;
 }
 
-void DrawServiceImpl::homothetie(::PetitPrince::Draw* d, ::CORBA::Long indice) {
+void DrawServiceImpl::homothetie(::PetitPrince::Draw* d, ::CORBA::Double indice) {
     d->homothetie(indice);
 
 }
 
-void DrawServiceImpl::rotation(::PetitPrince::Draw* d, ::CORBA::Long angle) {
+void DrawServiceImpl::rotation(::PetitPrince::Draw* d, ::CORBA::Double angle) {
     d->rotation(angle);
 }
 
-::CORBA::Long DrawServiceImpl::area(::PetitPrince::Draw* d) {
+::CORBA::Double DrawServiceImpl::area(::PetitPrince::Draw* d) {
     try{
         return d->area();
     } catch(::PetitPrince::DrawService::non_applicable e) {
-        std::cout << e << std::endl;
+        cout << e.msg << endl;
     }
 }
 
-::CORBA::Long DrawServiceImpl::perimeter(::PetitPrince::Draw* d) {
+::CORBA::Double DrawServiceImpl::perimeter(::PetitPrince::Draw* d) {
     try{
         return d->perimeter();
     } catch(::PetitPrince::DrawService::non_applicable e) {
-        std::cout << e << std::endl;
+        cout << e.msg << endl;
     }
 }
 
@@ -70,7 +76,7 @@ char* DrawServiceImpl::toString(::PetitPrince::Draw* d) {
     return d->toString();
 }
 
-void DrawServiceImpl::translation(::PetitPrince::Draw* d, ::CORBA::Long x, ::CORBA::Long y) {
+void DrawServiceImpl::translation(::PetitPrince::Draw* d, ::CORBA::Double x, ::CORBA::Double y) {
     d->translation(x,y);
 }
 

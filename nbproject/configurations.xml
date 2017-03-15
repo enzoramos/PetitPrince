@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>hdr/Client.h</itemPath>
+      <itemPath>hdr/Client.hpp</itemPath>
       <itemPath>hdr/DrawServiceImpl.hpp</itemPath>
       <itemPath>hdr/OBV_Circle.hpp</itemPath>
       <itemPath>hdr/OBV_Draw.hpp</itemPath>
@@ -12,7 +12,7 @@
       <itemPath>hdr/OBV_Line.hpp</itemPath>
       <itemPath>hdr/OBV_Polygon.hpp</itemPath>
       <itemPath>hdr/PetitPrinceServiceImpl.hpp</itemPath>
-      <itemPath>hdr/Server.h</itemPath>
+      <itemPath>hdr/Server.hpp</itemPath>
       <itemPath>hdr/ServiceDraw.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -34,6 +34,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/Client.cpp</itemPath>
       <itemPath>src/DrawServiceImpl.cpp</itemPath>
       <itemPath>src/PetitPrinceServiceImpl.cpp</itemPath>
       <itemPath>src/Server.cpp</itemPath>
@@ -92,7 +93,7 @@
       </item>
       <item path="README.md" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/Client.h" ex="false" tool="3" flavor2="0">
+      <item path="hdr/Client.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hdr/DrawServiceImpl.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -108,7 +109,7 @@
       </item>
       <item path="hdr/PetitPrinceServiceImpl.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/Server.h" ex="false" tool="3" flavor2="0">
+      <item path="hdr/Server.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hdr/ServiceDraw.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -133,6 +134,8 @@
       <item path="main_client.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main_server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Client.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/DrawServiceImpl.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -175,7 +178,7 @@
       </item>
       <item path="README.md" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/Client.h" ex="false" tool="3" flavor2="0">
+      <item path="hdr/Client.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hdr/DrawServiceImpl.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -191,7 +194,7 @@
       </item>
       <item path="hdr/PetitPrinceServiceImpl.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/Server.h" ex="false" tool="3" flavor2="0">
+      <item path="hdr/Server.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="hdr/ServiceDraw.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -216,6 +219,8 @@
       <item path="main_client.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main_server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Client.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/DrawServiceImpl.cpp" ex="false" tool="1" flavor2="0">
       </item>

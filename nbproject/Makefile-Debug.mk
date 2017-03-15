@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/main_client.o \
 	${OBJECTDIR}/main_server.o \
+	${OBJECTDIR}/src/Client.o \
 	${OBJECTDIR}/src/DrawServiceImpl.o \
 	${OBJECTDIR}/src/PetitPrinceServiceImpl.o \
 	${OBJECTDIR}/src/Server.o \
@@ -77,6 +78,11 @@ ${OBJECTDIR}/main_server.o: main_server.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Ihdr `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_server.o main_server.cpp
+
+${OBJECTDIR}/src/Client.o: src/Client.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Ihdr `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Client.o src/Client.cpp
 
 ${OBJECTDIR}/src/DrawServiceImpl.o: src/DrawServiceImpl.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

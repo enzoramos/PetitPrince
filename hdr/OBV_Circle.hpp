@@ -11,22 +11,23 @@
  * Created on 12 mars 2017, 17:08
  */
 
-#ifndef DRAWIMPL_HPP
-#define DRAWIMPL_HPP
+#ifndef OBV_CIRCLE_HPP
+#define OBV_CIRCLE_HPP
 
+#include "OBV_Draw.hpp"
 #include "ServiceDraw.hpp"
-#include "DrawServiceImpl.hpp"
 
 #include <cmath>
 #include <math.h>
 
+using namespace std;
 
+class Circle : public virtual Draw, public virtual ::OBV_PetitPrince::Circle {
 
-class ::OBV_PetitPrince::Circle : public virtual ::PetitPrince::Circle {
-protected:
-    Circle(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq* inner_draws, ::CORBA::Double mark,
+public:
+    Circle(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq& inner_draws, ::CORBA::Double mark,
         ::PetitPrince::Point center, ::CORBA::Double ray)
-            : ::PetitPrince::Line(id, author, inner_draws, mark),
+            : Draw(id, author, inner_draws, mark),
               _center(center), _ray(ray) {
     }
     virtual ~Circle();
@@ -34,18 +35,16 @@ protected:
 public:
     // operations from Draw
     ::CORBA::Double area() override {
-        return M_PI*ray()*ray();
+        return M_PI*_ray*_ray;
     }
     ::CORBA::Double perimeter() override {
-        return 2*M_PI*ray();
+        return 2*M_PI*_ray;
     }
     void homothetie(::CORBA::Double indice) override {
-        double tmp = ray();
-        ray(tmp*indice);
+        _ray *= indice;
     }
     void translation(::CORBA::Double x, ::CORBA::Double y) override {
-        ::PetitPrince::Point tmp = ::PetitPrince::Point(center().x+x,center().y+y)
-        center(tmp);
+        _center = {center().x+x, center().y+y};
     }
     void rotation(::CORBA::Double angle) override {
         // TODO
@@ -58,7 +57,9 @@ public:
     }
 
     char* toString() override {
-        return "rayon : " + ray() + "Centre : "center();
+        stringstream stream;
+        stream << Draw::toString() << "(Circle(center: (" << _center.x << "," << _center.y << "), ray: " << _ray << "))";
+        return const_cast<char*>(stream.str().c_str());
     }
 
     // attributes from Circle
@@ -68,12 +69,13 @@ public:
     void center(const ::PetitPrince::Point& _v) override {
         this->_center = _v;
     }
-    ::PetitPrince::Point ray() override {
+    ::CORBA::Double ray() override {
         return this->_ray;
     }
-    void ray(const ::PetitPrince::Point& _v) override {
+    void ray(::CORBA::Double _v) override {
         this->_ray = _v;
     }
+
 
 private:
     ::PetitPrince::Point _center;
@@ -82,5 +84,5 @@ private:
 };
 
 
-#endif /* DRAWIMPL_HPP */
+#endif /* OBV_CIRCLE_HPP */
 

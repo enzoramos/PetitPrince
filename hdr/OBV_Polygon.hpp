@@ -11,19 +11,24 @@
  * Created on 12 mars 2017, 17:08
  */
 
-#ifndef DRAWIMPL_HPP
-#define DRAWIMPL_HPP
+#ifndef OBV_POLYGON_HPP
+#define OBV_POLYGON_HPP
 
+#include "OBV_Draw.hpp"
 #include "ServiceDraw.hpp"
 
 #include <cmath>
+#include <cstring>
+#include <string>
+#include <iostream>
 
+using namespace std;
 
-class ::OBV_PetitPrince::Polygon : public virtual ::PetitPrince::Polygon {
-protected:
-    Polygon(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq* inner_draws, ::CORBA::Double mark,
+class Polygon : public virtual Draw, public virtual ::OBV_PetitPrince::Polygon {
+public:
+    Polygon(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq& inner_draws, ::CORBA::Double mark,
         ::PetitPrince::PointSeq& points_list)
-            : ::PetitPrince::Line(id, author, inner_draws, mark),
+            : Draw(id, author, inner_draws, mark),
               _points_list(points_list) {
     }
     virtual ~Polygon();
@@ -53,22 +58,30 @@ public:
     }
 
     char* toString() override {
-        // TODO
+        stringstream stream;
+        long l = points_list()->length();
+        stream << "(" << (*points_list())[0].x << "," << (*points_list())[0].y << ")";
+        for(int i=1; i<l; i++) {
+            stream << ",(" << (*points_list())[i].x << "," << (*points_list())[i].y << ")";
+        }
+        stringstream tmp;
+        tmp << Draw::toString() << "(Polygon(" << stream.str() << "))";
+        return const_cast<char*>(tmp.str().c_str());
     }
 
     // attributes from Polygon
     ::PetitPrince::PointSeq* points_list() override {
-        return this->_points_list;
+        return &this->_points_list;
     }
     void points_list(const ::PetitPrince::PointSeq& _v) override {
-        this->_points_list = &_v;
+        this->_points_list = _v;
     }
     
 private:
-    ::PetitPrince::PointSeq* _points_list;
+    ::PetitPrince::PointSeq _points_list;
 
 };
 
 
-#endif /* DRAWIMPL_HPP */
+#endif /* OBV_POLYGON_HPP */
 

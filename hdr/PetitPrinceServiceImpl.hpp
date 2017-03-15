@@ -28,7 +28,7 @@ public:
 
 
     void pushDraw(::PetitPrince::Draw* d) override;
-    void markDraw(::CORBA::Long mark, ::CORBA::Long id) override;
+    void markDraw(::CORBA::Double mark, ::CORBA::Long id) override;
     ::PetitPrince::Draw* getDraw(::CORBA::Long id) override;
     ::PetitPrince::DrawSeq* draw_list() override;
     void draw_list(const ::PetitPrince::DrawSeq& _v) override;

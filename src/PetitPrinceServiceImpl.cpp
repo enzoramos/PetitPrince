@@ -26,28 +26,28 @@ PetitPrinceServiceImpl::PetitPrinceServiceImpl(CORBA::ORB_var orb) {
     
 }
 
-virtual PetitPrinceServiceImpl::~PetitPrinceServiceImpl() {
+PetitPrinceServiceImpl::~PetitPrinceServiceImpl() {
     _orb->shutdown(false);
 }
 
 
-void PetitPrinceServiceImpl::pushDraw(::PetitPrince::Draw* d) override {
+void PetitPrinceServiceImpl::pushDraw(::PetitPrince::Draw* d) {
     
 }
 
-void PetitPrinceServiceImpl::markDraw(::CORBA::Long mark, ::CORBA::Long id) override {
+void PetitPrinceServiceImpl::markDraw(::CORBA::Double mark, ::CORBA::Long id) {
     
 }
 
-::PetitPrince::Draw* PetitPrinceServiceImpl::getDraw(::CORBA::Long id) override {
+::PetitPrince::Draw* PetitPrinceServiceImpl::getDraw(::CORBA::Long id) {
     
 }
 
-::PetitPrince::DrawSeq* PetitPrinceServiceImpl::draw_list() override {
+::PetitPrince::DrawSeq* PetitPrinceServiceImpl::draw_list() {
     
 }
 
-void PetitPrinceServiceImpl::draw_list(const ::PetitPrince::DrawSeq& _v) override {
+void PetitPrinceServiceImpl::draw_list(const ::PetitPrince::DrawSeq& _v) {
     
 }
 
