@@ -39,8 +39,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/main_server.o \
 	${OBJECTDIR}/src/DrawServiceImpl.o \
 	${OBJECTDIR}/src/PetitPrinceServiceImpl.o \
-	${OBJECTDIR}/src/PetitPrince_DynStub.o \
-	${OBJECTDIR}/src/PetitPrince_Stub.o
+	${OBJECTDIR}/src/ServiceDraw_DynStub.o \
+	${OBJECTDIR}/src/ServiceDraw_Stub.o
 
 
 # C Compiler Flags
@@ -87,15 +87,15 @@ ${OBJECTDIR}/src/PetitPrinceServiceImpl.o: src/PetitPrinceServiceImpl.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Ihdr `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/PetitPrinceServiceImpl.o src/PetitPrinceServiceImpl.cpp
 
-${OBJECTDIR}/src/PetitPrince_DynStub.o: src/PetitPrince_DynStub.cpp 
+${OBJECTDIR}/src/ServiceDraw_DynStub.o: src/ServiceDraw_DynStub.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Ihdr `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/PetitPrince_DynStub.o src/PetitPrince_DynStub.cpp
+	$(COMPILE.cc) -g -Ihdr `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ServiceDraw_DynStub.o src/ServiceDraw_DynStub.cpp
 
-${OBJECTDIR}/src/PetitPrince_Stub.o: src/PetitPrince_Stub.cpp 
+${OBJECTDIR}/src/ServiceDraw_Stub.o: src/ServiceDraw_Stub.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Ihdr `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/PetitPrince_Stub.o src/PetitPrince_Stub.cpp
+	$(COMPILE.cc) -g -Ihdr `pkg-config --cflags omniCOS4` `pkg-config --cflags omniCOSDynamic4` `pkg-config --cflags omniConnectionMgmt4` `pkg-config --cflags omniDynamic4` `pkg-config --cflags omniEvents` `pkg-config --cflags omniORB4` `pkg-config --cflags omnithread3` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ServiceDraw_Stub.o src/ServiceDraw_Stub.cpp
 
 # Subprojects
 .build-subprojects:

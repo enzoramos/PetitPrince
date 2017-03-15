@@ -32,16 +32,18 @@ public:
 public:
     // operations from Draw
     ::CORBA::Double area() override {
-        // TODO
+        return M_PI*_long_ray*_short_ray;
     }
     ::CORBA::Double perimeter() override {
-        // TODO
+        return M_PI*sqrt(2*(_long_ray*_long_ray+_short_ray*_short_ray));
     }
     void homothetie(::CORBA::Double indice) override {
-        // TODO
+        _short_ray *= indice;
+        _long_ray  *= indice; 
     }
     void translation(::CORBA::Double x, ::CORBA::Double y) override {
-        // TODO
+        _center.x += x;
+        _center.y += y;
     }
     void rotation(::CORBA::Double angle) override {
         // TODO

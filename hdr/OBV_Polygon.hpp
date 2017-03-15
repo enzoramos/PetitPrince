@@ -35,22 +35,52 @@ public:
 public:
     // operations from Draw
     ::CORBA::Double area() override {
-        // TODO
+        double area = 0;
+        for(int i = 1; i < _points_list.length();i++){
+            area += (_points_list[i-1].x *_points_list[i].y)-(_points_list[i].x *_points_list[i-1].y);
+        }
+        return 0.5*fabs(area);
     }
     ::CORBA::Double perimeter() override {
-        // TODO
+        double perim = 0;
+        if(_points_list->length() > 2){
+            for(int i = 1; i < _points_list->length();i++){
+                perim += dist(_points_list[i-1],_points_list[i]);
+            }
+            perim+=dist(_points_list[_points_list->length()-1],_points_list[0]);
+        }
+        return perim;
     }
     void homothetie(::CORBA::Double indice) override {
-        // TODO
+        ::PetitPrince::Point tmp = _points_list[0];
+        translation(-tmp.x,-tmp.y);
+        for(int i = 0; i < _points_list.length(); i++){
+            _points_list[i].x *= indice;
+            _points_list[i].y *= indice;
+        }
+        translation(tmp.x,tmp.y);
     }
     void translation(::CORBA::Double x, ::CORBA::Double y) override {
-        // TODO
+        for(int i = 0; i < _points_list.length(); i++){
+            _points_list[i].x += x;
+            _points_list[i].y += y;
+        }
     }
     void rotation(::CORBA::Double angle) override {
-        // TODO
+        ::PetitPrince::Point tmp = _points_list[0];
+        translation(-_points_list[0].x,-_points_list[0].y);
+        
+        for(int i = 1 ; i < _points_list.length(); i++){
+            double x = _points_list[i].x;
+            double y = _points_list[i].y;
+            double r = sqrt(x*x + y*y);
+            _points_list[i].x = r * cos(angle);
+            _points_list[i].y = r * sin(angle);
+        }
+        translation(tmp.x,tmp.y);
     }
     void symCenter() override {
-        // TODO
+        rotation(180);
     }
     void symAxial() override {
         // TODO
@@ -79,6 +109,9 @@ public:
 private:
     ::PetitPrince::PointSeq _points_list;
 
+    double dist(::PetitPrince::Point start, ::PetitPrince::Point end){
+        return sqrt(pow((end.x-start.x),2)+pow((end.y-start.y),2));
+    }
 };
 
 

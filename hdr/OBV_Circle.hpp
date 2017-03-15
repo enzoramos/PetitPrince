@@ -46,13 +46,10 @@ public:
         _center = {center().x+x, center().y+y};
     }
     void rotation(::CORBA::Double angle) override {
-        // TODO
     }
     void symCenter() override {
-        // TODO
     }
     void symAxial() override {
-        // TODO
     }
 
     char* toString() override {

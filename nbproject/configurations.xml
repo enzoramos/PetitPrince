@@ -10,7 +10,6 @@
       <itemPath>hdr/OBV_Ellipse.hpp</itemPath>
       <itemPath>hdr/OBV_Line.hpp</itemPath>
       <itemPath>hdr/OBV_Polygon.hpp</itemPath>
-      <itemPath>hdr/PetitPrince.hpp</itemPath>
       <itemPath>hdr/PetitPrinceServiceImpl.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -34,8 +33,8 @@
                    projectFiles="true">
       <itemPath>src/DrawServiceImpl.cpp</itemPath>
       <itemPath>src/PetitPrinceServiceImpl.cpp</itemPath>
-      <itemPath>src/PetitPrince_DynStub.cpp</itemPath>
-      <itemPath>src/PetitPrince_Stub.cpp</itemPath>
+      <itemPath>src/ServiceDraw_DynStub.cpp</itemPath>
+      <itemPath>src/ServiceDraw_Stub.cpp</itemPath>
       <itemPath>main_client.cpp</itemPath>
       <itemPath>main_server.cpp</itemPath>
     </logicalFolder>
@@ -54,7 +53,7 @@
     <itemPath>README.md</itemPath>
   </logicalFolder>
   <sourceRootList>
-    <Elem>.</Elem>
+    <Elem>lib</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -101,8 +100,6 @@
       </item>
       <item path="hdr/OBV_Polygon.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/PetitPrince.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="hdr/PetitPrinceServiceImpl.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="idl/PetitPrince.idl" ex="false" tool="3" flavor2="0">
@@ -131,9 +128,9 @@
       </item>
       <item path="src/PetitPrinceServiceImpl.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/PetitPrince_DynStub.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/ServiceDraw_DynStub.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/PetitPrince_Stub.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/ServiceDraw_Stub.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -178,8 +175,6 @@
       </item>
       <item path="hdr/OBV_Polygon.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="hdr/PetitPrince.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="hdr/PetitPrinceServiceImpl.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="idl/PetitPrince.idl" ex="false" tool="3" flavor2="0">
@@ -208,9 +203,9 @@
       </item>
       <item path="src/PetitPrinceServiceImpl.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/PetitPrince_DynStub.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/ServiceDraw_DynStub.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/PetitPrince_Stub.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/ServiceDraw_Stub.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
