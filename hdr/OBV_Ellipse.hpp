@@ -15,7 +15,7 @@
 #define OBV_ELLIPSE_HPP
 
 #include "OBV_Draw.hpp"
-#include "ServiceDraw.hpp"
+#include "PetitPrince.hpp"
 
 #include <cmath>
 
@@ -23,12 +23,11 @@ using namespace std;
 
 class Ellipse : public virtual Draw, public virtual ::OBV_PetitPrince::Ellipse {
 public:
-    Ellipse(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq& inner_draws, ::CORBA::Double mark,
-        ::PetitPrince::Point center, ::CORBA::Double long_ray, ::CORBA::Double short_ray)
-            : Draw(id, author, inner_draws, mark),
-              _center(center), _long_ray(long_ray), _short_ray(short_ray) {
+    Ellipse(::CORBA::Long id, char* author, ::PetitPrince::Point center, ::CORBA::Double long_ray, ::CORBA::Double short_ray)
+            : Draw(id, author, -1), _center(center), _long_ray(long_ray), _short_ray(short_ray) {
     }
-    virtual ~Ellipse();
+    virtual ~Ellipse() {
+    }
     
 public:
     // operations from Draw

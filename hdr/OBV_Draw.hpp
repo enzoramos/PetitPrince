@@ -14,7 +14,7 @@
 #ifndef OBV_DRAW_HPP
 #define OBV_DRAW_HPP
 
-#include "ServiceDraw.hpp"
+#include "PetitPrince.hpp"
 
 #include <omniORB4/CORBA.h>
 #include <sstream>
@@ -24,10 +24,13 @@ using namespace std;
 class Draw : public virtual ::OBV_PetitPrince::Draw {
 
 protected:
-    Draw(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq& inner_draws, ::CORBA::Double mark)
-            : _id(id), _author(author), _inner_draws(inner_draws), _mark(mark) {
+    Draw(::CORBA::Long id, char* author, ::CORBA::Double mark)
+            : _id(id), _author(author), _mark(mark) {
+    }
+    virtual ~Draw() {
     }
 
+    
 public:
     ::CORBA::Long id() override {
         return this->_id;

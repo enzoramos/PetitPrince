@@ -15,7 +15,7 @@
 #define OBV_LINE_HPP
 
 #include "OBV_Draw.hpp"
-#include "ServiceDraw.hpp"
+#include "PetitPrince.hpp"
 
 #include <cmath>
 
@@ -24,13 +24,10 @@ using namespace std;
 class Line : public virtual Draw, public virtual ::OBV_PetitPrince::Line {
 
 public:
-    Line(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq& inner_draws, ::CORBA::Double mark,
-        ::PetitPrince::Point start, ::PetitPrince::Point end)
-            : Draw(id, author, inner_draws, mark),
-              _start(start), _end(end) {
+    Line(::CORBA::Long id, char* author, ::PetitPrince::Point start, ::PetitPrince::Point end)
+            : Draw(id, author, -1), _start(start), _end(end) {
     }
     virtual ~Line() {
-
     }
     /*
     char* author() override {}
@@ -44,10 +41,10 @@ public:
 public:
     // operations from Draw
     ::CORBA::Double area() override {
-        throw(::PetitPrince::DrawService::non_applicable("A line does not have an area!"));
+        throw(::PetitPrince::DrawService::NonApplicable("A line does not have an area!"));
     }
     ::CORBA::Double perimeter() override {
-        throw(::PetitPrince::DrawService::non_applicable("A line does not have a perimeter!"));
+        throw(::PetitPrince::DrawService::NonApplicable("A line does not have a perimeter!"));
     }
     void homothetie(::CORBA::Double indice) override {
         double x = _start.x, y = _start.y;

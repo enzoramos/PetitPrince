@@ -15,7 +15,7 @@
 #define OBV_POLYGON_HPP
 
 #include "OBV_Draw.hpp"
-#include "ServiceDraw.hpp"
+#include "PetitPrince.hpp"
 
 #include <cmath>
 #include <cstring>
@@ -26,12 +26,11 @@ using namespace std;
 
 class Polygon : public virtual Draw, public virtual ::OBV_PetitPrince::Polygon {
 public:
-    Polygon(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq& inner_draws, ::CORBA::Double mark,
-        ::PetitPrince::PointSeq& points_list)
-            : Draw(id, author, inner_draws, mark),
-              _points_list(points_list) {
+    Polygon(::CORBA::Long id, char* author, ::PetitPrince::PointSeq& points_list)
+            : Draw(id, author, -1), _points_list(points_list) {
     }
-    virtual ~Polygon();
+    virtual ~Polygon() {
+    }
     
 public:
     // operations from Draw

@@ -14,7 +14,7 @@
 #ifndef DRAWSERVICEIMPL_HPP
 #define DRAWSERVICEIMPL_HPP
 
-#include "ServiceDraw.hpp"
+#include "PetitPrince.hpp"
 
 
 class DrawServiceImpl : virtual public POA_PetitPrince::DrawService,
@@ -24,15 +24,17 @@ public:
     DrawServiceImpl(const DrawServiceImpl& orig);
     virtual ~DrawServiceImpl();
     
-    void addDraw(::PetitPrince::Draw* parent, ::PetitPrince::Draw* child) override;
-    void homothetie(::PetitPrince::Draw* d, ::CORBA::Double indice) override;
-    void rotation(::PetitPrince::Draw* d, ::CORBA::Double angle) override;
-    void translation(::PetitPrince::Draw* d, ::CORBA::Double x, ::CORBA::Double y) override;
-    ::CORBA::Double area(::PetitPrince::Draw* d) override;
-    ::CORBA::Double perimeter(::PetitPrince::Draw* d) override;
-    void symAxial(::PetitPrince::Draw* d) override;
-    void symCenter(::PetitPrince::Draw* d) override;
-    char* toString(::PetitPrince::Draw* d) override;
+    ::CORBA::Double area(::CORBA::Long id) override;
+    ::CORBA::Double perimeter(::CORBA::Long id) override;
+    void homothetie(::CORBA::Long id, ::CORBA::Double index) override;
+    void translation(::CORBA::Long id, ::CORBA::Double x, ::CORBA::Double y) override;
+    void rotation(::CORBA::Long id, ::CORBA::Double angle) override;
+    void symCenter(::CORBA::Long id) override;
+    void symAxial(::CORBA::Long id) override;
+    
+    void addDraw(::CORBA::Long pid, ::CORBA::Long cid) override;
+    
+    char* toString(::CORBA::Long id) override;
     
 private:
     CORBA::ORB_var _orb;

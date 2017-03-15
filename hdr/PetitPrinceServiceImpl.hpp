@@ -14,7 +14,11 @@
 #ifndef SERVICEDRAWIMPL_HPP
 #define SERVICEDRAWIMPL_HPP
 
-#include "ServiceDraw.hpp"
+#include "PetitPrince.hpp"
+
+#include <map>
+
+using namespace std;
 
 class PetitPrinceServiceImpl:
         virtual public POA_PetitPrince::PetitPrinceService,
@@ -25,17 +29,22 @@ public:
     PetitPrinceServiceImpl(const PetitPrinceServiceImpl& orig);
     PetitPrinceServiceImpl(CORBA::ORB_var orb);
     virtual ~PetitPrinceServiceImpl();
-
-
-    void pushDraw(::PetitPrince::Draw* d) override;
+    
+    ::CORBA::Long createLine(const char* author, const ::PetitPrince::Point& a, const ::PetitPrince::Point& b) override;
+    ::CORBA::Long createCircle(const char* author, const ::PetitPrince::Point& center, ::CORBA::Double ray) override;
+    ::CORBA::Long createEllipse(const char* author, const ::PetitPrince::Point& center, ::CORBA::Double long_ray, ::CORBA::Double short_ray) override;
+    ::CORBA::Long createPolygon(const char* author, const ::PetitPrince::PointSeq& pts) override;
+    
+    ::PetitPrince::LongSeq* getDraws(const char* author) override;
     void markDraw(::CORBA::Double mark, ::CORBA::Long id) override;
-    ::PetitPrince::Draw* getDraw(::CORBA::Long id) override;
-    ::PetitPrince::DrawSeq* draw_list() override;
-    void draw_list(const ::PetitPrince::DrawSeq& _v) override;
+    
 
 private:
     CORBA::ORB_var _orb;
-
+    long cpt = 0;
+    
+public:
+    static map<::CORBA::Long, ::PetitPrince::Draw*> _draw_list;
 };
 
 

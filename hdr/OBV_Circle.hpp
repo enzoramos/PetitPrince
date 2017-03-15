@@ -15,7 +15,7 @@
 #define OBV_CIRCLE_HPP
 
 #include "OBV_Draw.hpp"
-#include "ServiceDraw.hpp"
+#include "PetitPrince.hpp"
 
 #include <cmath>
 #include <math.h>
@@ -25,12 +25,11 @@ using namespace std;
 class Circle : public virtual Draw, public virtual ::OBV_PetitPrince::Circle {
 
 public:
-    Circle(::CORBA::Long id, char* author, ::PetitPrince::DrawSeq& inner_draws, ::CORBA::Double mark,
-        ::PetitPrince::Point center, ::CORBA::Double ray)
-            : Draw(id, author, inner_draws, mark),
-              _center(center), _ray(ray) {
+    Circle(::CORBA::Long id, char* author, ::PetitPrince::Point center, ::CORBA::Double ray)
+            : Draw(id, author, -1), _center(center), _ray(ray) {
     }
-    virtual ~Circle();
+    virtual ~Circle() {
+    }
     
 public:
     // operations from Draw

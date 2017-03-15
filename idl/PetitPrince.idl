@@ -1,0 +1,91 @@
+/*
+ *Auteur : E.Ramos, J.Bidet, J.Ramsamy
+ *Description : Ce module definie les services et les formes
+ */
+
+module PetitPrince {
+
+    struct Point {
+        double x;
+        double y;
+    };
+
+    valuetype Draw;
+
+    typedef sequence<Draw> DrawSeq;
+    typedef sequence<Point> PointSeq;
+
+    valuetype Draw {
+        readonly attribute long id;
+        readonly attribute string author;
+        attribute DrawSeq inner_draws;
+        attribute double mark;
+
+        double area();
+        double perimeter();
+        void homothetie(in double indice);
+        void translation(in double x, in double y);
+        void rotation(in double angle);
+        void symCenter();
+        void symAxial();
+
+        string toString();
+    };
+
+    valuetype Line : Draw {
+        attribute Point start;
+        attribute Point end;
+    };
+
+    valuetype Circle : Draw {
+        attribute Point center;
+        attribute double ray;
+    };
+    
+    valuetype Ellipse : Draw {
+        attribute Point center;
+        attribute double long_ray;
+        attribute double short_ray;
+    };
+
+    valuetype Polygon : Draw {
+        attribute PointSeq points_list;
+    };
+
+    typedef sequence<long> LongSeq;
+
+    interface DrawService {
+        exception NonApplicable{string msg;};
+        exception UnexpectedDraw{string msg;};
+
+        double area(in long id)
+            raises(NonApplicable);
+        double perimeter(in long id)
+            raises(NonApplicable);
+        void homothetie(in long id, in double index);
+        void translation(in long id, in double x, in double y);
+        void rotation(in long id, in double angle);
+        void symCenter(in long id);
+        void symAxial(in long id);
+        void addDraw(in long pid, in long cid)
+            raises(UnexpectedDraw);
+
+        string toString(in long id);
+    };
+
+    interface PetitPrinceService {
+        exception InvalidDrawParams{string msg;};
+        
+        long createLine(in string author, in Point a, in Point b)
+            raises(InvalidDrawParams);
+        long createCircle(in string author, in Point center, in double ray)
+            raises(InvalidDrawParams);
+        long createEllipse(in string author, in Point center, in double long_ray, in double short_ray)
+            raises(InvalidDrawParams);
+        long createPolygon(in string author, in PointSeq pts)
+            raises(InvalidDrawParams);
+        LongSeq getDraws(in string author);
+        void markDraw(in double mark, in long id);
+    };
+
+};
