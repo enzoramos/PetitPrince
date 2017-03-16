@@ -17,7 +17,6 @@
 #include "OBV_Ellipse.hpp"
 #include "OBV_Polygon.hpp"
 
-#include <iostream>
 
 using namespace std;
 
@@ -37,7 +36,6 @@ PetitPrinceServiceImpl::~PetitPrinceServiceImpl() {
 
 
 ::CORBA::Long PetitPrinceServiceImpl::createLine(const char* author, const ::PetitPrince::Point& a, const ::PetitPrince::Point& b) {
-    cout << "author: " << author << endl;
     if(_draw_list.insert(make_pair(PetitPrinceServiceImpl::cpt, new Line(PetitPrinceServiceImpl::cpt, strcpy(new char[strlen(author)+1], author), a, b))).second) {
         return PetitPrinceServiceImpl::cpt++;
     }

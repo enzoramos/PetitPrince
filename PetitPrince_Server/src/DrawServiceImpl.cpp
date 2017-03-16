@@ -14,8 +14,6 @@
 #include "DrawServiceImpl.hpp"
 #include "PetitPrinceServiceImpl.hpp"
 
-#include <iostream>
-
 using namespace std;
 
 

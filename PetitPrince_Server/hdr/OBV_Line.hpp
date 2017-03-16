@@ -18,7 +18,6 @@
 #include "PetitPrince.hpp"
 
 #include <cmath>
-#include <iostream>
 
 using namespace std;
 
@@ -29,15 +28,7 @@ public:
             : Draw(id, author, -1), _start(start), _end(end) {
     }
     virtual ~Line() {
-    }
-    /*
-    char* author() override {}
-    ::CORBA::Long id() override {}
-    void inner_draws(const ::PetitPrince::DrawSeq& _v) override {}
-    ::PetitPrince::DrawSeq* inner_draws() override {}
-    ::CORBA::Double mark() override {}
-    void mark(::CORBA::Double _v) override {}
-    */    
+    } 
     
 public:
     // operations from Draw
@@ -81,8 +72,6 @@ public:
     }
 
     char* toString() override {
-        cout << "toString Line" << endl;
-        cout << "test:" << Draw::toString() << endl;
         stringstream stream;
         stream << Draw::toString() << "(Line((" << _start.x << "," << _start.y << "),(" << _end.x << "," << _end.y << ")))";
         return strcpy(new char[stream.str().size()+1], stream.str().c_str());

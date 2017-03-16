@@ -83,6 +83,7 @@ int main(int argc, char** argv) {
         PortableServer::POAManager_var poamanager = rootPOA->the_POAManager();
         poamanager->activate();
         cout << "The server is ready. Awaiting for incoming requests..." << endl;
+        
         /*
         ppsImpl->createLine("Batard1", {0, 0}, {7, 1});
         ppsImpl->createLine("Batard2", {0, 0}, {7, 2});

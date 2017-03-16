@@ -18,7 +18,6 @@
 
 #include <omniORB4/CORBA.h>
 #include <sstream>
-#include <iostream>
 
 using namespace std;
 
