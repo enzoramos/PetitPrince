@@ -17,6 +17,10 @@
 #include "OBV_Ellipse.hpp"
 #include "OBV_Polygon.hpp"
 
+#include <iostream>
+
+using namespace std;
+
 
 PetitPrinceServiceImpl::PetitPrinceServiceImpl() {
 }
@@ -24,7 +28,7 @@ PetitPrinceServiceImpl::PetitPrinceServiceImpl() {
 PetitPrinceServiceImpl::PetitPrinceServiceImpl(const PetitPrinceServiceImpl& orig) {
 }
 
-PetitPrinceServiceImpl::PetitPrinceServiceImpl(CORBA::ORB_var orb) {
+PetitPrinceServiceImpl::PetitPrinceServiceImpl(CORBA::ORB_var orb): _orb(orb) {
 }
 
 PetitPrinceServiceImpl::~PetitPrinceServiceImpl() {
@@ -33,28 +37,29 @@ PetitPrinceServiceImpl::~PetitPrinceServiceImpl() {
 
 
 ::CORBA::Long PetitPrinceServiceImpl::createLine(const char* author, const ::PetitPrince::Point& a, const ::PetitPrince::Point& b) {
-    if(_draw_list.insert(make_pair(PetitPrinceServiceImpl::cpt, new Line(PetitPrinceServiceImpl::cpt, const_cast<char*>(author), a, b))).second) {
+    cout << "author: " << author << endl;
+    if(_draw_list.insert(make_pair(PetitPrinceServiceImpl::cpt, new Line(PetitPrinceServiceImpl::cpt, strcpy(new char[strlen(author)+1], author), a, b))).second) {
         return PetitPrinceServiceImpl::cpt++;
     }
     throw(PetitPrince::PetitPrinceService::InvalidDrawParams("Parameters invalid!"));
 }
 
 ::CORBA::Long PetitPrinceServiceImpl::createCircle(const char* author, const ::PetitPrince::Point& center, ::CORBA::Double ray) {
-    if(_draw_list.insert(make_pair(PetitPrinceServiceImpl::cpt, new Circle(PetitPrinceServiceImpl::cpt, const_cast<char*>(author), center, ray))).second) {
+    if(_draw_list.insert(make_pair(PetitPrinceServiceImpl::cpt, new Circle(PetitPrinceServiceImpl::cpt, strcpy(new char[strlen(author)+1], author), center, ray))).second) {
         return PetitPrinceServiceImpl::cpt++;
     }
     throw(PetitPrince::PetitPrinceService::InvalidDrawParams("Parameters invalid!"));
 }
 
 ::CORBA::Long PetitPrinceServiceImpl::createEllipse(const char* author, const ::PetitPrince::Point& center, ::CORBA::Double long_ray, ::CORBA::Double short_ray) {
-    if(_draw_list.insert(make_pair(PetitPrinceServiceImpl::cpt, new Ellipse(PetitPrinceServiceImpl::cpt, const_cast<char*>(author), center, long_ray, short_ray))).second) {
+    if(_draw_list.insert(make_pair(PetitPrinceServiceImpl::cpt, new Ellipse(PetitPrinceServiceImpl::cpt, strcpy(new char[strlen(author)+1], author), center, long_ray, short_ray))).second) {
         return PetitPrinceServiceImpl::cpt++;
     }
     throw(PetitPrince::PetitPrinceService::InvalidDrawParams("Parameters invalid!"));
 }
 
 ::CORBA::Long PetitPrinceServiceImpl::createPolygon(const char* author, const ::PetitPrince::PointSeq& pts) {
-    if(_draw_list.insert(make_pair(PetitPrinceServiceImpl::cpt, new Polygon(PetitPrinceServiceImpl::cpt, const_cast<char*>(author), const_cast<::PetitPrince::PointSeq&>(pts)))).second) {
+    if(_draw_list.insert(make_pair(PetitPrinceServiceImpl::cpt, new Polygon(PetitPrinceServiceImpl::cpt, strcpy(new char[strlen(author)+1], author), const_cast<::PetitPrince::PointSeq&>(pts)))).second) {
         return PetitPrinceServiceImpl::cpt++;
     }
     throw(PetitPrince::PetitPrinceService::InvalidDrawParams("Parameters invalid!"));
@@ -63,9 +68,10 @@ PetitPrinceServiceImpl::~PetitPrinceServiceImpl() {
 ::PetitPrince::LongSeq* PetitPrinceServiceImpl::getDraws(const char* author) {
     ::PetitPrince::LongSeq* ls = new ::PetitPrince::LongSeq();
     for(auto elem : _draw_list) {
-        if(elem.second->author() == author) {
-            ls->length(ls->length()+1);
-            (*ls)[ls->length()-1] = elem.first;
+        if(strcmp(elem.second->author(), author) == 0) {
+            int l = ls->length();
+            ls->length(l+1);
+            (*ls)[l] = elem.first;
         }
     }
     return ls;

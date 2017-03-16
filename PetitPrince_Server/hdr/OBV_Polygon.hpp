@@ -43,11 +43,11 @@ public:
     }
     ::CORBA::Double perimeter() override {
         double perim = 0;
-        if(_points_list->length() > 2){
-            for(int i = 1; i < _points_list->length();i++){
+        if(_points_list.length() > 2){
+            for(int i = 1; i < _points_list.length();i++){
                 perim += dist(_points_list[i-1],_points_list[i]);
             }
-            perim+=dist(_points_list[_points_list->length()-1],_points_list[0]);
+            perim+=dist(_points_list[_points_list.length()-1],_points_list[0]);
         }
         return perim;
     }
@@ -83,7 +83,6 @@ public:
         rotation(180);
     }
     void symAxial() override {
-        // TODO
     }
 
     char* toString() override {
@@ -95,7 +94,7 @@ public:
         }
         stringstream tmp;
         tmp << Draw::toString() << "(Polygon(" << stream.str() << "))";
-        return const_cast<char*>(tmp.str().c_str());
+        return strcpy(new char[tmp.str().size()+1], tmp.str().c_str());
     }
 
     // attributes from Polygon
@@ -107,11 +106,13 @@ public:
     }
     
 private:
-    ::PetitPrince::PointSeq _points_list;
-
     double dist(::PetitPrince::Point start, ::PetitPrince::Point end){
         return sqrt(pow((end.x-start.x),2)+pow((end.y-start.y),2));
     }
+    
+private:
+    ::PetitPrince::PointSeq _points_list;
+
 };
 
 

@@ -39,26 +39,23 @@ public:
     }
     void homothetie(::CORBA::Double indice) override {
         _short_ray *= indice;
-        _long_ray  *= indice; 
+        _long_ray  *= indice;
     }
     void translation(::CORBA::Double x, ::CORBA::Double y) override {
         _center.x += x;
         _center.y += y;
     }
     void rotation(::CORBA::Double angle) override {
-        // TODO
     }
     void symCenter() override {
-        // TODO
     }
     void symAxial() override {
-        // TODO
     }
 
     char* toString() override {
         stringstream stream;
         stream << Draw::toString() << "(Ellipse(center: (" << _center.x << "," << _center.y << "), long_ray: " << _long_ray << ", short_ray: " << _short_ray << "))";
-        return const_cast<char*>(stream.str().c_str());
+        return strcpy(new char[stream.str().size()+1], stream.str().c_str());
     }
 
     // attributes from Ellipse

@@ -43,20 +43,18 @@ int main(int argc, char** argv) {
         CORBA::Object_var rootContextObj = orb->resolve_initial_references("NameService");
         CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow(rootContextObj.in());
         
-        CosNaming::Name name;
-        name.length(1);
-        name[0].id = (const char *) "PetitPrinceService";
-        name[0].kind = (const char *) "";
-        
-        ::CORBA::Object_var managerObj = nc->resolve(name);
+        CosNaming::Name pps;
+        pps.length(1);
+        pps[0].id = (const char *) "PetitPrinceService";
+        pps[0].kind = (const char *) "";
+        ::CORBA::Object_var managerObj = nc->resolve(pps);
         ::PetitPrince::PetitPrinceService_var pps_manager = ::PetitPrince::PetitPrinceService::_narrow(managerObj.in());
         
-        name;
-        name.length(1);
-        name[0].id = (const char *) "DrawService";
-        name[0].kind = (const char *) "";
-        
-        managerObj = nc->resolve(name);
+        CosNaming::Name ds;
+        ds.length(1);
+        ds[0].id = (const char *) "DrawService";
+        ds[0].kind = (const char *) "";
+        managerObj = nc->resolve(ds);
         ::PetitPrince::DrawService_var ds_manager = ::PetitPrince::DrawService::_narrow(managerObj.in());
         
         // TODO:
@@ -67,13 +65,13 @@ int main(int argc, char** argv) {
                 cout << "----------------------------" << endl;
                 try {
                     // Invoke first remote method
-                    long b1 = pps_manager->createLine("Batard1", {0, 0}, {7, 1});
-                    long b2 = pps_manager->createLine("Batard2", {0, 0}, {7, 2});
-                    long b3 = pps_manager->createLine("Batard3", {0, 0}, {7, 3});
-                    long b4 = pps_manager->createLine("Batard4", {0, 0}, {7, 4});
+                    long b1 = pps_manager->createLine((char*)"Batard1", {0, 0}, {7, 1});
+                    long b2 = pps_manager->createLine((char*)"Batard2", {0, 0}, {7, 2});
+                    long b3 = pps_manager->createLine((char*)"Batard3", {0, 0}, {7, 3});
+                    long b4 = pps_manager->createLine((char*)"Batard1", {0, 0}, {7, 4});
                     
                     ::PetitPrince::LongSeq* s = pps_manager->getDraws("Batard1");
-                    cout << longSeqToString(s) << endl;
+                    cout << "longSeq: " << longSeqToString(s) << endl;
                     long l = s->length();
                     for(int i=0; i<l; i++) {
                         cout << ds_manager->toString((*s)[i]) << endl;
@@ -81,7 +79,7 @@ int main(int argc, char** argv) {
                     pps_manager->markDraw(2.5, b1);
                     
                     s = pps_manager->getDraws("Batard1");
-                    cout << longSeqToString(s) << endl;
+                    cout << "longSeq: " << longSeqToString(s) << endl;
                     l = s->length();
                     for(int i=0; i<l; i++) {
                         cout << ds_manager->toString((*s)[i]) << endl;

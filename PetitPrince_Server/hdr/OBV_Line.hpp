@@ -18,6 +18,7 @@
 #include "PetitPrince.hpp"
 
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
@@ -75,16 +76,16 @@ public:
     }
     void symCenter() override {
         rotation(180);
-        // TODO
     }
     void symAxial() override {
-        // TODO
     }
 
     char* toString() override {
+        cout << "toString Line" << endl;
+        cout << "test:" << Draw::toString() << endl;
         stringstream stream;
         stream << Draw::toString() << "(Line((" << _start.x << "," << _start.y << "),(" << _end.x << "," << _end.y << ")))";
-        return const_cast<char*>(stream.str().c_str());
+        return strcpy(new char[stream.str().size()+1], stream.str().c_str());
     }
 
     // attributes from Line

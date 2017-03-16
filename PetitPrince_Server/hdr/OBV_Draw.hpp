@@ -18,6 +18,7 @@
 
 #include <omniORB4/CORBA.h>
 #include <sstream>
+#include <iostream>
 
 using namespace std;
 
@@ -54,7 +55,7 @@ public:
     char* toString() override {
         stringstream stream;
         stream << "Draw(id: " << _id  <<  ", author: "  <<  _author  <<  ", mark: "  <<  _mark  <<  ")";
-        return const_cast<char*>(stream.str().c_str());
+        return strcpy(new char[stream.str().size()+1], stream.str().c_str());
     }
     
     void _add_ref() override {}

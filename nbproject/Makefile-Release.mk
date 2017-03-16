@@ -35,12 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main_client.o \
-	${OBJECTDIR}/main_server.o \
-	${OBJECTDIR}/src/DrawServiceImpl.o \
-	${OBJECTDIR}/src/PetitPrinceServiceImpl.o \
-	${OBJECTDIR}/src/ServiceDraw_DynStub.o \
-	${OBJECTDIR}/src/ServiceDraw_Stub.o
+	${OBJECTDIR}/useless_main.o
 
 
 # C Compiler Flags
@@ -67,38 +62,15 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/main_client.o: main_client.cpp 
+${OBJECTDIR}/useless_main.o: useless_main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_client.o main_client.cpp
-
-${OBJECTDIR}/main_server.o: main_server.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_server.o main_server.cpp
-
-${OBJECTDIR}/src/DrawServiceImpl.o: src/DrawServiceImpl.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/DrawServiceImpl.o src/DrawServiceImpl.cpp
-
-${OBJECTDIR}/src/PetitPrinceServiceImpl.o: src/PetitPrinceServiceImpl.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/PetitPrinceServiceImpl.o src/PetitPrinceServiceImpl.cpp
-
-${OBJECTDIR}/src/ServiceDraw_DynStub.o: src/ServiceDraw_DynStub.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ServiceDraw_DynStub.o src/ServiceDraw_DynStub.cpp
-
-${OBJECTDIR}/src/ServiceDraw_Stub.o: src/ServiceDraw_Stub.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Ihdr -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ServiceDraw_Stub.o src/ServiceDraw_Stub.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/useless_main.o useless_main.cpp
 
 # Subprojects
 .build-subprojects:
+	cd PetitPrince_Server && ${MAKE}  -f Makefile CONF=Release
+	cd PetitPrince_Client && ${MAKE}  -f Makefile CONF=Release
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -107,6 +79,8 @@ ${OBJECTDIR}/src/ServiceDraw_Stub.o: src/ServiceDraw_Stub.cpp
 
 # Subprojects
 .clean-subprojects:
+	cd PetitPrince_Server && ${MAKE}  -f Makefile CONF=Release clean
+	cd PetitPrince_Client && ${MAKE}  -f Makefile CONF=Release clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

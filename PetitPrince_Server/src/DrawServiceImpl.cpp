@@ -25,6 +25,9 @@ DrawServiceImpl::DrawServiceImpl(){
 DrawServiceImpl::DrawServiceImpl(const DrawServiceImpl& orig){
 }
 
+DrawServiceImpl::DrawServiceImpl(CORBA::ORB_var orb): _orb(orb) {
+}
+
 DrawServiceImpl::~DrawServiceImpl(){
 }
 

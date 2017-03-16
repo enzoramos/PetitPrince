@@ -23,7 +23,7 @@ AS=as
 # Macros
 CND_PLATFORM=GNU-Linux
 CND_DLIB_EXT=so
-CND_CONF=Debug
+CND_CONF=Release
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -35,7 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/useless_main.o
+	${OBJECTDIR}/main_client.o \
+	${OBJECTDIR}/src/PetitPrince_DynStub.o \
+	${OBJECTDIR}/src/PetitPrince_Stub.o
 
 
 # C Compiler Flags
@@ -56,31 +58,37 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince_client
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince_client: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince_client ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/useless_main.o: useless_main.cpp 
+${OBJECTDIR}/main_client.o: main_client.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/useless_main.o useless_main.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_client.o main_client.cpp
+
+${OBJECTDIR}/src/PetitPrince_DynStub.o: src/PetitPrince_DynStub.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/PetitPrince_DynStub.o src/PetitPrince_DynStub.cpp
+
+${OBJECTDIR}/src/PetitPrince_Stub.o: src/PetitPrince_Stub.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/PetitPrince_Stub.o src/PetitPrince_Stub.cpp
 
 # Subprojects
 .build-subprojects:
-	cd PetitPrince_Server && ${MAKE}  -f Makefile CONF=Debug
-	cd PetitPrince_Client && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/petitprince_client
 
 # Subprojects
 .clean-subprojects:
-	cd PetitPrince_Server && ${MAKE}  -f Makefile CONF=Debug clean
-	cd PetitPrince_Client && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl
