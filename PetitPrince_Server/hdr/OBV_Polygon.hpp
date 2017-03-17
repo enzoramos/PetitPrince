@@ -37,11 +37,6 @@ public:
             : Draw(id, author, -1), _points_list(points_list) {
     }
     virtual ~Polygon() {
-        int l = _points_list.length();
-        for(int i=0; i<l; i++) {
-            delete _points_list[i];
-        }
-        delete _points_list;
     }
     
 public:

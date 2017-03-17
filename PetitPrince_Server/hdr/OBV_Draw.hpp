@@ -38,11 +38,6 @@ protected:
             : _id(id), _author(author), _mark(mark) {
     }
     virtual ~Draw() {
-        int l = _inner_draws.length();
-        for(int i=0; i<l; i++) {
-            delete _inner_draws[i];
-        }
-        delete _inner_draws;
     }
 
     
