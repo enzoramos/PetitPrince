@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.cpp
- * Author: jerem
+/*!
+ * \file main_client.cpp
+ * \author Enzo Ramos
+ * \version 1.0
  *
- * Created on 6 mars 2017, 20:06
+ * \brief Define the client main.
+ * 
  */
 
 #include "PetitPrinceServiceImpl.hpp"
