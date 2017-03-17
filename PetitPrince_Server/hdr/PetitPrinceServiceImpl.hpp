@@ -1,6 +1,6 @@
 /*!
  * \file PetitPrinceServiceImpl.hpp
- * \author Enzo Ramos
+ * \author Jeremy Bidet
  * \version 1.0
  *
  * \brief Define PetitPrinceService interface implementation.
