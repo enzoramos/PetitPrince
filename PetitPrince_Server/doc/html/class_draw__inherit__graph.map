@@ -1,0 +1,6 @@
+<map id="Draw" name="Draw">
+<area shape="rect" id="node5" href="$class_circle.html" title="Circle" alt="" coords="76,155,132,181"/>
+<area shape="rect" id="node6" href="$class_ellipse.html" title="Ellipse" alt="" coords="156,155,217,181"/>
+<area shape="rect" id="node7" href="$class_line.html" title="This class is the class that define the implementation of a circle. " alt="" coords="242,155,289,181"/>
+<area shape="rect" id="node8" href="$class_polygon.html" title="Polygon" alt="" coords="313,155,383,181"/>
+</map>

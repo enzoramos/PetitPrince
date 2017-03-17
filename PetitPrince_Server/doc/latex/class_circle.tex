@@ -1,0 +1,582 @@
+\hypertarget{class_circle}{}\section{Circle Class Reference}
+\label{class_circle}\index{Circle@{Circle}}
+
+
+{\ttfamily \#include $<$O\+B\+V\+\_\+\+Circle.\+hpp$>$}
+
+
+
+Inheritance diagram for Circle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_circle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Circle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_circle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_circle}{Circle} $\ast$ \hyperlink{class_circle_ae284325f0ac7647d6e137e8a3f507f38}{\+\_\+ptr\+\_\+type}
+\item 
+typedef \hyperlink{_petit_prince_8hpp_ac2106cf1632c65be064ea3929f62047b}{Circle\+\_\+var} \hyperlink{class_circle_a193392939eca82b9195367ac5be1461a}{\+\_\+var\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_circle_a2fa6fdcd4c23644df468dfa48c519611}{Circle} (\+::C\+O\+R\+B\+A\+::\+Long \hyperlink{class_draw_a1bf27c5a59da9002d55936c947dce2cc}{id}, char $\ast$\hyperlink{class_draw_a4781c654db63e069c8c5be017f6ccc34}{author},\+::Petit\+Prince\+::\+Point \hyperlink{class_circle_a3c50bcfe91b3c635a92bdab41a52c8b6}{center},\+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_circle_ac5d62ae3368cd16552b77454095bb618}{ray})
+\begin{DoxyCompactList}\small\item\em The public constructor of the class \hyperlink{class_circle}{Circle}. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_circle_ad02555ca63f3574193b958c49f81d178}{$\sim$\+Circle} ()
+\item 
+\+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_circle_a1bed1e5042fa7021ed397334ea2e4338}{area} () override
+\begin{DoxyCompactList}\small\item\em This method calculate the area of the draw, if applicable. \end{DoxyCompactList}\item 
+\+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_circle_a17053c2408a3f9e951531ec11722c06a}{perimeter} () override
+\item 
+void \hyperlink{class_circle_a288221daec16e6d4b0b5b0816935451b}{homothetie} (\+::C\+O\+R\+B\+A\+::\+Double indice) override
+\begin{DoxyCompactList}\small\item\em This method apply an homothetie to the draw. \end{DoxyCompactList}\item 
+void \hyperlink{class_circle_ad7aed2e09cb4cf0f370d8cc137a6e4ea}{translation} (\+::C\+O\+R\+B\+A\+::\+Double x,\+::C\+O\+R\+B\+A\+::\+Double y) override
+\begin{DoxyCompactList}\small\item\em This method apply a translation to the draw. \end{DoxyCompactList}\item 
+void \hyperlink{class_circle_acf614416a1269c430cf180fe78ffb1c4}{rotation} (\+::C\+O\+R\+B\+A\+::\+Double angle) override
+\begin{DoxyCompactList}\small\item\em This method apply a rotation to the draw. \end{DoxyCompactList}\item 
+void \hyperlink{class_circle_a4bbc6fc3d759edda13e253240e8dcacf}{sym\+Center} () override
+\begin{DoxyCompactList}\small\item\em This method apply a central symetry to the draw. \end{DoxyCompactList}\item 
+void \hyperlink{class_circle_a4b74442abd9f3f76bbb5655b3003beec}{sym\+Axial} () override
+\begin{DoxyCompactList}\small\item\em This method apply a axial symetry to the draw. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_circle_a5672abf3a344e988acf8b1eec13512b9}{to\+String} () override
+\begin{DoxyCompactList}\small\item\em Generate a user-\/friendly representation of this draw. \end{DoxyCompactList}\item 
+\+::Petit\+Prince\+::\+Point \hyperlink{class_circle_a3c50bcfe91b3c635a92bdab41a52c8b6}{center} () override
+\item 
+void \hyperlink{class_circle_ae1d58af117d8228a91f0aabd8c92a97e}{center} (const \+::Petit\+Prince\+::\+Point \&\+\_\+v) override
+\item 
+\+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_circle_ac5d62ae3368cd16552b77454095bb618}{ray} () override
+\item 
+void \hyperlink{class_circle_ae29e5eb504877615d1268cfac04bcb12}{ray} (\+::C\+O\+R\+B\+A\+::\+Double \+\_\+v) override
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$ \hyperlink{class_circle_a77491043677d6e55c0647af478178bb3}{\+\_\+copy\+\_\+value} ()
+\item 
+virtual \hyperlink{struct_point}{Point} \hyperlink{class_circle_a7e6386f745d6255a2ddec2a53ff514b7}{center} ()=0
+\item 
+virtual void \hyperlink{class_circle_a9c4d4e9ec2a2e59f0c8d0c3f36e10edc}{center} (const \+::Petit\+Prince\+::\+Point \&\+\_\+v)=0
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_circle_a1ddff289fde40dc6c25963c0c7b8d985}{ray} ()=0
+\item 
+virtual void \hyperlink{class_circle_a850aad5e97721700746efd3d82af1487}{ray} (\+::C\+O\+R\+B\+A\+::\+Double \+\_\+v)=0
+\item 
+virtual const char $\ast$ \hyperlink{class_circle_aef9e3dad8cb215413d3d9371c21312ba}{\+\_\+\+N\+P\+\_\+repository\+Id} () const 
+\item 
+virtual const char $\ast$ \hyperlink{class_circle_a2b46a87a83e6e4953bf3cbd507a99e26}{\+\_\+\+N\+P\+\_\+repository\+Id} (\+::C\+O\+R\+B\+A\+::\+U\+Long \&\+\_\+hashval) const 
+\item 
+virtual const \+\_\+omni\+\_\+\+Value\+Ids $\ast$ \hyperlink{class_circle_aaf148f2aa3a4bc47c990850800897ff9}{\+\_\+\+N\+P\+\_\+truncatable\+Ids} () const 
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Boolean \hyperlink{class_circle_a5c0763ec17a208a2e25796b7714975cf}{\+\_\+\+N\+P\+\_\+custom} () const 
+\item 
+virtual void $\ast$ \hyperlink{class_circle_a4bcb25e2b518b4674bf81439c8f4ef6a}{\+\_\+ptr\+To\+Value} (const char $\ast$\hyperlink{class_draw_a1bf27c5a59da9002d55936c947dce2cc}{id})
+\item 
+virtual void \hyperlink{class_circle_af2d05d9a1c7ac75312e9e778b55a5625}{\+\_\+\+P\+R\+\_\+marshal\+\_\+state} (cdr\+Stream \&) const 
+\item 
+virtual void \hyperlink{class_circle_a7756078d5d749f39cd6620de130cfd0e}{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state} (cdr\+Stream \&)
+\item 
+virtual void \hyperlink{class_circle_a5a2cf4d7bb6f06052c34ecf0467cbe69}{\+\_\+\+P\+R\+\_\+copy\+\_\+state} (\hyperlink{class_circle}{Circle} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_draw_a5164256572b3c4123ceecd1897c248dd}{\+\_\+ptr\+\_\+type} \hyperlink{class_circle_a264dbd97a8e3819388a008d722aab612}{\+\_\+downcast} (\+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$)
+\item 
+static void \hyperlink{class_circle_a6b682a01a8bf70dad668ec3f1fc1c5ef}{\+\_\+\+N\+P\+\_\+marshal} (\hyperlink{class_circle}{Circle} $\ast$, cdr\+Stream \&)
+\item 
+static \hyperlink{class_circle}{Circle} $\ast$ \hyperlink{class_circle_ae8e42637a424b531bcba7cb48fc398ef}{\+\_\+\+N\+P\+\_\+unmarshal} (cdr\+Stream \&)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_petit_prince_8hpp_a5f7bf7cddb608c2aad7c95f55f8a33c5}{\+\_\+core\+\_\+attr} const char $\ast$ \hyperlink{class_circle_a3cc85c810268073e3c3f0519aa3b12a0}{\+\_\+\+P\+D\+\_\+repo\+Id}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_circle_ad1ecfcfc7bf34529c6a6d6c448bf70fe}{Circle} ()
+\item 
+virtual \hyperlink{class_circle_ad02555ca63f3574193b958c49f81d178}{$\sim$\+Circle} ()
+\item 
+\hyperlink{class_circle_ad1ecfcfc7bf34529c6a6d6c448bf70fe}{Circle} ()
+\item 
+virtual \hyperlink{class_circle_ad02555ca63f3574193b958c49f81d178}{$\sim$\+Circle} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Circle@{Circle}!\+\_\+ptr\+\_\+type@{\+\_\+ptr\+\_\+type}}
+\index{\+\_\+ptr\+\_\+type@{\+\_\+ptr\+\_\+type}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+ptr\+\_\+type}{_ptr_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Circle}$\ast$ {\bf Circle\+::\+\_\+ptr\+\_\+type}}\hypertarget{class_circle_ae284325f0ac7647d6e137e8a3f507f38}{}\label{class_circle_ae284325f0ac7647d6e137e8a3f507f38}
+
+
+Definition at line 526 of file Petit\+Prince.\+hpp.
+
+\index{Circle@{Circle}!\+\_\+var\+\_\+type@{\+\_\+var\+\_\+type}}
+\index{\+\_\+var\+\_\+type@{\+\_\+var\+\_\+type}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+var\+\_\+type}{_var_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Circle\+\_\+var} {\bf Circle\+::\+\_\+var\+\_\+type}}\hypertarget{class_circle_a193392939eca82b9195367ac5be1461a}{}\label{class_circle_a193392939eca82b9195367ac5be1461a}
+
+
+Definition at line 527 of file Petit\+Prince.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Circle@{Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{Circle(\+::\+C\+O\+R\+B\+A\+::\+Long id, char $\ast$author,\+::\+Petit\+Prince\+::\+Point center,\+::\+C\+O\+R\+B\+A\+::\+Double ray)}{Circle(::CORBA::Long id, char *author,::PetitPrince::Point center,::CORBA::Double ray)}}]{\setlength{\rightskip}{0pt plus 5cm}Circle\+::\+Circle (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Long}]{id, }
+\item[{char $\ast$}]{author, }
+\item[{\+::Petit\+Prince\+::\+Point}]{center, }
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{ray}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_circle_a2fa6fdcd4c23644df468dfa48c519611}{}\label{class_circle_a2fa6fdcd4c23644df468dfa48c519611}
+
+
+The public constructor of the class \hyperlink{class_circle}{Circle}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the draw (auto-\/generated) \\
+\hline
+{\em author} & the author of the draw \\
+\hline
+{\em center} & the center point for this circle \\
+\hline
+{\em ray} & the ray for this circle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!````~Circle@{$\sim$\+Circle}}
+\index{````~Circle@{$\sim$\+Circle}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{$\sim$\+Circle()}{~Circle()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Circle\+::$\sim$\+Circle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_circle_ad02555ca63f3574193b958c49f81d178}{}\label{class_circle_ad02555ca63f3574193b958c49f81d178}
+
+
+Definition at line 40 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{Circle()}{Circle()}}]{\setlength{\rightskip}{0pt plus 5cm}Circle\+::\+Circle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_circle_ad1ecfcfc7bf34529c6a6d6c448bf70fe}{}\label{class_circle_ad1ecfcfc7bf34529c6a6d6c448bf70fe}
+\index{Circle@{Circle}!````~Circle@{$\sim$\+Circle}}
+\index{````~Circle@{$\sim$\+Circle}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{$\sim$\+Circle()}{~Circle()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Circle\+::$\sim$\+Circle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_circle_ad02555ca63f3574193b958c49f81d178}{}\label{class_circle_ad02555ca63f3574193b958c49f81d178}
+\index{Circle@{Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{Circle()}{Circle()}}]{\setlength{\rightskip}{0pt plus 5cm}Circle\+::\+Circle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_circle_ad1ecfcfc7bf34529c6a6d6c448bf70fe}{}\label{class_circle_ad1ecfcfc7bf34529c6a6d6c448bf70fe}
+\index{Circle@{Circle}!````~Circle@{$\sim$\+Circle}}
+\index{````~Circle@{$\sim$\+Circle}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{$\sim$\+Circle()}{~Circle()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Circle\+::$\sim$\+Circle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_circle_ad02555ca63f3574193b958c49f81d178}{}\label{class_circle_ad02555ca63f3574193b958c49f81d178}
+
+
+\subsection{Member Function Documentation}
+\index{Circle@{Circle}!\+\_\+copy\+\_\+value@{\+\_\+copy\+\_\+value}}
+\index{\+\_\+copy\+\_\+value@{\+\_\+copy\+\_\+value}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+copy\+\_\+value()}{_copy_value()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Value\+Base$\ast$ Circle\+::\+\_\+copy\+\_\+value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_circle_a77491043677d6e55c0647af478178bb3}{}\label{class_circle_a77491043677d6e55c0647af478178bb3}
+\index{Circle@{Circle}!\+\_\+downcast@{\+\_\+downcast}}
+\index{\+\_\+downcast@{\+\_\+downcast}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+downcast(\+::\+C\+O\+R\+B\+A\+::\+Value\+Base $\ast$)}{_downcast(::CORBA::ValueBase *)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \+\_\+ptr\+\_\+type} Circle\+::\+\_\+downcast (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_circle_a264dbd97a8e3819388a008d722aab612}{}\label{class_circle_a264dbd97a8e3819388a008d722aab612}
+\index{Circle@{Circle}!\+\_\+\+N\+P\+\_\+custom@{\+\_\+\+N\+P\+\_\+custom}}
+\index{\+\_\+\+N\+P\+\_\+custom@{\+\_\+\+N\+P\+\_\+custom}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+custom() const }{_NP_custom() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Boolean Circle\+::\+\_\+\+N\+P\+\_\+custom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_circle_a5c0763ec17a208a2e25796b7714975cf}{}\label{class_circle_a5c0763ec17a208a2e25796b7714975cf}
+\index{Circle@{Circle}!\+\_\+\+N\+P\+\_\+marshal@{\+\_\+\+N\+P\+\_\+marshal}}
+\index{\+\_\+\+N\+P\+\_\+marshal@{\+\_\+\+N\+P\+\_\+marshal}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+marshal(\+Circle $\ast$, cdr\+Stream \&)}{_NP_marshal(Circle *, cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Circle\+::\+\_\+\+N\+P\+\_\+marshal (
+\begin{DoxyParamCaption}
+\item[{{\bf Circle} $\ast$}]{, }
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_circle_a6b682a01a8bf70dad668ec3f1fc1c5ef}{}\label{class_circle_a6b682a01a8bf70dad668ec3f1fc1c5ef}
+\index{Circle@{Circle}!\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}}
+\index{\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+repository\+Id() const }{_NP_repositoryId() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Circle\+::\+\_\+\+N\+P\+\_\+repository\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_circle_aef9e3dad8cb215413d3d9371c21312ba}{}\label{class_circle_aef9e3dad8cb215413d3d9371c21312ba}
+
+
+Reimplemented from \hyperlink{class_draw_a90d2c0a9b6aed68ca30ea2a7187317dc}{Draw}.
+
+\index{Circle@{Circle}!\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}}
+\index{\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+repository\+Id(\+::\+C\+O\+R\+B\+A\+::\+U\+Long \&\+\_\+hashval) const }{_NP_repositoryId(::CORBA::ULong &_hashval) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Circle\+::\+\_\+\+N\+P\+\_\+repository\+Id (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+U\+Long \&}]{\+\_\+hashval}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_circle_a2b46a87a83e6e4953bf3cbd507a99e26}{}\label{class_circle_a2b46a87a83e6e4953bf3cbd507a99e26}
+
+
+Reimplemented from \hyperlink{class_draw_ae24df04b0f119c2fb6fd525a041f081d}{Draw}.
+
+\index{Circle@{Circle}!\+\_\+\+N\+P\+\_\+truncatable\+Ids@{\+\_\+\+N\+P\+\_\+truncatable\+Ids}}
+\index{\+\_\+\+N\+P\+\_\+truncatable\+Ids@{\+\_\+\+N\+P\+\_\+truncatable\+Ids}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+truncatable\+Ids() const }{_NP_truncatableIds() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const \+\_\+omni\+\_\+\+Value\+Ids$\ast$ Circle\+::\+\_\+\+N\+P\+\_\+truncatable\+Ids (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_circle_aaf148f2aa3a4bc47c990850800897ff9}{}\label{class_circle_aaf148f2aa3a4bc47c990850800897ff9}
+
+
+Reimplemented from \hyperlink{class_draw_a10a319bcb2ef5d6ac5439859fe9f126e}{Draw}.
+
+\index{Circle@{Circle}!\+\_\+\+N\+P\+\_\+unmarshal@{\+\_\+\+N\+P\+\_\+unmarshal}}
+\index{\+\_\+\+N\+P\+\_\+unmarshal@{\+\_\+\+N\+P\+\_\+unmarshal}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+unmarshal(cdr\+Stream \&)}{_NP_unmarshal(cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Circle}$\ast$ Circle\+::\+\_\+\+N\+P\+\_\+unmarshal (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_circle_ae8e42637a424b531bcba7cb48fc398ef}{}\label{class_circle_ae8e42637a424b531bcba7cb48fc398ef}
+\index{Circle@{Circle}!\+\_\+\+P\+R\+\_\+copy\+\_\+state@{\+\_\+\+P\+R\+\_\+copy\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+copy\+\_\+state@{\+\_\+\+P\+R\+\_\+copy\+\_\+state}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+copy\+\_\+state(\+Circle $\ast$)}{_PR_copy_state(Circle *)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Circle\+::\+\_\+\+P\+R\+\_\+copy\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{{\bf Circle} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_circle_a5a2cf4d7bb6f06052c34ecf0467cbe69}{}\label{class_circle_a5a2cf4d7bb6f06052c34ecf0467cbe69}
+\index{Circle@{Circle}!\+\_\+\+P\+R\+\_\+marshal\+\_\+state@{\+\_\+\+P\+R\+\_\+marshal\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+marshal\+\_\+state@{\+\_\+\+P\+R\+\_\+marshal\+\_\+state}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+marshal\+\_\+state(cdr\+Stream \&) const }{_PR_marshal_state(cdrStream &) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Circle\+::\+\_\+\+P\+R\+\_\+marshal\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_circle_af2d05d9a1c7ac75312e9e778b55a5625}{}\label{class_circle_af2d05d9a1c7ac75312e9e778b55a5625}
+
+
+Reimplemented from \hyperlink{class_draw_adfa1e0ac94bad822e332caeddc17f02a}{Draw}.
+
+\index{Circle@{Circle}!\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state@{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state@{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state(cdr\+Stream \&)}{_PR_unmarshal_state(cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Circle\+::\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_circle_a7756078d5d749f39cd6620de130cfd0e}{}\label{class_circle_a7756078d5d749f39cd6620de130cfd0e}
+
+
+Reimplemented from \hyperlink{class_draw_a62dc59ec12f9ebd4da1f3448dbec683f}{Draw}.
+
+\index{Circle@{Circle}!\+\_\+ptr\+To\+Value@{\+\_\+ptr\+To\+Value}}
+\index{\+\_\+ptr\+To\+Value@{\+\_\+ptr\+To\+Value}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+ptr\+To\+Value(const char $\ast$id)}{_ptrToValue(const char *id)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ Circle\+::\+\_\+ptr\+To\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_circle_a4bcb25e2b518b4674bf81439c8f4ef6a}{}\label{class_circle_a4bcb25e2b518b4674bf81439c8f4ef6a}
+
+
+Reimplemented from \hyperlink{class_draw_a2924173c6238dd077531f555324155b9}{Draw}.
+
+\index{Circle@{Circle}!area@{area}}
+\index{area@{area}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{area() override}{area() override}}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+R\+B\+A\+::\+Double Circle\+::area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_circle_a1bed1e5042fa7021ed397334ea2e4338}{}\label{class_circle_a1bed1e5042fa7021ed397334ea2e4338}
+
+
+This method calculate the area of the draw, if applicable. 
+
+\begin{DoxyReturn}{Returns}
+the area of this draw 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_draw_a0fb84e185ec13237aa456962d1eb0816}{Draw}.
+
+
+
+Definition at line 51 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!center@{center}}
+\index{center@{center}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{center() override}{center() override}}]{\setlength{\rightskip}{0pt plus 5cm}\+::Petit\+Prince\+::\+Point Circle\+::center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}\hypertarget{class_circle_a3c50bcfe91b3c635a92bdab41a52c8b6}{}\label{class_circle_a3c50bcfe91b3c635a92bdab41a52c8b6}
+
+
+Definition at line 128 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!center@{center}}
+\index{center@{center}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{center(const \+::\+Petit\+Prince\+::\+Point \&\+\_\+v) override}{center(const ::PetitPrince::Point &_v) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Circle\+::center (
+\begin{DoxyParamCaption}
+\item[{const \+::Petit\+Prince\+::\+Point \&}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}\hypertarget{class_circle_ae1d58af117d8228a91f0aabd8c92a97e}{}\label{class_circle_ae1d58af117d8228a91f0aabd8c92a97e}
+
+
+Definition at line 138 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!center@{center}}
+\index{center@{center}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{center()=0}{center()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Point} Circle\+::center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_circle_a7e6386f745d6255a2ddec2a53ff514b7}{}\label{class_circle_a7e6386f745d6255a2ddec2a53ff514b7}
+\index{Circle@{Circle}!center@{center}}
+\index{center@{center}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{center(const \+::\+Petit\+Prince\+::\+Point \&\+\_\+v)=0}{center(const ::PetitPrince::Point &_v)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Circle\+::center (
+\begin{DoxyParamCaption}
+\item[{const \+::Petit\+Prince\+::\+Point \&}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_circle_a9c4d4e9ec2a2e59f0c8d0c3f36e10edc}{}\label{class_circle_a9c4d4e9ec2a2e59f0c8d0c3f36e10edc}
+\index{Circle@{Circle}!homothetie@{homothetie}}
+\index{homothetie@{homothetie}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{homothetie(\+::\+C\+O\+R\+B\+A\+::\+Double indice) override}{homothetie(::CORBA::Double indice) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Circle\+::homothetie (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{indice}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_circle_a288221daec16e6d4b0b5b0816935451b}{}\label{class_circle_a288221daec16e6d4b0b5b0816935451b}
+
+
+This method apply an homothetie to the draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & the scalar factor defining the homothetie. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_draw_a39387bf248da4d7d91bee9099d4b6fca}{Draw}.
+
+
+
+Definition at line 71 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!perimeter@{perimeter}}
+\index{perimeter@{perimeter}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{perimeter() override}{perimeter() override}}]{\setlength{\rightskip}{0pt plus 5cm}\+::C\+O\+R\+B\+A\+::\+Double Circle\+::perimeter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_circle_a17053c2408a3f9e951531ec11722c06a}{}\label{class_circle_a17053c2408a3f9e951531ec11722c06a}
+
+
+Implements \hyperlink{class_draw_a7171f2b64135c81a41cb5a7a9926af52}{Draw}.
+
+
+
+Definition at line 61 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!ray@{ray}}
+\index{ray@{ray}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{ray() override}{ray() override}}]{\setlength{\rightskip}{0pt plus 5cm}\+::C\+O\+R\+B\+A\+::\+Double Circle\+::ray (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}\hypertarget{class_circle_ac5d62ae3368cd16552b77454095bb618}{}\label{class_circle_ac5d62ae3368cd16552b77454095bb618}
+
+
+Definition at line 148 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!ray@{ray}}
+\index{ray@{ray}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{ray(\+::\+C\+O\+R\+B\+A\+::\+Double \+\_\+v) override}{ray(::CORBA::Double _v) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Circle\+::ray (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}\hypertarget{class_circle_ae29e5eb504877615d1268cfac04bcb12}{}\label{class_circle_ae29e5eb504877615d1268cfac04bcb12}
+
+
+Definition at line 158 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!ray@{ray}}
+\index{ray@{ray}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{ray()=0}{ray()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Double Circle\+::ray (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_circle_a1ddff289fde40dc6c25963c0c7b8d985}{}\label{class_circle_a1ddff289fde40dc6c25963c0c7b8d985}
+\index{Circle@{Circle}!ray@{ray}}
+\index{ray@{ray}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{ray(\+::\+C\+O\+R\+B\+A\+::\+Double \+\_\+v)=0}{ray(::CORBA::Double _v)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Circle\+::ray (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_circle_a850aad5e97721700746efd3d82af1487}{}\label{class_circle_a850aad5e97721700746efd3d82af1487}
+\index{Circle@{Circle}!rotation@{rotation}}
+\index{rotation@{rotation}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{rotation(\+::\+C\+O\+R\+B\+A\+::\+Double angle) override}{rotation(::CORBA::Double angle) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Circle\+::rotation (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_circle_acf614416a1269c430cf180fe78ffb1c4}{}\label{class_circle_acf614416a1269c430cf180fe78ffb1c4}
+
+
+This method apply a rotation to the draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & the angle defining the rotation. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_draw_ab45c311ee0963a1a5e3ba3ac461e467c}{Draw}.
+
+
+
+Definition at line 92 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!sym\+Axial@{sym\+Axial}}
+\index{sym\+Axial@{sym\+Axial}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{sym\+Axial() override}{symAxial() override}}]{\setlength{\rightskip}{0pt plus 5cm}void Circle\+::sym\+Axial (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_circle_a4b74442abd9f3f76bbb5655b3003beec}{}\label{class_circle_a4b74442abd9f3f76bbb5655b3003beec}
+
+
+This method apply a axial symetry to the draw. 
+
+
+
+Implements \hyperlink{class_draw_aede358197311244da0fe937fb7e9573e}{Draw}.
+
+
+
+Definition at line 106 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!sym\+Center@{sym\+Center}}
+\index{sym\+Center@{sym\+Center}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{sym\+Center() override}{symCenter() override}}]{\setlength{\rightskip}{0pt plus 5cm}void Circle\+::sym\+Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_circle_a4bbc6fc3d759edda13e253240e8dcacf}{}\label{class_circle_a4bbc6fc3d759edda13e253240e8dcacf}
+
+
+This method apply a central symetry to the draw. 
+
+
+
+Implements \hyperlink{class_draw_a1a10bbbeb1ccd4b10b04226f3fe10755}{Draw}.
+
+
+
+Definition at line 99 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{to\+String() override}{toString() override}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Circle\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_circle_a5672abf3a344e988acf8b1eec13512b9}{}\label{class_circle_a5672abf3a344e988acf8b1eec13512b9}
+
+
+Generate a user-\/friendly representation of this draw. 
+
+\begin{DoxyReturn}{Returns}
+The user-\/friendly representation of this draw 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_draw_a0dd9c8b5127149b28e54bd602c797cca}{Draw}.
+
+
+
+Definition at line 115 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+\index{Circle@{Circle}!translation@{translation}}
+\index{translation@{translation}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{translation(\+::\+C\+O\+R\+B\+A\+::\+Double x,\+::\+C\+O\+R\+B\+A\+::\+Double y) override}{translation(::CORBA::Double x,::CORBA::Double y) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Circle\+::translation (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{x, }
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_circle_ad7aed2e09cb4cf0f370d8cc137a6e4ea}{}\label{class_circle_ad7aed2e09cb4cf0f370d8cc137a6e4ea}
+
+
+This method apply a translation to the draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x-\/axis translation \\
+\hline
+{\em y} & the y-\/axis translation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_draw_a71e63b40c9505098652a94e06872fdc6}{Draw}.
+
+
+
+Definition at line 82 of file O\+B\+V\+\_\+\+Circle.\+hpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{Circle@{Circle}!\+\_\+\+P\+D\+\_\+repo\+Id@{\+\_\+\+P\+D\+\_\+repo\+Id}}
+\index{\+\_\+\+P\+D\+\_\+repo\+Id@{\+\_\+\+P\+D\+\_\+repo\+Id}!Circle@{Circle}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+D\+\_\+repo\+Id}{_PD_repoId}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+core\+\_\+attr} const char$\ast$ Circle\+::\+\_\+\+P\+D\+\_\+repo\+Id\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_circle_a3cc85c810268073e3c3f0519aa3b12a0}{}\label{class_circle_a3cc85c810268073e3c3f0519aa3b12a0}
+
+
+Definition at line 573 of file Petit\+Prince.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+hdr/\hyperlink{_o_b_v___circle_8hpp}{O\+B\+V\+\_\+\+Circle.\+hpp}\item 
+hdr/\hyperlink{_petit_prince_8hpp}{Petit\+Prince.\+hpp}\end{DoxyCompactItemize}

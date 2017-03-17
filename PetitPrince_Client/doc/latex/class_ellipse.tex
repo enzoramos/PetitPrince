@@ -1,0 +1,296 @@
+\hypertarget{class_ellipse}{}\section{Ellipse Class Reference}
+\label{class_ellipse}\index{Ellipse@{Ellipse}}
+
+
+{\ttfamily \#include $<$Petit\+Prince.\+hpp$>$}
+
+
+
+Inheritance diagram for Ellipse\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_ellipse__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ellipse\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_ellipse__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_ellipse}{Ellipse} $\ast$ \hyperlink{class_ellipse_ac03e9a197e4d346d6a7f4360f83affdc}{\+\_\+ptr\+\_\+type}
+\item 
+typedef \hyperlink{_petit_prince_8hpp_a2e82f3c0eab1432cbb901c90c56b845d}{Ellipse\+\_\+var} \hyperlink{class_ellipse_af5ce6e507c505dcd1b6ef888b904616f}{\+\_\+var\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$ \hyperlink{class_ellipse_a325a05f5f1c4141ec6c99e416564b476}{\+\_\+copy\+\_\+value} ()
+\item 
+virtual \hyperlink{struct_point}{Point} \hyperlink{class_ellipse_a7c167034ea6380590201091da189a08b}{center} ()=0
+\item 
+virtual void \hyperlink{class_ellipse_a9002930f3e980351e775592942cac3fc}{center} (const \+::Petit\+Prince\+::\+Point \&\+\_\+v)=0
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_ellipse_a2656a501e4ee8296f8ec71aa5b63f4db}{long\+\_\+ray} ()=0
+\item 
+virtual void \hyperlink{class_ellipse_ae089aa3f771974912d1c73d9db94cc70}{long\+\_\+ray} (\+::C\+O\+R\+B\+A\+::\+Double \+\_\+v)=0
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_ellipse_a836989b508beb2da448363e5ed63aec2}{short\+\_\+ray} ()=0
+\item 
+virtual void \hyperlink{class_ellipse_a4d6bf30278c2839a5d38aa4351cf3a2f}{short\+\_\+ray} (\+::C\+O\+R\+B\+A\+::\+Double \+\_\+v)=0
+\item 
+virtual const char $\ast$ \hyperlink{class_ellipse_a0e56c51dadf0c21c5f3c82bd7ae3c34c}{\+\_\+\+N\+P\+\_\+repository\+Id} () const 
+\item 
+virtual const char $\ast$ \hyperlink{class_ellipse_a61c90841d732f4e69247545fc736c321}{\+\_\+\+N\+P\+\_\+repository\+Id} (\+::C\+O\+R\+B\+A\+::\+U\+Long \&\+\_\+hashval) const 
+\item 
+virtual const \+\_\+omni\+\_\+\+Value\+Ids $\ast$ \hyperlink{class_ellipse_ae5257f936afdfbbeb0ef3344231fc111}{\+\_\+\+N\+P\+\_\+truncatable\+Ids} () const 
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Boolean \hyperlink{class_ellipse_a020acd78a7f680f73c99dd038170749c}{\+\_\+\+N\+P\+\_\+custom} () const 
+\item 
+virtual void $\ast$ \hyperlink{class_ellipse_a7a69ec5b0954f4c623c9f450afb71d6c}{\+\_\+ptr\+To\+Value} (const char $\ast$\hyperlink{class_draw_a50509da989141b00a5ae22d68a4d5856}{id})
+\item 
+virtual void \hyperlink{class_ellipse_a63076fc769000247bd13c910dbf54c9e}{\+\_\+\+P\+R\+\_\+marshal\+\_\+state} (cdr\+Stream \&) const 
+\item 
+virtual void \hyperlink{class_ellipse_aa4dea62b56229863d757ae8861c225da}{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state} (cdr\+Stream \&)
+\item 
+virtual void \hyperlink{class_ellipse_a9959b5cef873ad4debf7ce4841172522}{\+\_\+\+P\+R\+\_\+copy\+\_\+state} (\hyperlink{class_ellipse}{Ellipse} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_draw_a5164256572b3c4123ceecd1897c248dd}{\+\_\+ptr\+\_\+type} \hyperlink{class_ellipse_acbcf7089f6cceeee9bb7663221f94cfa}{\+\_\+downcast} (\+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$)
+\item 
+static void \hyperlink{class_ellipse_a7b86d2bf246fb67efe6b43220c7509d9}{\+\_\+\+N\+P\+\_\+marshal} (\hyperlink{class_ellipse}{Ellipse} $\ast$, cdr\+Stream \&)
+\item 
+static \hyperlink{class_ellipse}{Ellipse} $\ast$ \hyperlink{class_ellipse_a1c519c9754fc33d80898ed92b470770a}{\+\_\+\+N\+P\+\_\+unmarshal} (cdr\+Stream \&)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_petit_prince_8hpp_a5f7bf7cddb608c2aad7c95f55f8a33c5}{\+\_\+core\+\_\+attr} const char $\ast$ \hyperlink{class_ellipse_a9d889330622bef63cd90c0f42e7ee344}{\+\_\+\+P\+D\+\_\+repo\+Id}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ellipse_aaff4917eddd8882616fe2f956151ba9b}{Ellipse} ()
+\item 
+virtual \hyperlink{class_ellipse_a5ab8160e6bf40ced81490d6d83d33d89}{$\sim$\+Ellipse} ()
+\item 
+\hyperlink{class_ellipse_aaff4917eddd8882616fe2f956151ba9b}{Ellipse} ()
+\item 
+virtual \hyperlink{class_ellipse_a5ab8160e6bf40ced81490d6d83d33d89}{$\sim$\+Ellipse} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{Ellipse@{Ellipse}!\+\_\+ptr\+\_\+type@{\+\_\+ptr\+\_\+type}}
+\index{\+\_\+ptr\+\_\+type@{\+\_\+ptr\+\_\+type}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+ptr\+\_\+type}{_ptr_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Ellipse}$\ast$ {\bf Ellipse\+::\+\_\+ptr\+\_\+type}}\hypertarget{class_ellipse_ac03e9a197e4d346d6a7f4360f83affdc}{}\label{class_ellipse_ac03e9a197e4d346d6a7f4360f83affdc}
+\index{Ellipse@{Ellipse}!\+\_\+var\+\_\+type@{\+\_\+var\+\_\+type}}
+\index{\+\_\+var\+\_\+type@{\+\_\+var\+\_\+type}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+var\+\_\+type}{_var_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Ellipse\+\_\+var} {\bf Ellipse\+::\+\_\+var\+\_\+type}}\hypertarget{class_ellipse_af5ce6e507c505dcd1b6ef888b904616f}{}\label{class_ellipse_af5ce6e507c505dcd1b6ef888b904616f}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ellipse@{Ellipse}!Ellipse@{Ellipse}}
+\index{Ellipse@{Ellipse}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{Ellipse()}{Ellipse()}}]{\setlength{\rightskip}{0pt plus 5cm}Ellipse\+::\+Ellipse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_ellipse_aaff4917eddd8882616fe2f956151ba9b}{}\label{class_ellipse_aaff4917eddd8882616fe2f956151ba9b}
+\index{Ellipse@{Ellipse}!````~Ellipse@{$\sim$\+Ellipse}}
+\index{````~Ellipse@{$\sim$\+Ellipse}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{$\sim$\+Ellipse()}{~Ellipse()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Ellipse\+::$\sim$\+Ellipse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_ellipse_a5ab8160e6bf40ced81490d6d83d33d89}{}\label{class_ellipse_a5ab8160e6bf40ced81490d6d83d33d89}
+\index{Ellipse@{Ellipse}!Ellipse@{Ellipse}}
+\index{Ellipse@{Ellipse}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{Ellipse()}{Ellipse()}}]{\setlength{\rightskip}{0pt plus 5cm}Ellipse\+::\+Ellipse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_ellipse_aaff4917eddd8882616fe2f956151ba9b}{}\label{class_ellipse_aaff4917eddd8882616fe2f956151ba9b}
+\index{Ellipse@{Ellipse}!````~Ellipse@{$\sim$\+Ellipse}}
+\index{````~Ellipse@{$\sim$\+Ellipse}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{$\sim$\+Ellipse()}{~Ellipse()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Ellipse\+::$\sim$\+Ellipse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_ellipse_a5ab8160e6bf40ced81490d6d83d33d89}{}\label{class_ellipse_a5ab8160e6bf40ced81490d6d83d33d89}
+
+
+\subsection{Member Function Documentation}
+\index{Ellipse@{Ellipse}!\+\_\+copy\+\_\+value@{\+\_\+copy\+\_\+value}}
+\index{\+\_\+copy\+\_\+value@{\+\_\+copy\+\_\+value}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+copy\+\_\+value()}{_copy_value()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Value\+Base$\ast$ Ellipse\+::\+\_\+copy\+\_\+value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ellipse_a325a05f5f1c4141ec6c99e416564b476}{}\label{class_ellipse_a325a05f5f1c4141ec6c99e416564b476}
+\index{Ellipse@{Ellipse}!\+\_\+downcast@{\+\_\+downcast}}
+\index{\+\_\+downcast@{\+\_\+downcast}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+downcast(\+::\+C\+O\+R\+B\+A\+::\+Value\+Base $\ast$)}{_downcast(::CORBA::ValueBase *)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \+\_\+ptr\+\_\+type} Ellipse\+::\+\_\+downcast (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ellipse_acbcf7089f6cceeee9bb7663221f94cfa}{}\label{class_ellipse_acbcf7089f6cceeee9bb7663221f94cfa}
+\index{Ellipse@{Ellipse}!\+\_\+\+N\+P\+\_\+custom@{\+\_\+\+N\+P\+\_\+custom}}
+\index{\+\_\+\+N\+P\+\_\+custom@{\+\_\+\+N\+P\+\_\+custom}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+custom() const }{_NP_custom() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Boolean Ellipse\+::\+\_\+\+N\+P\+\_\+custom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ellipse_a020acd78a7f680f73c99dd038170749c}{}\label{class_ellipse_a020acd78a7f680f73c99dd038170749c}
+\index{Ellipse@{Ellipse}!\+\_\+\+N\+P\+\_\+marshal@{\+\_\+\+N\+P\+\_\+marshal}}
+\index{\+\_\+\+N\+P\+\_\+marshal@{\+\_\+\+N\+P\+\_\+marshal}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+marshal(\+Ellipse $\ast$, cdr\+Stream \&)}{_NP_marshal(Ellipse *, cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Ellipse\+::\+\_\+\+N\+P\+\_\+marshal (
+\begin{DoxyParamCaption}
+\item[{{\bf Ellipse} $\ast$}]{, }
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ellipse_a7b86d2bf246fb67efe6b43220c7509d9}{}\label{class_ellipse_a7b86d2bf246fb67efe6b43220c7509d9}
+\index{Ellipse@{Ellipse}!\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}}
+\index{\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+repository\+Id() const }{_NP_repositoryId() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Ellipse\+::\+\_\+\+N\+P\+\_\+repository\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ellipse_a0e56c51dadf0c21c5f3c82bd7ae3c34c}{}\label{class_ellipse_a0e56c51dadf0c21c5f3c82bd7ae3c34c}
+
+
+Reimplemented from \hyperlink{class_draw_a90d2c0a9b6aed68ca30ea2a7187317dc}{Draw}.
+
+\index{Ellipse@{Ellipse}!\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}}
+\index{\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+repository\+Id(\+::\+C\+O\+R\+B\+A\+::\+U\+Long \&\+\_\+hashval) const }{_NP_repositoryId(::CORBA::ULong &_hashval) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Ellipse\+::\+\_\+\+N\+P\+\_\+repository\+Id (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+U\+Long \&}]{\+\_\+hashval}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ellipse_a61c90841d732f4e69247545fc736c321}{}\label{class_ellipse_a61c90841d732f4e69247545fc736c321}
+
+
+Reimplemented from \hyperlink{class_draw_ae24df04b0f119c2fb6fd525a041f081d}{Draw}.
+
+\index{Ellipse@{Ellipse}!\+\_\+\+N\+P\+\_\+truncatable\+Ids@{\+\_\+\+N\+P\+\_\+truncatable\+Ids}}
+\index{\+\_\+\+N\+P\+\_\+truncatable\+Ids@{\+\_\+\+N\+P\+\_\+truncatable\+Ids}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+truncatable\+Ids() const }{_NP_truncatableIds() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const \+\_\+omni\+\_\+\+Value\+Ids$\ast$ Ellipse\+::\+\_\+\+N\+P\+\_\+truncatable\+Ids (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ellipse_ae5257f936afdfbbeb0ef3344231fc111}{}\label{class_ellipse_ae5257f936afdfbbeb0ef3344231fc111}
+
+
+Reimplemented from \hyperlink{class_draw_a10a319bcb2ef5d6ac5439859fe9f126e}{Draw}.
+
+\index{Ellipse@{Ellipse}!\+\_\+\+N\+P\+\_\+unmarshal@{\+\_\+\+N\+P\+\_\+unmarshal}}
+\index{\+\_\+\+N\+P\+\_\+unmarshal@{\+\_\+\+N\+P\+\_\+unmarshal}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+unmarshal(cdr\+Stream \&)}{_NP_unmarshal(cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Ellipse}$\ast$ Ellipse\+::\+\_\+\+N\+P\+\_\+unmarshal (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ellipse_a1c519c9754fc33d80898ed92b470770a}{}\label{class_ellipse_a1c519c9754fc33d80898ed92b470770a}
+\index{Ellipse@{Ellipse}!\+\_\+\+P\+R\+\_\+copy\+\_\+state@{\+\_\+\+P\+R\+\_\+copy\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+copy\+\_\+state@{\+\_\+\+P\+R\+\_\+copy\+\_\+state}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+copy\+\_\+state(\+Ellipse $\ast$)}{_PR_copy_state(Ellipse *)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ellipse\+::\+\_\+\+P\+R\+\_\+copy\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{{\bf Ellipse} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ellipse_a9959b5cef873ad4debf7ce4841172522}{}\label{class_ellipse_a9959b5cef873ad4debf7ce4841172522}
+\index{Ellipse@{Ellipse}!\+\_\+\+P\+R\+\_\+marshal\+\_\+state@{\+\_\+\+P\+R\+\_\+marshal\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+marshal\+\_\+state@{\+\_\+\+P\+R\+\_\+marshal\+\_\+state}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+marshal\+\_\+state(cdr\+Stream \&) const }{_PR_marshal_state(cdrStream &) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ellipse\+::\+\_\+\+P\+R\+\_\+marshal\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ellipse_a63076fc769000247bd13c910dbf54c9e}{}\label{class_ellipse_a63076fc769000247bd13c910dbf54c9e}
+
+
+Reimplemented from \hyperlink{class_draw_adfa1e0ac94bad822e332caeddc17f02a}{Draw}.
+
+\index{Ellipse@{Ellipse}!\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state@{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state@{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state(cdr\+Stream \&)}{_PR_unmarshal_state(cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ellipse\+::\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ellipse_aa4dea62b56229863d757ae8861c225da}{}\label{class_ellipse_aa4dea62b56229863d757ae8861c225da}
+
+
+Reimplemented from \hyperlink{class_draw_a62dc59ec12f9ebd4da1f3448dbec683f}{Draw}.
+
+\index{Ellipse@{Ellipse}!\+\_\+ptr\+To\+Value@{\+\_\+ptr\+To\+Value}}
+\index{\+\_\+ptr\+To\+Value@{\+\_\+ptr\+To\+Value}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+ptr\+To\+Value(const char $\ast$id)}{_ptrToValue(const char *id)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ Ellipse\+::\+\_\+ptr\+To\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ellipse_a7a69ec5b0954f4c623c9f450afb71d6c}{}\label{class_ellipse_a7a69ec5b0954f4c623c9f450afb71d6c}
+
+
+Reimplemented from \hyperlink{class_draw_a2924173c6238dd077531f555324155b9}{Draw}.
+
+\index{Ellipse@{Ellipse}!center@{center}}
+\index{center@{center}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{center()=0}{center()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Point} Ellipse\+::center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_ellipse_a7c167034ea6380590201091da189a08b}{}\label{class_ellipse_a7c167034ea6380590201091da189a08b}
+\index{Ellipse@{Ellipse}!center@{center}}
+\index{center@{center}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{center(const \+::\+Petit\+Prince\+::\+Point \&\+\_\+v)=0}{center(const ::PetitPrince::Point &_v)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ellipse\+::center (
+\begin{DoxyParamCaption}
+\item[{const \+::Petit\+Prince\+::\+Point \&}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_ellipse_a9002930f3e980351e775592942cac3fc}{}\label{class_ellipse_a9002930f3e980351e775592942cac3fc}
+\index{Ellipse@{Ellipse}!long\+\_\+ray@{long\+\_\+ray}}
+\index{long\+\_\+ray@{long\+\_\+ray}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{long\+\_\+ray()=0}{long_ray()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Double Ellipse\+::long\+\_\+ray (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_ellipse_a2656a501e4ee8296f8ec71aa5b63f4db}{}\label{class_ellipse_a2656a501e4ee8296f8ec71aa5b63f4db}
+\index{Ellipse@{Ellipse}!long\+\_\+ray@{long\+\_\+ray}}
+\index{long\+\_\+ray@{long\+\_\+ray}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{long\+\_\+ray(\+::\+C\+O\+R\+B\+A\+::\+Double \+\_\+v)=0}{long_ray(::CORBA::Double _v)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ellipse\+::long\+\_\+ray (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_ellipse_ae089aa3f771974912d1c73d9db94cc70}{}\label{class_ellipse_ae089aa3f771974912d1c73d9db94cc70}
+\index{Ellipse@{Ellipse}!short\+\_\+ray@{short\+\_\+ray}}
+\index{short\+\_\+ray@{short\+\_\+ray}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{short\+\_\+ray()=0}{short_ray()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Double Ellipse\+::short\+\_\+ray (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_ellipse_a836989b508beb2da448363e5ed63aec2}{}\label{class_ellipse_a836989b508beb2da448363e5ed63aec2}
+\index{Ellipse@{Ellipse}!short\+\_\+ray@{short\+\_\+ray}}
+\index{short\+\_\+ray@{short\+\_\+ray}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{short\+\_\+ray(\+::\+C\+O\+R\+B\+A\+::\+Double \+\_\+v)=0}{short_ray(::CORBA::Double _v)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ellipse\+::short\+\_\+ray (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_ellipse_a4d6bf30278c2839a5d38aa4351cf3a2f}{}\label{class_ellipse_a4d6bf30278c2839a5d38aa4351cf3a2f}
+
+
+\subsection{Member Data Documentation}
+\index{Ellipse@{Ellipse}!\+\_\+\+P\+D\+\_\+repo\+Id@{\+\_\+\+P\+D\+\_\+repo\+Id}}
+\index{\+\_\+\+P\+D\+\_\+repo\+Id@{\+\_\+\+P\+D\+\_\+repo\+Id}!Ellipse@{Ellipse}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+D\+\_\+repo\+Id}{_PD_repoId}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+core\+\_\+attr} const char$\ast$ Ellipse\+::\+\_\+\+P\+D\+\_\+repo\+Id\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ellipse_a9d889330622bef63cd90c0f42e7ee344}{}\label{class_ellipse_a9d889330622bef63cd90c0f42e7ee344}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hdr/\hyperlink{_petit_prince_8hpp}{Petit\+Prince.\+hpp}\end{DoxyCompactItemize}

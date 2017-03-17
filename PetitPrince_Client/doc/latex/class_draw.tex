@@ -1,0 +1,369 @@
+\hypertarget{class_draw}{}\section{Draw Class Reference}
+\label{class_draw}\index{Draw@{Draw}}
+
+
+{\ttfamily \#include $<$Petit\+Prince.\+hpp$>$}
+
+
+
+Inheritance diagram for Draw\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_draw__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Draw\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_draw__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_draw}{Draw} $\ast$ \hyperlink{class_draw_a5164256572b3c4123ceecd1897c248dd}{\+\_\+ptr\+\_\+type}
+\item 
+typedef \hyperlink{_petit_prince_8hpp_ad6329853fd4733d5723ae5cc6c8a9f43}{Draw\+\_\+var} \hyperlink{class_draw_a0ef4fbc763491a2013fa08badb5ee934}{\+\_\+var\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$ \hyperlink{class_draw_a833b3c7cd298f64e57e2d91644c1fba0}{\+\_\+copy\+\_\+value} ()
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Long \hyperlink{class_draw_a50509da989141b00a5ae22d68a4d5856}{id} ()=0
+\item 
+virtual char $\ast$ \hyperlink{class_draw_a4a1145eee8c06df2d81c99ad3ed40237}{author} ()=0
+\item 
+virtual \hyperlink{class_draw_seq}{Draw\+Seq} $\ast$ \hyperlink{class_draw_a8dfc05b32e3879efeb3b497abed032e8}{inner\+\_\+draws} ()=0
+\item 
+virtual void \hyperlink{class_draw_ae1c94fbdfc84aed1996ef1cdb9495076}{inner\+\_\+draws} (const \+::Petit\+Prince\+::\+Draw\+Seq \&\+\_\+v)=0
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_draw_a24995593a9bf2ae75e2bfd9360064fa8}{mark} ()=0
+\item 
+virtual void \hyperlink{class_draw_aa4e3152cacbeda31c43d1fab6f54f4f2}{mark} (\+::C\+O\+R\+B\+A\+::\+Double \+\_\+v)=0
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_draw_a0fb84e185ec13237aa456962d1eb0816}{area} ()=0
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_draw_a7171f2b64135c81a41cb5a7a9926af52}{perimeter} ()=0
+\item 
+virtual void \hyperlink{class_draw_a39387bf248da4d7d91bee9099d4b6fca}{homothetie} (\+::C\+O\+R\+B\+A\+::\+Double indice)=0
+\item 
+virtual void \hyperlink{class_draw_a71e63b40c9505098652a94e06872fdc6}{translation} (\+::C\+O\+R\+B\+A\+::\+Double x,\+::C\+O\+R\+B\+A\+::\+Double y)=0
+\item 
+virtual void \hyperlink{class_draw_ab45c311ee0963a1a5e3ba3ac461e467c}{rotation} (\+::C\+O\+R\+B\+A\+::\+Double angle)=0
+\item 
+virtual void \hyperlink{class_draw_a1a10bbbeb1ccd4b10b04226f3fe10755}{sym\+Center} ()=0
+\item 
+virtual void \hyperlink{class_draw_aede358197311244da0fe937fb7e9573e}{sym\+Axial} ()=0
+\item 
+virtual char $\ast$ \hyperlink{class_draw_a0dd9c8b5127149b28e54bd602c797cca}{to\+String} ()=0
+\item 
+virtual const char $\ast$ \hyperlink{class_draw_a90d2c0a9b6aed68ca30ea2a7187317dc}{\+\_\+\+N\+P\+\_\+repository\+Id} () const 
+\item 
+virtual const char $\ast$ \hyperlink{class_draw_ae24df04b0f119c2fb6fd525a041f081d}{\+\_\+\+N\+P\+\_\+repository\+Id} (\+::C\+O\+R\+B\+A\+::\+U\+Long \&\+\_\+hashval) const 
+\item 
+virtual const \+\_\+omni\+\_\+\+Value\+Ids $\ast$ \hyperlink{class_draw_a10a319bcb2ef5d6ac5439859fe9f126e}{\+\_\+\+N\+P\+\_\+truncatable\+Ids} () const 
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Boolean \hyperlink{class_draw_aab5e3083274138f65200f2516df70510}{\+\_\+\+N\+P\+\_\+custom} () const 
+\item 
+virtual void $\ast$ \hyperlink{class_draw_a2924173c6238dd077531f555324155b9}{\+\_\+ptr\+To\+Value} (const char $\ast$\hyperlink{class_draw_a50509da989141b00a5ae22d68a4d5856}{id})
+\item 
+virtual void \hyperlink{class_draw_adfa1e0ac94bad822e332caeddc17f02a}{\+\_\+\+P\+R\+\_\+marshal\+\_\+state} (cdr\+Stream \&) const 
+\item 
+virtual void \hyperlink{class_draw_a62dc59ec12f9ebd4da1f3448dbec683f}{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state} (cdr\+Stream \&)
+\item 
+virtual void \hyperlink{class_draw_a5832713920beeb0d47ef83caf919f185}{\+\_\+\+P\+R\+\_\+copy\+\_\+state} (\hyperlink{class_draw}{Draw} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_draw_a5164256572b3c4123ceecd1897c248dd}{\+\_\+ptr\+\_\+type} \hyperlink{class_draw_adf5095556588059f6a3c1663e84e46c0}{\+\_\+downcast} (\+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$)
+\item 
+static void \hyperlink{class_draw_aa95f9c6dc4ba6f6d3477fc6432180594}{\+\_\+\+N\+P\+\_\+marshal} (\hyperlink{class_draw}{Draw} $\ast$, cdr\+Stream \&)
+\item 
+static \hyperlink{class_draw}{Draw} $\ast$ \hyperlink{class_draw_a3c3a65725a77c521aca9582928f5b298}{\+\_\+\+N\+P\+\_\+unmarshal} (cdr\+Stream \&)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_petit_prince_8hpp_a5f7bf7cddb608c2aad7c95f55f8a33c5}{\+\_\+core\+\_\+attr} const char $\ast$ \hyperlink{class_draw_aa81c5a904a215524ca32f588126783bc}{\+\_\+\+P\+D\+\_\+repo\+Id}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_draw_a7c808e2194e8659b401584773e26730e}{Draw} ()
+\item 
+virtual \hyperlink{class_draw_a9c2feb77460265c202c60772ae05656a}{$\sim$\+Draw} ()
+\item 
+\hyperlink{class_draw_a7c808e2194e8659b401584773e26730e}{Draw} ()
+\item 
+virtual \hyperlink{class_draw_a9c2feb77460265c202c60772ae05656a}{$\sim$\+Draw} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{Draw@{Draw}!\+\_\+ptr\+\_\+type@{\+\_\+ptr\+\_\+type}}
+\index{\+\_\+ptr\+\_\+type@{\+\_\+ptr\+\_\+type}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+ptr\+\_\+type}{_ptr_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Draw}$\ast$ {\bf Draw\+::\+\_\+ptr\+\_\+type}}\hypertarget{class_draw_a5164256572b3c4123ceecd1897c248dd}{}\label{class_draw_a5164256572b3c4123ceecd1897c248dd}
+\index{Draw@{Draw}!\+\_\+var\+\_\+type@{\+\_\+var\+\_\+type}}
+\index{\+\_\+var\+\_\+type@{\+\_\+var\+\_\+type}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+var\+\_\+type}{_var_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Draw\+\_\+var} {\bf Draw\+::\+\_\+var\+\_\+type}}\hypertarget{class_draw_a0ef4fbc763491a2013fa08badb5ee934}{}\label{class_draw_a0ef4fbc763491a2013fa08badb5ee934}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Draw@{Draw}!Draw@{Draw}}
+\index{Draw@{Draw}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{Draw()}{Draw()}}]{\setlength{\rightskip}{0pt plus 5cm}Draw\+::\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_draw_a7c808e2194e8659b401584773e26730e}{}\label{class_draw_a7c808e2194e8659b401584773e26730e}
+\index{Draw@{Draw}!````~Draw@{$\sim$\+Draw}}
+\index{````~Draw@{$\sim$\+Draw}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{$\sim$\+Draw()}{~Draw()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Draw\+::$\sim$\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_draw_a9c2feb77460265c202c60772ae05656a}{}\label{class_draw_a9c2feb77460265c202c60772ae05656a}
+\index{Draw@{Draw}!Draw@{Draw}}
+\index{Draw@{Draw}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{Draw()}{Draw()}}]{\setlength{\rightskip}{0pt plus 5cm}Draw\+::\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_draw_a7c808e2194e8659b401584773e26730e}{}\label{class_draw_a7c808e2194e8659b401584773e26730e}
+\index{Draw@{Draw}!````~Draw@{$\sim$\+Draw}}
+\index{````~Draw@{$\sim$\+Draw}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{$\sim$\+Draw()}{~Draw()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Draw\+::$\sim$\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_draw_a9c2feb77460265c202c60772ae05656a}{}\label{class_draw_a9c2feb77460265c202c60772ae05656a}
+
+
+\subsection{Member Function Documentation}
+\index{Draw@{Draw}!\+\_\+copy\+\_\+value@{\+\_\+copy\+\_\+value}}
+\index{\+\_\+copy\+\_\+value@{\+\_\+copy\+\_\+value}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+copy\+\_\+value()}{_copy_value()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Value\+Base$\ast$ Draw\+::\+\_\+copy\+\_\+value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_draw_a833b3c7cd298f64e57e2d91644c1fba0}{}\label{class_draw_a833b3c7cd298f64e57e2d91644c1fba0}
+\index{Draw@{Draw}!\+\_\+downcast@{\+\_\+downcast}}
+\index{\+\_\+downcast@{\+\_\+downcast}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+downcast(\+::\+C\+O\+R\+B\+A\+::\+Value\+Base $\ast$)}{_downcast(::CORBA::ValueBase *)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \+\_\+ptr\+\_\+type} Draw\+::\+\_\+downcast (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_draw_adf5095556588059f6a3c1663e84e46c0}{}\label{class_draw_adf5095556588059f6a3c1663e84e46c0}
+\index{Draw@{Draw}!\+\_\+\+N\+P\+\_\+custom@{\+\_\+\+N\+P\+\_\+custom}}
+\index{\+\_\+\+N\+P\+\_\+custom@{\+\_\+\+N\+P\+\_\+custom}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+custom() const }{_NP_custom() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Boolean Draw\+::\+\_\+\+N\+P\+\_\+custom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_draw_aab5e3083274138f65200f2516df70510}{}\label{class_draw_aab5e3083274138f65200f2516df70510}
+\index{Draw@{Draw}!\+\_\+\+N\+P\+\_\+marshal@{\+\_\+\+N\+P\+\_\+marshal}}
+\index{\+\_\+\+N\+P\+\_\+marshal@{\+\_\+\+N\+P\+\_\+marshal}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+marshal(\+Draw $\ast$, cdr\+Stream \&)}{_NP_marshal(Draw *, cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Draw\+::\+\_\+\+N\+P\+\_\+marshal (
+\begin{DoxyParamCaption}
+\item[{{\bf Draw} $\ast$}]{, }
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_draw_aa95f9c6dc4ba6f6d3477fc6432180594}{}\label{class_draw_aa95f9c6dc4ba6f6d3477fc6432180594}
+\index{Draw@{Draw}!\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}}
+\index{\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+repository\+Id() const }{_NP_repositoryId() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Draw\+::\+\_\+\+N\+P\+\_\+repository\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_draw_a90d2c0a9b6aed68ca30ea2a7187317dc}{}\label{class_draw_a90d2c0a9b6aed68ca30ea2a7187317dc}
+
+
+Reimplemented in \hyperlink{class_polygon_a95a6b4967ce579d1405de9061a7c7b91}{Polygon}, \hyperlink{class_ellipse_a0e56c51dadf0c21c5f3c82bd7ae3c34c}{Ellipse}, \hyperlink{class_circle_aef9e3dad8cb215413d3d9371c21312ba}{Circle}, and \hyperlink{class_line_a5aa5a1667a431543c7d5f5c5aa392962}{Line}.
+
+\index{Draw@{Draw}!\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}}
+\index{\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+repository\+Id(\+::\+C\+O\+R\+B\+A\+::\+U\+Long \&\+\_\+hashval) const }{_NP_repositoryId(::CORBA::ULong &_hashval) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Draw\+::\+\_\+\+N\+P\+\_\+repository\+Id (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+U\+Long \&}]{\+\_\+hashval}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_draw_ae24df04b0f119c2fb6fd525a041f081d}{}\label{class_draw_ae24df04b0f119c2fb6fd525a041f081d}
+
+
+Reimplemented in \hyperlink{class_polygon_a52b08c50329f4d0c8c89eacede7a2adc}{Polygon}, \hyperlink{class_ellipse_a61c90841d732f4e69247545fc736c321}{Ellipse}, \hyperlink{class_circle_a2b46a87a83e6e4953bf3cbd507a99e26}{Circle}, and \hyperlink{class_line_a12ea7527d761f37cfe908fbcabab7ca7}{Line}.
+
+\index{Draw@{Draw}!\+\_\+\+N\+P\+\_\+truncatable\+Ids@{\+\_\+\+N\+P\+\_\+truncatable\+Ids}}
+\index{\+\_\+\+N\+P\+\_\+truncatable\+Ids@{\+\_\+\+N\+P\+\_\+truncatable\+Ids}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+truncatable\+Ids() const }{_NP_truncatableIds() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const \+\_\+omni\+\_\+\+Value\+Ids$\ast$ Draw\+::\+\_\+\+N\+P\+\_\+truncatable\+Ids (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_draw_a10a319bcb2ef5d6ac5439859fe9f126e}{}\label{class_draw_a10a319bcb2ef5d6ac5439859fe9f126e}
+
+
+Reimplemented in \hyperlink{class_polygon_a169c4ae5faf3b5d8514cd4aa5ccf8a47}{Polygon}, \hyperlink{class_ellipse_ae5257f936afdfbbeb0ef3344231fc111}{Ellipse}, \hyperlink{class_circle_aaf148f2aa3a4bc47c990850800897ff9}{Circle}, and \hyperlink{class_line_a35a312efa270e82c4c038e90aa6e676e}{Line}.
+
+\index{Draw@{Draw}!\+\_\+\+N\+P\+\_\+unmarshal@{\+\_\+\+N\+P\+\_\+unmarshal}}
+\index{\+\_\+\+N\+P\+\_\+unmarshal@{\+\_\+\+N\+P\+\_\+unmarshal}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+unmarshal(cdr\+Stream \&)}{_NP_unmarshal(cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Draw}$\ast$ Draw\+::\+\_\+\+N\+P\+\_\+unmarshal (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_draw_a3c3a65725a77c521aca9582928f5b298}{}\label{class_draw_a3c3a65725a77c521aca9582928f5b298}
+\index{Draw@{Draw}!\+\_\+\+P\+R\+\_\+copy\+\_\+state@{\+\_\+\+P\+R\+\_\+copy\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+copy\+\_\+state@{\+\_\+\+P\+R\+\_\+copy\+\_\+state}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+copy\+\_\+state(\+Draw $\ast$)}{_PR_copy_state(Draw *)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::\+\_\+\+P\+R\+\_\+copy\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{{\bf Draw} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_draw_a5832713920beeb0d47ef83caf919f185}{}\label{class_draw_a5832713920beeb0d47ef83caf919f185}
+\index{Draw@{Draw}!\+\_\+\+P\+R\+\_\+marshal\+\_\+state@{\+\_\+\+P\+R\+\_\+marshal\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+marshal\+\_\+state@{\+\_\+\+P\+R\+\_\+marshal\+\_\+state}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+marshal\+\_\+state(cdr\+Stream \&) const }{_PR_marshal_state(cdrStream &) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::\+\_\+\+P\+R\+\_\+marshal\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_draw_adfa1e0ac94bad822e332caeddc17f02a}{}\label{class_draw_adfa1e0ac94bad822e332caeddc17f02a}
+
+
+Reimplemented in \hyperlink{class_polygon_a914894e25e18b467be8f5c3050b0bcbe}{Polygon}, \hyperlink{class_ellipse_a63076fc769000247bd13c910dbf54c9e}{Ellipse}, \hyperlink{class_circle_af2d05d9a1c7ac75312e9e778b55a5625}{Circle}, and \hyperlink{class_line_a17a35e84f5dd3ff6ecfa3df14f02dc10}{Line}.
+
+\index{Draw@{Draw}!\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state@{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state@{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state(cdr\+Stream \&)}{_PR_unmarshal_state(cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_draw_a62dc59ec12f9ebd4da1f3448dbec683f}{}\label{class_draw_a62dc59ec12f9ebd4da1f3448dbec683f}
+
+
+Reimplemented in \hyperlink{class_polygon_a991333f1f730256d07552568fa175780}{Polygon}, \hyperlink{class_ellipse_aa4dea62b56229863d757ae8861c225da}{Ellipse}, \hyperlink{class_circle_a7756078d5d749f39cd6620de130cfd0e}{Circle}, and \hyperlink{class_line_a001d93972f80167f1b53d728a55afef9}{Line}.
+
+\index{Draw@{Draw}!\+\_\+ptr\+To\+Value@{\+\_\+ptr\+To\+Value}}
+\index{\+\_\+ptr\+To\+Value@{\+\_\+ptr\+To\+Value}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+ptr\+To\+Value(const char $\ast$id)}{_ptrToValue(const char *id)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ Draw\+::\+\_\+ptr\+To\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_draw_a2924173c6238dd077531f555324155b9}{}\label{class_draw_a2924173c6238dd077531f555324155b9}
+
+
+Reimplemented in \hyperlink{class_polygon_a3a92b1e0e80c8fdc33e0f2788321f314}{Polygon}, \hyperlink{class_ellipse_a7a69ec5b0954f4c623c9f450afb71d6c}{Ellipse}, \hyperlink{class_circle_a4bcb25e2b518b4674bf81439c8f4ef6a}{Circle}, and \hyperlink{class_line_a569c01e17ca50a4b7d6bd7d80553040d}{Line}.
+
+\index{Draw@{Draw}!area@{area}}
+\index{area@{area}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{area()=0}{area()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Double Draw\+::area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a0fb84e185ec13237aa456962d1eb0816}{}\label{class_draw_a0fb84e185ec13237aa456962d1eb0816}
+\index{Draw@{Draw}!author@{author}}
+\index{author@{author}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{author()=0}{author()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ Draw\+::author (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a4a1145eee8c06df2d81c99ad3ed40237}{}\label{class_draw_a4a1145eee8c06df2d81c99ad3ed40237}
+\index{Draw@{Draw}!homothetie@{homothetie}}
+\index{homothetie@{homothetie}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{homothetie(\+::\+C\+O\+R\+B\+A\+::\+Double indice)=0}{homothetie(::CORBA::Double indice)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::homothetie (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{indice}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a39387bf248da4d7d91bee9099d4b6fca}{}\label{class_draw_a39387bf248da4d7d91bee9099d4b6fca}
+\index{Draw@{Draw}!id@{id}}
+\index{id@{id}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{id()=0}{id()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Long Draw\+::id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a50509da989141b00a5ae22d68a4d5856}{}\label{class_draw_a50509da989141b00a5ae22d68a4d5856}
+\index{Draw@{Draw}!inner\+\_\+draws@{inner\+\_\+draws}}
+\index{inner\+\_\+draws@{inner\+\_\+draws}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{inner\+\_\+draws()=0}{inner_draws()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Draw\+Seq}$\ast$ Draw\+::inner\+\_\+draws (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a8dfc05b32e3879efeb3b497abed032e8}{}\label{class_draw_a8dfc05b32e3879efeb3b497abed032e8}
+\index{Draw@{Draw}!inner\+\_\+draws@{inner\+\_\+draws}}
+\index{inner\+\_\+draws@{inner\+\_\+draws}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{inner\+\_\+draws(const \+::\+Petit\+Prince\+::\+Draw\+Seq \&\+\_\+v)=0}{inner_draws(const ::PetitPrince::DrawSeq &_v)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::inner\+\_\+draws (
+\begin{DoxyParamCaption}
+\item[{const \+::Petit\+Prince\+::\+Draw\+Seq \&}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_ae1c94fbdfc84aed1996ef1cdb9495076}{}\label{class_draw_ae1c94fbdfc84aed1996ef1cdb9495076}
+\index{Draw@{Draw}!mark@{mark}}
+\index{mark@{mark}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{mark()=0}{mark()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Double Draw\+::mark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a24995593a9bf2ae75e2bfd9360064fa8}{}\label{class_draw_a24995593a9bf2ae75e2bfd9360064fa8}
+\index{Draw@{Draw}!mark@{mark}}
+\index{mark@{mark}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{mark(\+::\+C\+O\+R\+B\+A\+::\+Double \+\_\+v)=0}{mark(::CORBA::Double _v)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::mark (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_aa4e3152cacbeda31c43d1fab6f54f4f2}{}\label{class_draw_aa4e3152cacbeda31c43d1fab6f54f4f2}
+\index{Draw@{Draw}!perimeter@{perimeter}}
+\index{perimeter@{perimeter}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{perimeter()=0}{perimeter()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Double Draw\+::perimeter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a7171f2b64135c81a41cb5a7a9926af52}{}\label{class_draw_a7171f2b64135c81a41cb5a7a9926af52}
+\index{Draw@{Draw}!rotation@{rotation}}
+\index{rotation@{rotation}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{rotation(\+::\+C\+O\+R\+B\+A\+::\+Double angle)=0}{rotation(::CORBA::Double angle)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::rotation (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_ab45c311ee0963a1a5e3ba3ac461e467c}{}\label{class_draw_ab45c311ee0963a1a5e3ba3ac461e467c}
+\index{Draw@{Draw}!sym\+Axial@{sym\+Axial}}
+\index{sym\+Axial@{sym\+Axial}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{sym\+Axial()=0}{symAxial()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::sym\+Axial (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_aede358197311244da0fe937fb7e9573e}{}\label{class_draw_aede358197311244da0fe937fb7e9573e}
+\index{Draw@{Draw}!sym\+Center@{sym\+Center}}
+\index{sym\+Center@{sym\+Center}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{sym\+Center()=0}{symCenter()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::sym\+Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a1a10bbbeb1ccd4b10b04226f3fe10755}{}\label{class_draw_a1a10bbbeb1ccd4b10b04226f3fe10755}
+\index{Draw@{Draw}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{to\+String()=0}{toString()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ Draw\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a0dd9c8b5127149b28e54bd602c797cca}{}\label{class_draw_a0dd9c8b5127149b28e54bd602c797cca}
+\index{Draw@{Draw}!translation@{translation}}
+\index{translation@{translation}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{translation(\+::\+C\+O\+R\+B\+A\+::\+Double x,\+::\+C\+O\+R\+B\+A\+::\+Double y)=0}{translation(::CORBA::Double x,::CORBA::Double y)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Draw\+::translation (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{x, }
+\item[{\+::C\+O\+R\+B\+A\+::\+Double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_draw_a71e63b40c9505098652a94e06872fdc6}{}\label{class_draw_a71e63b40c9505098652a94e06872fdc6}
+
+
+\subsection{Member Data Documentation}
+\index{Draw@{Draw}!\+\_\+\+P\+D\+\_\+repo\+Id@{\+\_\+\+P\+D\+\_\+repo\+Id}}
+\index{\+\_\+\+P\+D\+\_\+repo\+Id@{\+\_\+\+P\+D\+\_\+repo\+Id}!Draw@{Draw}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+D\+\_\+repo\+Id}{_PD_repoId}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+core\+\_\+attr} const char$\ast$ Draw\+::\+\_\+\+P\+D\+\_\+repo\+Id\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_draw_aa81c5a904a215524ca32f588126783bc}{}\label{class_draw_aa81c5a904a215524ca32f588126783bc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hdr/\hyperlink{_petit_prince_8hpp}{Petit\+Prince.\+hpp}\end{DoxyCompactItemize}

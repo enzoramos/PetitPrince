@@ -1,0 +1,278 @@
+\hypertarget{class_line}{}\section{Line Class Reference}
+\label{class_line}\index{Line@{Line}}
+
+
+{\ttfamily \#include $<$Petit\+Prince.\+hpp$>$}
+
+
+
+Inheritance diagram for Line\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_line__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Line\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_line__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_line}{Line} $\ast$ \hyperlink{class_line_a886875fa295d09a973b952a38d791975}{\+\_\+ptr\+\_\+type}
+\item 
+typedef \hyperlink{_petit_prince_8hpp_a90bd71cc9b7ba07b75cd943d99dbc8a6}{Line\+\_\+var} \hyperlink{class_line_a65425cec92e3b0b955728581d07ac83b}{\+\_\+var\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$ \hyperlink{class_line_a1394704db9b14feb758131900ad5d173}{\+\_\+copy\+\_\+value} ()
+\item 
+virtual \hyperlink{struct_point}{Point} \hyperlink{class_line_aaf3b5135f7b80df4a4882277a5b1b63f}{start} ()=0
+\item 
+virtual void \hyperlink{class_line_aa0fb946ffb5689f0eb08339a93ea76ed}{start} (const \+::Petit\+Prince\+::\+Point \&\+\_\+v)=0
+\item 
+virtual \hyperlink{struct_point}{Point} \hyperlink{class_line_ad69f4951e34588087edacf3dccb9205f}{end} ()=0
+\item 
+virtual void \hyperlink{class_line_a422da36ea2f877b1c30d0bff5153a707}{end} (const \+::Petit\+Prince\+::\+Point \&\+\_\+v)=0
+\item 
+virtual const char $\ast$ \hyperlink{class_line_a5aa5a1667a431543c7d5f5c5aa392962}{\+\_\+\+N\+P\+\_\+repository\+Id} () const 
+\item 
+virtual const char $\ast$ \hyperlink{class_line_a12ea7527d761f37cfe908fbcabab7ca7}{\+\_\+\+N\+P\+\_\+repository\+Id} (\+::C\+O\+R\+B\+A\+::\+U\+Long \&\+\_\+hashval) const 
+\item 
+virtual const \+\_\+omni\+\_\+\+Value\+Ids $\ast$ \hyperlink{class_line_a35a312efa270e82c4c038e90aa6e676e}{\+\_\+\+N\+P\+\_\+truncatable\+Ids} () const 
+\item 
+virtual \+::C\+O\+R\+B\+A\+::\+Boolean \hyperlink{class_line_a694798a7c10a1140fe76cfd7c5563594}{\+\_\+\+N\+P\+\_\+custom} () const 
+\item 
+virtual void $\ast$ \hyperlink{class_line_a569c01e17ca50a4b7d6bd7d80553040d}{\+\_\+ptr\+To\+Value} (const char $\ast$\hyperlink{class_draw_a50509da989141b00a5ae22d68a4d5856}{id})
+\item 
+virtual void \hyperlink{class_line_a17a35e84f5dd3ff6ecfa3df14f02dc10}{\+\_\+\+P\+R\+\_\+marshal\+\_\+state} (cdr\+Stream \&) const 
+\item 
+virtual void \hyperlink{class_line_a001d93972f80167f1b53d728a55afef9}{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state} (cdr\+Stream \&)
+\item 
+virtual void \hyperlink{class_line_a1b19ca8c4ce07cd365d189215f12c62f}{\+\_\+\+P\+R\+\_\+copy\+\_\+state} (\hyperlink{class_line}{Line} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_draw_a5164256572b3c4123ceecd1897c248dd}{\+\_\+ptr\+\_\+type} \hyperlink{class_line_afa65669cf372e878732863fd66902d1d}{\+\_\+downcast} (\+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$)
+\item 
+static void \hyperlink{class_line_ae2475a529c9b0ed1f7eb9ca396b35999}{\+\_\+\+N\+P\+\_\+marshal} (\hyperlink{class_line}{Line} $\ast$, cdr\+Stream \&)
+\item 
+static \hyperlink{class_line}{Line} $\ast$ \hyperlink{class_line_a81748df80cd480d249f192c649df8e1e}{\+\_\+\+N\+P\+\_\+unmarshal} (cdr\+Stream \&)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_petit_prince_8hpp_a5f7bf7cddb608c2aad7c95f55f8a33c5}{\+\_\+core\+\_\+attr} const char $\ast$ \hyperlink{class_line_a38707cdd2f006195ad299c521928dc32}{\+\_\+\+P\+D\+\_\+repo\+Id}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_line_acc11b8a429d8cdd63ba6803dff5602b3}{Line} ()
+\item 
+virtual \hyperlink{class_line_a4a95bafcefa28672b3999deb011b9e50}{$\sim$\+Line} ()
+\item 
+\hyperlink{class_line_acc11b8a429d8cdd63ba6803dff5602b3}{Line} ()
+\item 
+virtual \hyperlink{class_line_a4a95bafcefa28672b3999deb011b9e50}{$\sim$\+Line} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{Line@{Line}!\+\_\+ptr\+\_\+type@{\+\_\+ptr\+\_\+type}}
+\index{\+\_\+ptr\+\_\+type@{\+\_\+ptr\+\_\+type}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+ptr\+\_\+type}{_ptr_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Line}$\ast$ {\bf Line\+::\+\_\+ptr\+\_\+type}}\hypertarget{class_line_a886875fa295d09a973b952a38d791975}{}\label{class_line_a886875fa295d09a973b952a38d791975}
+\index{Line@{Line}!\+\_\+var\+\_\+type@{\+\_\+var\+\_\+type}}
+\index{\+\_\+var\+\_\+type@{\+\_\+var\+\_\+type}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+var\+\_\+type}{_var_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Line\+\_\+var} {\bf Line\+::\+\_\+var\+\_\+type}}\hypertarget{class_line_a65425cec92e3b0b955728581d07ac83b}{}\label{class_line_a65425cec92e3b0b955728581d07ac83b}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\subsubsection[{\texorpdfstring{Line()}{Line()}}]{\setlength{\rightskip}{0pt plus 5cm}Line\+::\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_line_acc11b8a429d8cdd63ba6803dff5602b3}{}\label{class_line_acc11b8a429d8cdd63ba6803dff5602b3}
+\index{Line@{Line}!````~Line@{$\sim$\+Line}}
+\index{````~Line@{$\sim$\+Line}!Line@{Line}}
+\subsubsection[{\texorpdfstring{$\sim$\+Line()}{~Line()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Line\+::$\sim$\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_line_a4a95bafcefa28672b3999deb011b9e50}{}\label{class_line_a4a95bafcefa28672b3999deb011b9e50}
+\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\subsubsection[{\texorpdfstring{Line()}{Line()}}]{\setlength{\rightskip}{0pt plus 5cm}Line\+::\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_line_acc11b8a429d8cdd63ba6803dff5602b3}{}\label{class_line_acc11b8a429d8cdd63ba6803dff5602b3}
+\index{Line@{Line}!````~Line@{$\sim$\+Line}}
+\index{````~Line@{$\sim$\+Line}!Line@{Line}}
+\subsubsection[{\texorpdfstring{$\sim$\+Line()}{~Line()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Line\+::$\sim$\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_line_a4a95bafcefa28672b3999deb011b9e50}{}\label{class_line_a4a95bafcefa28672b3999deb011b9e50}
+
+
+\subsection{Member Function Documentation}
+\index{Line@{Line}!\+\_\+copy\+\_\+value@{\+\_\+copy\+\_\+value}}
+\index{\+\_\+copy\+\_\+value@{\+\_\+copy\+\_\+value}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+copy\+\_\+value()}{_copy_value()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Value\+Base$\ast$ Line\+::\+\_\+copy\+\_\+value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_line_a1394704db9b14feb758131900ad5d173}{}\label{class_line_a1394704db9b14feb758131900ad5d173}
+\index{Line@{Line}!\+\_\+downcast@{\+\_\+downcast}}
+\index{\+\_\+downcast@{\+\_\+downcast}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+downcast(\+::\+C\+O\+R\+B\+A\+::\+Value\+Base $\ast$)}{_downcast(::CORBA::ValueBase *)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \+\_\+ptr\+\_\+type} Line\+::\+\_\+downcast (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+Value\+Base $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_line_afa65669cf372e878732863fd66902d1d}{}\label{class_line_afa65669cf372e878732863fd66902d1d}
+\index{Line@{Line}!\+\_\+\+N\+P\+\_\+custom@{\+\_\+\+N\+P\+\_\+custom}}
+\index{\+\_\+\+N\+P\+\_\+custom@{\+\_\+\+N\+P\+\_\+custom}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+custom() const }{_NP_custom() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual \+::C\+O\+R\+B\+A\+::\+Boolean Line\+::\+\_\+\+N\+P\+\_\+custom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_line_a694798a7c10a1140fe76cfd7c5563594}{}\label{class_line_a694798a7c10a1140fe76cfd7c5563594}
+\index{Line@{Line}!\+\_\+\+N\+P\+\_\+marshal@{\+\_\+\+N\+P\+\_\+marshal}}
+\index{\+\_\+\+N\+P\+\_\+marshal@{\+\_\+\+N\+P\+\_\+marshal}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+marshal(\+Line $\ast$, cdr\+Stream \&)}{_NP_marshal(Line *, cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Line\+::\+\_\+\+N\+P\+\_\+marshal (
+\begin{DoxyParamCaption}
+\item[{{\bf Line} $\ast$}]{, }
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_line_ae2475a529c9b0ed1f7eb9ca396b35999}{}\label{class_line_ae2475a529c9b0ed1f7eb9ca396b35999}
+\index{Line@{Line}!\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}}
+\index{\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+repository\+Id() const }{_NP_repositoryId() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Line\+::\+\_\+\+N\+P\+\_\+repository\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_line_a5aa5a1667a431543c7d5f5c5aa392962}{}\label{class_line_a5aa5a1667a431543c7d5f5c5aa392962}
+
+
+Reimplemented from \hyperlink{class_draw_a90d2c0a9b6aed68ca30ea2a7187317dc}{Draw}.
+
+\index{Line@{Line}!\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}}
+\index{\+\_\+\+N\+P\+\_\+repository\+Id@{\+\_\+\+N\+P\+\_\+repository\+Id}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+repository\+Id(\+::\+C\+O\+R\+B\+A\+::\+U\+Long \&\+\_\+hashval) const }{_NP_repositoryId(::CORBA::ULong &_hashval) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Line\+::\+\_\+\+N\+P\+\_\+repository\+Id (
+\begin{DoxyParamCaption}
+\item[{\+::C\+O\+R\+B\+A\+::\+U\+Long \&}]{\+\_\+hashval}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_line_a12ea7527d761f37cfe908fbcabab7ca7}{}\label{class_line_a12ea7527d761f37cfe908fbcabab7ca7}
+
+
+Reimplemented from \hyperlink{class_draw_ae24df04b0f119c2fb6fd525a041f081d}{Draw}.
+
+\index{Line@{Line}!\+\_\+\+N\+P\+\_\+truncatable\+Ids@{\+\_\+\+N\+P\+\_\+truncatable\+Ids}}
+\index{\+\_\+\+N\+P\+\_\+truncatable\+Ids@{\+\_\+\+N\+P\+\_\+truncatable\+Ids}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+truncatable\+Ids() const }{_NP_truncatableIds() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual const \+\_\+omni\+\_\+\+Value\+Ids$\ast$ Line\+::\+\_\+\+N\+P\+\_\+truncatable\+Ids (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_line_a35a312efa270e82c4c038e90aa6e676e}{}\label{class_line_a35a312efa270e82c4c038e90aa6e676e}
+
+
+Reimplemented from \hyperlink{class_draw_a10a319bcb2ef5d6ac5439859fe9f126e}{Draw}.
+
+\index{Line@{Line}!\+\_\+\+N\+P\+\_\+unmarshal@{\+\_\+\+N\+P\+\_\+unmarshal}}
+\index{\+\_\+\+N\+P\+\_\+unmarshal@{\+\_\+\+N\+P\+\_\+unmarshal}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+P\+\_\+unmarshal(cdr\+Stream \&)}{_NP_unmarshal(cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Line}$\ast$ Line\+::\+\_\+\+N\+P\+\_\+unmarshal (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_line_a81748df80cd480d249f192c649df8e1e}{}\label{class_line_a81748df80cd480d249f192c649df8e1e}
+\index{Line@{Line}!\+\_\+\+P\+R\+\_\+copy\+\_\+state@{\+\_\+\+P\+R\+\_\+copy\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+copy\+\_\+state@{\+\_\+\+P\+R\+\_\+copy\+\_\+state}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+copy\+\_\+state(\+Line $\ast$)}{_PR_copy_state(Line *)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Line\+::\+\_\+\+P\+R\+\_\+copy\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{{\bf Line} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_line_a1b19ca8c4ce07cd365d189215f12c62f}{}\label{class_line_a1b19ca8c4ce07cd365d189215f12c62f}
+\index{Line@{Line}!\+\_\+\+P\+R\+\_\+marshal\+\_\+state@{\+\_\+\+P\+R\+\_\+marshal\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+marshal\+\_\+state@{\+\_\+\+P\+R\+\_\+marshal\+\_\+state}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+marshal\+\_\+state(cdr\+Stream \&) const }{_PR_marshal_state(cdrStream &) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Line\+::\+\_\+\+P\+R\+\_\+marshal\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_line_a17a35e84f5dd3ff6ecfa3df14f02dc10}{}\label{class_line_a17a35e84f5dd3ff6ecfa3df14f02dc10}
+
+
+Reimplemented from \hyperlink{class_draw_adfa1e0ac94bad822e332caeddc17f02a}{Draw}.
+
+\index{Line@{Line}!\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state@{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state}}
+\index{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state@{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state(cdr\+Stream \&)}{_PR_unmarshal_state(cdrStream &)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Line\+::\+\_\+\+P\+R\+\_\+unmarshal\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{cdr\+Stream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_line_a001d93972f80167f1b53d728a55afef9}{}\label{class_line_a001d93972f80167f1b53d728a55afef9}
+
+
+Reimplemented from \hyperlink{class_draw_a62dc59ec12f9ebd4da1f3448dbec683f}{Draw}.
+
+\index{Line@{Line}!\+\_\+ptr\+To\+Value@{\+\_\+ptr\+To\+Value}}
+\index{\+\_\+ptr\+To\+Value@{\+\_\+ptr\+To\+Value}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+ptr\+To\+Value(const char $\ast$id)}{_ptrToValue(const char *id)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ Line\+::\+\_\+ptr\+To\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_line_a569c01e17ca50a4b7d6bd7d80553040d}{}\label{class_line_a569c01e17ca50a4b7d6bd7d80553040d}
+
+
+Reimplemented from \hyperlink{class_draw_a2924173c6238dd077531f555324155b9}{Draw}.
+
+\index{Line@{Line}!end@{end}}
+\index{end@{end}!Line@{Line}}
+\subsubsection[{\texorpdfstring{end()=0}{end()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Point} Line\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_line_ad69f4951e34588087edacf3dccb9205f}{}\label{class_line_ad69f4951e34588087edacf3dccb9205f}
+\index{Line@{Line}!end@{end}}
+\index{end@{end}!Line@{Line}}
+\subsubsection[{\texorpdfstring{end(const \+::\+Petit\+Prince\+::\+Point \&\+\_\+v)=0}{end(const ::PetitPrince::Point &_v)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Line\+::end (
+\begin{DoxyParamCaption}
+\item[{const \+::Petit\+Prince\+::\+Point \&}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_line_a422da36ea2f877b1c30d0bff5153a707}{}\label{class_line_a422da36ea2f877b1c30d0bff5153a707}
+\index{Line@{Line}!start@{start}}
+\index{start@{start}!Line@{Line}}
+\subsubsection[{\texorpdfstring{start()=0}{start()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Point} Line\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_line_aaf3b5135f7b80df4a4882277a5b1b63f}{}\label{class_line_aaf3b5135f7b80df4a4882277a5b1b63f}
+\index{Line@{Line}!start@{start}}
+\index{start@{start}!Line@{Line}}
+\subsubsection[{\texorpdfstring{start(const \+::\+Petit\+Prince\+::\+Point \&\+\_\+v)=0}{start(const ::PetitPrince::Point &_v)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Line\+::start (
+\begin{DoxyParamCaption}
+\item[{const \+::Petit\+Prince\+::\+Point \&}]{\+\_\+v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_line_aa0fb946ffb5689f0eb08339a93ea76ed}{}\label{class_line_aa0fb946ffb5689f0eb08339a93ea76ed}
+
+
+\subsection{Member Data Documentation}
+\index{Line@{Line}!\+\_\+\+P\+D\+\_\+repo\+Id@{\+\_\+\+P\+D\+\_\+repo\+Id}}
+\index{\+\_\+\+P\+D\+\_\+repo\+Id@{\+\_\+\+P\+D\+\_\+repo\+Id}!Line@{Line}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+D\+\_\+repo\+Id}{_PD_repoId}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+core\+\_\+attr} const char$\ast$ Line\+::\+\_\+\+P\+D\+\_\+repo\+Id\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_line_a38707cdd2f006195ad299c521928dc32}{}\label{class_line_a38707cdd2f006195ad299c521928dc32}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hdr/\hyperlink{_petit_prince_8hpp}{Petit\+Prince.\+hpp}\end{DoxyCompactItemize}
