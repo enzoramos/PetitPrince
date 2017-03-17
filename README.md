@@ -37,10 +37,12 @@ $ omniidl -bcxx -Wba -Wbh=.hpp -Wbs=_Stub.cpp -Wbd=_DynStub.cpp -Wbuse_quotes Pe
 This command create three files: `PetitPrince.hpp`, `PetitPricne_Stub.cpp` and `PetitPrince_DynStub.cpp`.
 These files are located where you typed the `omniidl` command (i.e. `%ROOT/idl/` folder).
 Next step is to move these files to a proper location (in client and server projects):
-> cp *.hpp %ROOT/PetitPrince_Client/hdr
-> cp *.cpp %ROOT/PetitPrince_Client/src
-> cp *.hpp %ROOT/PetitPrince_Server/hdr
-> cp *.cpp %ROOT/PetitPrince_Server/src
+```shell
+cp *.hpp %ROOT/PetitPrince_Client/hdr
+cp *.cpp %ROOT/PetitPrince_Client/src
+cp *.hpp %ROOT/PetitPrince_Server/hdr
+cp *.cpp %ROOT/PetitPrince_Server/src
+```
 
 Finally, check if there are following lines:
 ```Makefile
