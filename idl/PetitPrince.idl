@@ -1,7 +1,99 @@
-/*
- *Auteur : E.Ramos, J.Bidet, J.Ramsamy
- *Description : Ce module definie les services et les formes
+/**
+ * Auteur : E.Ramos, J.Bidet, J.Ramsamy
+ * Description : Ce module definie les services et les formes.
+ * 
+ * Pour la conception de l'idl nous avons pensé à développer deux interfaces
+ * au lieu d'une, afin de bien séparer les services de l'application et les
+ * services liés aux formes.
+ * Dans CORBA, les interfaces définissent un service, composé d'une liste de
+ * méthodes destinées à être appelées (en remote) par le(s) client(s).
+ * L'utilisation de CORBA pour ces services, permet ici d'obscurcir
+ * l'implémentation côté server et l'utilisation côté client des services.
+ * Ainsi, peu importe le client et la technologie utilisée, le client peut
+ * appeler de façon autonome les méthodes du service sans se préoccuper de leur
+ * implémentation et surtout du langage utilisé. Le seul prérequis est la
+ * compilation de l'idl côté client vers le langage souhaité.
+ *
+ * Nous avons définie deux interfaces et des valuetype pour décrire les formes.
+ * Voici les deux interfaces choisies :
+ * - PetitPrinceService
+ * - DrawService
+ * Voici les valuetype choisis :
+ * - Draw
+ * - Line
+ * - Circle
+ * - Ellipse
+ * - Polygon
+ *
+ *
+ * I. PetitPrinceService
+ * 
+ * Possède 1 exception et 6 méthodes.
+ * L'exception permet d'informer l'utilisateur de l'échec d'ajout d'une forme.
+ * 4 concernent la création d'une forme :
+ * - createLine()
+ * - createEllipse()
+ * - createCircle()
+ * - createPolygon()
+ * 1 concerne la recherche par auteur des formes :
+ * - getDraws()
+ * 1 concerne la notation d'une forme :
+ * - markDraw()
+ *
+ * Axes d'amélioration :
+ * 
+ * 1. Pour la création des formes nous avons pensé à utiliser le design pattern
+ * Factory. Ce dernier aurait permis de n'avoir qu'une méthode de création de
+ * formes dans laquelle nous aurions passé en paramètre le type de la forme et
+ * ses paramètres. Nous n'avons pas implémenté ce design par manque de temps lié
+ * à la compléxité de son développement. Il aurait fallu en effet, générer une
+ * une classe enum dynamique dans laquelle nous aurions pu
+ * ajouter/modifier/supprimer des formes dynamiquement (c-à-d, sans retoucher à
+ * l'idl). Mais ceci aurait impliqué l'utilisation du type Any de CORBA sachant
+ * que chaque forme possède un nombre de paramètres différent et des types
+ * différents pour chaque paramètre. Cette réalisation n'est pas impossible, car
+ * déjà réalisée, mais coûte trop cher en ressources pour ce projet.
+ *
+ * 2. Pour la récupération des formes nous aurions pu également ajouter d'autres
+ * filtres de sélection, comme par ID, par type, ou par note. Nous aurions pu
+ * également développer une méthode générique (à la manière de la creation des
+ * formes, cf. axe d'amélioration 1.) qui aurait permis de passer un ou plusieur
+ * filtres dans une seule et même méthode. Les autres filtres indépendents n'ont
+ * pas été implémenté, non pas par compléxité mais par manque de temps. La
+ * méthode générique, elle, pour les même raisons que l'axe d'amélioration 1.
+ * 
+ *
+ * II. DrawService
+ *
+ * Possède 2 exceptions et 9 méthodes.
+ * Les exceptions permettent d'informer l'utilisateur que l'opération ne peut
+ * être exécutée sur cette forme (i.e. une ligne n'a pas d'air) et également
+ * que la forme souhaitée n'existe pas.
+ * 7 concernent les opérations sur les formes :
+ * - area()
+ * - perimeter()
+ * - homothetie()
+ * - translation()
+ * - rotation()
+ * - symCenter()
+ * - symAxial()
+ * 1 concerne l'ajout d'une forme dans une autre :
+ * - addDraw()
+ * 1 concerne la méthode d'affichage standard d'une forme :
+ * - toString()
+ *
+ * 
+ * III. Valuetype Draw, Line, Circle, Ellipse, Polygon
+ * Le valuetype Draw définie la classe abstraite avec les champs et méthodes
+ * communes. Les autres valuetype définissent les différentes formes héritant de
+ * Draw. Elles implémentent les méthodes avec les formules géométriques.
+ * Certaines méthodes de certains valuetype ne sont pas implémentées car elles
+ * n'auraient pas de sens (ex: Line et area), elles renvoient alors l'exception
+ * NonApplicable(). La méthode toString() de Draw affiche les champs communs et
+ * est appelée par tous les valuetype héritant et affiche les champs spécifiques
+ *
  */
+
 
 module PetitPrince {
 

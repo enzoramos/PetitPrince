@@ -21,7 +21,12 @@
 
 using namespace std;
 
-
+/*!
+ * \fn string longSeqToString(::PetitPrince::LongSeq* s)
+ * \brief This method is used locally to ease the print of a Long sequence.
+ * \param s a pointer to the Long sequence.
+ * \return a user-friendly representation of the Long sequence.
+ */
 string longSeqToString(::PetitPrince::LongSeq* s) {
     stringstream ss;
     if(s->length() <= 0) {
@@ -37,27 +42,37 @@ string longSeqToString(::PetitPrince::LongSeq* s) {
 
 int main(int argc, char** argv) {
     
+    // Define the main vars
     CORBA::ORB_var orb;
+    
+    // Used to handle exception
     try {
+        // Initialize the ORB
         orb = CORBA::ORB_init(argc, argv);
+        
+        // Get the Naming Service context
         CORBA::Object_var rootContextObj = orb->resolve_initial_references("NameService");
         CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow(rootContextObj.in());
         
+        // Create the naming service for PetitPrince service
         CosNaming::Name pps;
         pps.length(1);
         pps[0].id = (const char *) "PetitPrinceService";
         pps[0].kind = (const char *) "";
+        // Get the reference for the PetitPrince service in naming service
         ::CORBA::Object_var managerObj = nc->resolve(pps);
         ::PetitPrince::PetitPrinceService_var pps_manager = ::PetitPrince::PetitPrinceService::_narrow(managerObj.in());
         
+        // Create the naming service for Draw service
         CosNaming::Name ds;
         ds.length(1);
         ds[0].id = (const char *) "DrawService";
         ds[0].kind = (const char *) "";
+        // Get the reference for the Draw service in naming service
         managerObj = nc->resolve(ds);
         ::PetitPrince::DrawService_var ds_manager = ::PetitPrince::DrawService::_narrow(managerObj.in());
         
-        // TODO:
+        // Loop to make a user command prompt
         char exit = 'n';
         try {
             do {
@@ -94,14 +109,12 @@ int main(int argc, char** argv) {
                 cin >> exit;
             } while(exit!='y');
             
-            //TODO: Shutdown server message
-            
         } catch(const std::exception& std_e) {
             cerr << std_e.what() << endl;
         }
     } catch(const CORBA::Exception& e) {
         // Handles CORBA exceptions
-        //cerr << e << endl;
+        cerr << e._name() << endl;
     }
     
     // End CORBA
@@ -110,7 +123,7 @@ int main(int argc, char** argv) {
             orb->destroy();
             cout << "Ending CORBA..." << endl;
         } catch(const CORBA::Exception& e) {
-            //cerr << "orb->destroy failed:" << e << endl;
+            cerr << "orb->destroy failed:" << e._name() << endl;
             return 1;
         }
     }
