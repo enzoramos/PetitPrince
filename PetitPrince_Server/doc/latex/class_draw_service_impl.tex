@@ -41,23 +41,23 @@ Collaboration diagram for Draw\+Service\+Impl\+:
 virtual \hyperlink{class_draw_service_impl_a0ed99cbf8486cbbab8061728d005dd8a}{$\sim$\+Draw\+Service\+Impl} ()
 \item 
 \+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_draw_service_impl_af7c453d679b203736a8b46ccbf011205}{area} (\+::C\+O\+R\+B\+A\+::\+Long id) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method is a local call to the \hyperlink{class_draw}{Draw} class method. \end{DoxyCompactList}\item 
 \+::C\+O\+R\+B\+A\+::\+Double \hyperlink{class_draw_service_impl_a48036a5f8d3cea2fcd81bf1c36581d3b}{perimeter} (\+::C\+O\+R\+B\+A\+::\+Long id) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method is a local call to the \hyperlink{class_draw}{Draw} class method. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_service_impl_a2ded991472f1d2e1afab3a475360e070}{homothetie} (\+::C\+O\+R\+B\+A\+::\+Long id,\+::C\+O\+R\+B\+A\+::\+Double index) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method is a local call to the \hyperlink{class_draw}{Draw} class method. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_service_impl_a0b11a8d94d84c97a00de63873370e932}{translation} (\+::C\+O\+R\+B\+A\+::\+Long id,\+::C\+O\+R\+B\+A\+::\+Double x,\+::C\+O\+R\+B\+A\+::\+Double y) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method is a local call to the \hyperlink{class_draw}{Draw} class method. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_service_impl_a01fab41862413e70cd171883c36056a7}{rotation} (\+::C\+O\+R\+B\+A\+::\+Long id,\+::C\+O\+R\+B\+A\+::\+Double angle) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method is a local call to the \hyperlink{class_draw}{Draw} class method. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_service_impl_a6d464f4798e45309ce29c69a60a04d2d}{sym\+Center} (\+::C\+O\+R\+B\+A\+::\+Long id) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method is a local call to the \hyperlink{class_draw}{Draw} class method. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_service_impl_aa2aa750626c52f3e00056216e854e09e}{sym\+Axial} (\+::C\+O\+R\+B\+A\+::\+Long id) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method is a local call to the \hyperlink{class_draw}{Draw} class method. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_service_impl_a9e4fe6a245439b112c5985682d759fb2}{add\+Draw} (\+::C\+O\+R\+B\+A\+::\+Long pid,\+::C\+O\+R\+B\+A\+::\+Long cid) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method add an inner draw into a parent draw. \end{DoxyCompactList}\item 
 char $\ast$ \hyperlink{class_draw_service_impl_a5cc444981cf134ad07a4c0e468883676}{to\+String} (\+::C\+O\+R\+B\+A\+::\+Long id) override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This method is a local call to the \hyperlink{class_draw}{Draw} class method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -125,7 +125,23 @@ Definition at line 25 of file Draw\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_draw_service_impl_a9e4fe6a245439b112c5985682d759fb2}{}\label{class_draw_service_impl_a9e4fe6a245439b112c5985682d759fb2}
 
 
-Definition at line 136 of file Draw\+Service\+Impl.\+cpp.
+This method add an inner draw into a parent draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & the draw parent id. This draw is the one who will own the inner draw. \\
+\hline
+{\em cid} & the draw child id. This draw is the one who will belong to the parent draw.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Unexpected\+Draw} & when the inner draw has a greater area than the parent draw. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 72 of file Draw\+Service\+Impl.\+cpp.
 
 \index{Draw\+Service\+Impl@{Draw\+Service\+Impl}!area@{area}}
 \index{area@{area}!Draw\+Service\+Impl@{Draw\+Service\+Impl}}
@@ -136,7 +152,19 @@ Definition at line 136 of file Draw\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_draw_service_impl_af7c453d679b203736a8b46ccbf011205}{}\label{class_draw_service_impl_af7c453d679b203736a8b46ccbf011205}
 
 
-Definition at line 36 of file Draw\+Service\+Impl.\+cpp.
+This method is a local call to the \hyperlink{class_draw}{Draw} class method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the draw\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the calculated area of the draw. 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Draw\+Service\+Impl.\+cpp.
 
 \index{Draw\+Service\+Impl@{Draw\+Service\+Impl}!homothetie@{homothetie}}
 \index{homothetie@{homothetie}!Draw\+Service\+Impl@{Draw\+Service\+Impl}}
@@ -148,7 +176,18 @@ Definition at line 36 of file Draw\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_draw_service_impl_a2ded991472f1d2e1afab3a475360e070}{}\label{class_draw_service_impl_a2ded991472f1d2e1afab3a475360e070}
 
 
-Definition at line 70 of file Draw\+Service\+Impl.\+cpp.
+This method is a local call to the \hyperlink{class_draw}{Draw} class method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the draw \\
+\hline
+{\em index} & the scalar factor to apply to the draw \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Draw\+Service\+Impl.\+cpp.
 
 \index{Draw\+Service\+Impl@{Draw\+Service\+Impl}!perimeter@{perimeter}}
 \index{perimeter@{perimeter}!Draw\+Service\+Impl@{Draw\+Service\+Impl}}
@@ -159,7 +198,19 @@ Definition at line 70 of file Draw\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_draw_service_impl_a48036a5f8d3cea2fcd81bf1c36581d3b}{}\label{class_draw_service_impl_a48036a5f8d3cea2fcd81bf1c36581d3b}
 
 
-Definition at line 53 of file Draw\+Service\+Impl.\+cpp.
+This method is a local call to the \hyperlink{class_draw}{Draw} class method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the draw\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the calculated perimeter of the draw. 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Draw\+Service\+Impl.\+cpp.
 
 \index{Draw\+Service\+Impl@{Draw\+Service\+Impl}!rotation@{rotation}}
 \index{rotation@{rotation}!Draw\+Service\+Impl@{Draw\+Service\+Impl}}
@@ -171,7 +222,18 @@ Definition at line 53 of file Draw\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_draw_service_impl_a01fab41862413e70cd171883c36056a7}{}\label{class_draw_service_impl_a01fab41862413e70cd171883c36056a7}
 
 
-Definition at line 97 of file Draw\+Service\+Impl.\+cpp.
+This method is a local call to the \hyperlink{class_draw}{Draw} class method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the draw \\
+\hline
+{\em angle} & the angle to rotate the draw \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Draw\+Service\+Impl.\+cpp.
 
 \index{Draw\+Service\+Impl@{Draw\+Service\+Impl}!sym\+Axial@{sym\+Axial}}
 \index{sym\+Axial@{sym\+Axial}!Draw\+Service\+Impl@{Draw\+Service\+Impl}}
@@ -182,7 +244,16 @@ Definition at line 97 of file Draw\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_draw_service_impl_aa2aa750626c52f3e00056216e854e09e}{}\label{class_draw_service_impl_aa2aa750626c52f3e00056216e854e09e}
 
 
-Definition at line 121 of file Draw\+Service\+Impl.\+cpp.
+This method is a local call to the \hyperlink{class_draw}{Draw} class method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the draw \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file Draw\+Service\+Impl.\+cpp.
 
 \index{Draw\+Service\+Impl@{Draw\+Service\+Impl}!sym\+Center@{sym\+Center}}
 \index{sym\+Center@{sym\+Center}!Draw\+Service\+Impl@{Draw\+Service\+Impl}}
@@ -193,7 +264,16 @@ Definition at line 121 of file Draw\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_draw_service_impl_a6d464f4798e45309ce29c69a60a04d2d}{}\label{class_draw_service_impl_a6d464f4798e45309ce29c69a60a04d2d}
 
 
-Definition at line 109 of file Draw\+Service\+Impl.\+cpp.
+This method is a local call to the \hyperlink{class_draw}{Draw} class method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the draw \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file Draw\+Service\+Impl.\+cpp.
 
 \index{Draw\+Service\+Impl@{Draw\+Service\+Impl}!to\+String@{to\+String}}
 \index{to\+String@{to\+String}!Draw\+Service\+Impl@{Draw\+Service\+Impl}}
@@ -204,7 +284,19 @@ Definition at line 109 of file Draw\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_draw_service_impl_a5cc444981cf134ad07a4c0e468883676}{}\label{class_draw_service_impl_a5cc444981cf134ad07a4c0e468883676}
 
 
-Definition at line 156 of file Draw\+Service\+Impl.\+cpp.
+This method is a local call to the \hyperlink{class_draw}{Draw} class method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the draw\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the user-\/friendly formatted string that represent the draw. 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file Draw\+Service\+Impl.\+cpp.
 
 \index{Draw\+Service\+Impl@{Draw\+Service\+Impl}!translation@{translation}}
 \index{translation@{translation}!Draw\+Service\+Impl@{Draw\+Service\+Impl}}
@@ -217,7 +309,20 @@ Definition at line 156 of file Draw\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_draw_service_impl_a0b11a8d94d84c97a00de63873370e932}{}\label{class_draw_service_impl_a0b11a8d94d84c97a00de63873370e932}
 
 
-Definition at line 84 of file Draw\+Service\+Impl.\+cpp.
+This method is a local call to the \hyperlink{class_draw}{Draw} class method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the draw \\
+\hline
+{\em x} & the x translation to apply to the draw \\
+\hline
+{\em y} & the y translation to apply to the draw \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Draw\+Service\+Impl.\+cpp.
 
 
 

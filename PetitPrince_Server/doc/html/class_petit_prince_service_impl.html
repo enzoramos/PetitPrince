@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>PetitPrince_Server: PetitPrinceServiceImpl Class Reference</title>
+<title>PetitPrince Server: PetitPrinceServiceImpl Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">PetitPrince_Server
+   <div id="projectname">PetitPrince Server
    &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
@@ -122,16 +122,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af2198ec89de73b22c98f9944f3b5912f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_petit_prince_service_impl.html#af2198ec89de73b22c98f9944f3b5912f">~PetitPrinceServiceImpl</a> ()</td></tr>
 <tr class="separator:af2198ec89de73b22c98f9944f3b5912f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f30a969622fa0ca7bc88ee5d72bc51c"><td class="memItemLeft" align="right" valign="top">::CORBA::Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_petit_prince_service_impl.html#a8f30a969622fa0ca7bc88ee5d72bc51c">createLine</a> (const char *author, const ::PetitPrince::Point &amp;a, const ::PetitPrince::Point &amp;b) override</td></tr>
+<tr class="memdesc:a8f30a969622fa0ca7bc88ee5d72bc51c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method create a line with an author and two points as start and end coordinates.  <a href="#a8f30a969622fa0ca7bc88ee5d72bc51c">More...</a><br /></td></tr>
 <tr class="separator:a8f30a969622fa0ca7bc88ee5d72bc51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62369775140e067970bbdf544392714c"><td class="memItemLeft" align="right" valign="top">::CORBA::Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_petit_prince_service_impl.html#a62369775140e067970bbdf544392714c">createCircle</a> (const char *author, const ::PetitPrince::Point &amp;center,::CORBA::Double ray) override</td></tr>
+<tr class="memdesc:a62369775140e067970bbdf544392714c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method create a circle with an author a center and a ray.  <a href="#a62369775140e067970bbdf544392714c">More...</a><br /></td></tr>
 <tr class="separator:a62369775140e067970bbdf544392714c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad69b464b23df4495e29387d07811a2d2"><td class="memItemLeft" align="right" valign="top">::CORBA::Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_petit_prince_service_impl.html#ad69b464b23df4495e29387d07811a2d2">createEllipse</a> (const char *author, const ::PetitPrince::Point &amp;center,::CORBA::Double long_ray,::CORBA::Double short_ray) override</td></tr>
+<tr class="memdesc:ad69b464b23df4495e29387d07811a2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method create a circle with an author a center and a ray.  <a href="#ad69b464b23df4495e29387d07811a2d2">More...</a><br /></td></tr>
 <tr class="separator:ad69b464b23df4495e29387d07811a2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f7839fea87678e071f39ec019e7b306"><td class="memItemLeft" align="right" valign="top">::CORBA::Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_petit_prince_service_impl.html#a5f7839fea87678e071f39ec019e7b306">createPolygon</a> (const char *author, const ::PetitPrince::PointSeq &amp;pts) override</td></tr>
+<tr class="memdesc:a5f7839fea87678e071f39ec019e7b306"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method create a polygon with an author and a serie of points.  <a href="#a5f7839fea87678e071f39ec019e7b306">More...</a><br /></td></tr>
 <tr class="separator:a5f7839fea87678e071f39ec019e7b306"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97ed62c5a6c2fb4d86a23bde084e3c82"><td class="memItemLeft" align="right" valign="top">::PetitPrince::LongSeq *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_petit_prince_service_impl.html#a97ed62c5a6c2fb4d86a23bde084e3c82">getDraws</a> (const char *author) override</td></tr>
+<tr class="memdesc:a97ed62c5a6c2fb4d86a23bde084e3c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method return a sequence of id for the draws craeated by an author.  <a href="#a97ed62c5a6c2fb4d86a23bde084e3c82">More...</a><br /></td></tr>
 <tr class="separator:a97ed62c5a6c2fb4d86a23bde084e3c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe85dc1a7c705dec3aeac5c56e2f9e98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_petit_prince_service_impl.html#abe85dc1a7c705dec3aeac5c56e2f9e98">markDraw</a> (::CORBA::Double mark,::CORBA::Long id) override</td></tr>
+<tr class="memdesc:abe85dc1a7c705dec3aeac5c56e2f9e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method give a mark for a draw.  <a href="#abe85dc1a7c705dec3aeac5c56e2f9e98">More...</a><br /></td></tr>
 <tr class="separator:abe85dc1a7c705dec3aeac5c56e2f9e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -261,7 +267,24 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00066">66</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
+<p>This method create a circle with an author a center and a ray. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">author</td><td>the author of the draw </td></tr>
+    <tr><td class="paramname">center</td><td>a reference to the center point of the circle </td></tr>
+    <tr><td class="paramname">ray</td><td>the ray of the circle</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidDrawParams</td><td>when creation fails</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the id of the created draw </dd></dl>
+
+<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00041">41</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
 
 </div>
 </div>
@@ -309,7 +332,24 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00086">86</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
+<p>This method create a circle with an author a center and a ray. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">author</td><td>the author of the draw </td></tr>
+    <tr><td class="paramname">center</td><td>a reference to the center point of the circle </td></tr>
+    <tr><td class="paramname">ray</td><td>the ray of the circle</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidDrawParams</td><td>when creation fails</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the id of the created draw </dd></dl>
+
+<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00048">48</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
 
 </div>
 </div>
@@ -351,7 +391,24 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00046">46</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
+<p>This method create a line with an author and two points as start and end coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">author</td><td>the author of the draw </td></tr>
+    <tr><td class="paramname">a</td><td>a reference to the start point of the line </td></tr>
+    <tr><td class="paramname">b</td><td>a reference to the end point of the line</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidDrawParams</td><td>when creation fails</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the id of the created draw </dd></dl>
+
+<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00034">34</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
 
 </div>
 </div>
@@ -387,7 +444,23 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00105">105</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
+<p>This method create a polygon with an author and a serie of points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">author</td><td>the author of the draw </td></tr>
+    <tr><td class="paramname">pts</td><td>a sequence of points</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidDrawParams</td><td>when creation fails</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the id of the created draw </dd></dl>
+
+<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00055">55</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
 
 </div>
 </div>
@@ -413,7 +486,16 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00121">121</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
+<p>This method return a sequence of id for the draws craeated by an author. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">author</td><td>the author of the draws</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the ids of the draws created by this author </dd></dl>
+
+<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00062">62</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,7 +531,16 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00141">141</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
+<p>This method give a mark for a draw. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mark</td><td>the given mark </td></tr>
+    <tr><td class="paramname">id</td><td>the id of the draw to apply the mark </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_petit_prince_service_impl_8cpp_source.html#l00074">74</a> of file <a class="el" href="_petit_prince_service_impl_8cpp_source.html">PetitPrinceServiceImpl.cpp</a>.</p>
 
 </div>
 </div>
@@ -472,7 +563,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_petit_prince_service_impl_8hpp_source.html#l00051">51</a> of file <a class="el" href="_petit_prince_service_impl_8hpp_source.html">PetitPrinceServiceImpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_petit_prince_service_impl_8hpp_source.html#l00123">123</a> of file <a class="el" href="_petit_prince_service_impl_8hpp_source.html">PetitPrinceServiceImpl.hpp</a>.</p>
 
 </div>
 </div>

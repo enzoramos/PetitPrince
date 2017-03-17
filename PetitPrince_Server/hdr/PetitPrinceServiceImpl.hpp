@@ -34,12 +34,84 @@ public:
     PetitPrinceServiceImpl(CORBA::ORB_var orb);
     virtual ~PetitPrinceServiceImpl();
     
+    /*!
+     * \fn ::CORBA::Long createLine(const char* author, const ::PetitPrince::Point& a, const ::PetitPrince::Point& b)
+     * \brief This method create a line with an author and two points as start and end coordinates
+     * 
+     * \param author the author of the draw
+     * \param a a reference to the start point of the line
+     * \param b a reference to the end point of the line
+     * 
+     * \throw InvalidDrawParams when creation fails
+     * 
+     * \return the id of the created draw
+     * 
+     */
     ::CORBA::Long createLine(const char* author, const ::PetitPrince::Point& a, const ::PetitPrince::Point& b) override;
+    
+    /*!
+     * \fn ::CORBA::Long createCircle(const char* author, const ::PetitPrince::Point& center, ::CORBA::Double ray)
+     * \brief This method create a circle with an author a center and a ray
+     * 
+     * \param author the author of the draw
+     * \param center a reference to the center point of the circle
+     * \param ray the ray of the circle
+     * 
+     * \throw InvalidDrawParams when creation fails
+     * 
+     * \return the id of the created draw
+     * 
+     */
     ::CORBA::Long createCircle(const char* author, const ::PetitPrince::Point& center, ::CORBA::Double ray) override;
+    
+    /*!
+     * \fn ::CORBA::Long createEllipse(const char* author, const ::PetitPrince::Point& center, ::CORBA::Double long_ray, ::CORBA::Double short_ray)
+     * \brief This method create a circle with an author a center and a ray
+     * 
+     * \param author the author of the draw
+     * \param center a reference to the center point of the circle
+     * \param ray the ray of the circle
+     * 
+     * \throw InvalidDrawParams when creation fails
+     * 
+     * \return the id of the created draw
+     * 
+     */
     ::CORBA::Long createEllipse(const char* author, const ::PetitPrince::Point& center, ::CORBA::Double long_ray, ::CORBA::Double short_ray) override;
+    
+    /*!
+     * \fn ::CORBA::Long createPolygon(const char* author, const ::PetitPrince::PointSeq& pts)
+     * \brief This method create a polygon with an author and a serie of points
+     * 
+     * \param author the author of the draw
+     * \param pts a sequence of points
+     * 
+     * \throw InvalidDrawParams when creation fails
+     * 
+     * \return the id of the created draw
+     * 
+     */
     ::CORBA::Long createPolygon(const char* author, const ::PetitPrince::PointSeq& pts) override;
     
+    /*!
+     * \fn ::PetitPrince::LongSeq* getDraws(const char* author)
+     * \brief This method return a sequence of id for the draws craeated by an author
+     * 
+     * \param author the author of the draws
+     * 
+     * \return the ids of the draws created by this author
+     * 
+     */
     ::PetitPrince::LongSeq* getDraws(const char* author) override;
+    
+    /*!
+     * \fn void markDraw(::CORBA::Double mark, ::CORBA::Long id)
+     * \brief This method give a mark for a draw
+     * 
+     * \param mark the given mark
+     * \param id the id of the draw to apply the mark
+     * 
+     */
     void markDraw(::CORBA::Double mark, ::CORBA::Long id) override;
     
 

@@ -41,17 +41,17 @@ Collaboration diagram for Petit\+Prince\+Service\+Impl\+:
 virtual \hyperlink{class_petit_prince_service_impl_af2198ec89de73b22c98f9944f3b5912f}{$\sim$\+Petit\+Prince\+Service\+Impl} ()
 \item 
 \+::C\+O\+R\+B\+A\+::\+Long \hyperlink{class_petit_prince_service_impl_a8f30a969622fa0ca7bc88ee5d72bc51c}{create\+Line} (const char $\ast$author, const \+::Petit\+Prince\+::\+Point \&a, const \+::Petit\+Prince\+::\+Point \&b) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method create a line with an author and two points as start and end coordinates. \end{DoxyCompactList}\item 
 \+::C\+O\+R\+B\+A\+::\+Long \hyperlink{class_petit_prince_service_impl_a62369775140e067970bbdf544392714c}{create\+Circle} (const char $\ast$author, const \+::Petit\+Prince\+::\+Point \&center,\+::C\+O\+R\+B\+A\+::\+Double ray) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method create a circle with an author a center and a ray. \end{DoxyCompactList}\item 
 \+::C\+O\+R\+B\+A\+::\+Long \hyperlink{class_petit_prince_service_impl_ad69b464b23df4495e29387d07811a2d2}{create\+Ellipse} (const char $\ast$author, const \+::Petit\+Prince\+::\+Point \&center,\+::C\+O\+R\+B\+A\+::\+Double long\+\_\+ray,\+::C\+O\+R\+B\+A\+::\+Double short\+\_\+ray) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method create a circle with an author a center and a ray. \end{DoxyCompactList}\item 
 \+::C\+O\+R\+B\+A\+::\+Long \hyperlink{class_petit_prince_service_impl_a5f7839fea87678e071f39ec019e7b306}{create\+Polygon} (const char $\ast$author, const \+::Petit\+Prince\+::\+Point\+Seq \&pts) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method create a polygon with an author and a serie of points. \end{DoxyCompactList}\item 
 \+::Petit\+Prince\+::\+Long\+Seq $\ast$ \hyperlink{class_petit_prince_service_impl_a97ed62c5a6c2fb4d86a23bde084e3c82}{get\+Draws} (const char $\ast$author) override
-\item 
+\begin{DoxyCompactList}\small\item\em This method return a sequence of id for the draws craeated by an author. \end{DoxyCompactList}\item 
 void \hyperlink{class_petit_prince_service_impl_abe85dc1a7c705dec3aeac5c56e2f9e98}{mark\+Draw} (\+::C\+O\+R\+B\+A\+::\+Double mark,\+::C\+O\+R\+B\+A\+::\+Long id) override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This method give a mark for a draw. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -125,7 +125,28 @@ Definition at line 29 of file Petit\+Prince\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_petit_prince_service_impl_a62369775140e067970bbdf544392714c}{}\label{class_petit_prince_service_impl_a62369775140e067970bbdf544392714c}
 
 
-Definition at line 66 of file Petit\+Prince\+Service\+Impl.\+cpp.
+This method create a circle with an author a center and a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author} & the author of the draw \\
+\hline
+{\em center} & a reference to the center point of the circle \\
+\hline
+{\em ray} & the ray of the circle\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Draw\+Params} & when creation fails\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the id of the created draw 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file Petit\+Prince\+Service\+Impl.\+cpp.
 
 \index{Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}!create\+Ellipse@{create\+Ellipse}}
 \index{create\+Ellipse@{create\+Ellipse}!Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}}
@@ -139,7 +160,28 @@ Definition at line 66 of file Petit\+Prince\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_petit_prince_service_impl_ad69b464b23df4495e29387d07811a2d2}{}\label{class_petit_prince_service_impl_ad69b464b23df4495e29387d07811a2d2}
 
 
-Definition at line 86 of file Petit\+Prince\+Service\+Impl.\+cpp.
+This method create a circle with an author a center and a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author} & the author of the draw \\
+\hline
+{\em center} & a reference to the center point of the circle \\
+\hline
+{\em ray} & the ray of the circle\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Draw\+Params} & when creation fails\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the id of the created draw 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file Petit\+Prince\+Service\+Impl.\+cpp.
 
 \index{Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}!create\+Line@{create\+Line}}
 \index{create\+Line@{create\+Line}!Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}}
@@ -152,7 +194,28 @@ Definition at line 86 of file Petit\+Prince\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_petit_prince_service_impl_a8f30a969622fa0ca7bc88ee5d72bc51c}{}\label{class_petit_prince_service_impl_a8f30a969622fa0ca7bc88ee5d72bc51c}
 
 
-Definition at line 46 of file Petit\+Prince\+Service\+Impl.\+cpp.
+This method create a line with an author and two points as start and end coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author} & the author of the draw \\
+\hline
+{\em a} & a reference to the start point of the line \\
+\hline
+{\em b} & a reference to the end point of the line\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Draw\+Params} & when creation fails\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the id of the created draw 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file Petit\+Prince\+Service\+Impl.\+cpp.
 
 \index{Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}!create\+Polygon@{create\+Polygon}}
 \index{create\+Polygon@{create\+Polygon}!Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}}
@@ -164,7 +227,26 @@ Definition at line 46 of file Petit\+Prince\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_petit_prince_service_impl_a5f7839fea87678e071f39ec019e7b306}{}\label{class_petit_prince_service_impl_a5f7839fea87678e071f39ec019e7b306}
 
 
-Definition at line 105 of file Petit\+Prince\+Service\+Impl.\+cpp.
+This method create a polygon with an author and a serie of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author} & the author of the draw \\
+\hline
+{\em pts} & a sequence of points\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Draw\+Params} & when creation fails\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the id of the created draw 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file Petit\+Prince\+Service\+Impl.\+cpp.
 
 \index{Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}!get\+Draws@{get\+Draws}}
 \index{get\+Draws@{get\+Draws}!Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}}
@@ -175,7 +257,19 @@ Definition at line 105 of file Petit\+Prince\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_petit_prince_service_impl_a97ed62c5a6c2fb4d86a23bde084e3c82}{}\label{class_petit_prince_service_impl_a97ed62c5a6c2fb4d86a23bde084e3c82}
 
 
-Definition at line 121 of file Petit\+Prince\+Service\+Impl.\+cpp.
+This method return a sequence of id for the draws craeated by an author. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author} & the author of the draws\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ids of the draws created by this author 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file Petit\+Prince\+Service\+Impl.\+cpp.
 
 \index{Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}!mark\+Draw@{mark\+Draw}}
 \index{mark\+Draw@{mark\+Draw}!Petit\+Prince\+Service\+Impl@{Petit\+Prince\+Service\+Impl}}
@@ -187,7 +281,18 @@ Definition at line 121 of file Petit\+Prince\+Service\+Impl.\+cpp.
 )\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_petit_prince_service_impl_abe85dc1a7c705dec3aeac5c56e2f9e98}{}\label{class_petit_prince_service_impl_abe85dc1a7c705dec3aeac5c56e2f9e98}
 
 
-Definition at line 141 of file Petit\+Prince\+Service\+Impl.\+cpp.
+This method give a mark for a draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mark} & the given mark \\
+\hline
+{\em id} & the id of the draw to apply the mark \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Petit\+Prince\+Service\+Impl.\+cpp.
 
 
 
@@ -197,7 +302,7 @@ Definition at line 141 of file Petit\+Prince\+Service\+Impl.\+cpp.
 \subsubsection[{\texorpdfstring{\+\_\+draw\+\_\+list}{_draw_list}}]{\setlength{\rightskip}{0pt plus 5cm}map$<$\+::C\+O\+R\+B\+A\+::\+Long,\+::Petit\+Prince\+::\+Draw $\ast$ $>$ Petit\+Prince\+Service\+Impl\+::\+\_\+draw\+\_\+list\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_petit_prince_service_impl_ac469e25a69375c26d3d6ec514fc7bb5b}{}\label{class_petit_prince_service_impl_ac469e25a69375c26d3d6ec514fc7bb5b}
 
 
-Definition at line 51 of file Petit\+Prince\+Service\+Impl.\+hpp.
+Definition at line 123 of file Petit\+Prince\+Service\+Impl.\+hpp.
 
 
 
