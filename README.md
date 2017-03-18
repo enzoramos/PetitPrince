@@ -1,4 +1,4 @@
-PetitPrince (UPEM C++ project)
+PetitPrince (UPEM C++/CORBA project)
 =========================
 ## README
 
