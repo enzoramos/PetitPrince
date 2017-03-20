@@ -134,7 +134,10 @@ public:
      */
     char* toString() override {
         stringstream stream;
-        stream << Draw::toString() << "(Line((" << _start.x << "," << _start.y << "),(" << _end.x << "," << _end.y << ")))";
+        stream << Draw::toString() << "Line((" << _start.x << "," << _start.y << "),(" << _end.x << "," << _end.y << "))";
+        if(Draw::inner_draws()->length() > 0) {
+            stream << "\n" << Draw::innerDrawsToString();
+        }
         return strcpy(new char[stream.str().size()+1], stream.str().c_str());
     }
 

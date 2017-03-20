@@ -30,20 +30,12 @@ DrawServiceImpl::~DrawServiceImpl(){
 
 ::CORBA::Double DrawServiceImpl::area(::CORBA::Long id) {
     ::PetitPrince::Draw* d = ::PetitPrinceServiceImpl::_draw_list.at(id);
-    try{
-        return d->area();
-    } catch(::PetitPrince::DrawService::NonApplicable e) {
-        cout << e.msg << endl;
-    }
+    return d->area();
 }
 
 ::CORBA::Double DrawServiceImpl::perimeter(::CORBA::Long id) {
     ::PetitPrince::Draw* d = PetitPrinceServiceImpl::_draw_list.at(id);
-    try{
-        return d->perimeter();
-    } catch(::PetitPrince::DrawService::NonApplicable e) {
-        cout << e.msg << endl;
-    }
+    return d->perimeter();
 }
 
 void DrawServiceImpl::homothetie(::CORBA::Long id, ::CORBA::Double index) {
@@ -74,8 +66,11 @@ void DrawServiceImpl::symAxial(::CORBA::Long id) {
 void DrawServiceImpl::addDraw(::CORBA::Long pid, ::CORBA::Long cid) {
     ::PetitPrince::Draw* parent = PetitPrinceServiceImpl::_draw_list.at(pid);
     ::PetitPrince::Draw* child = PetitPrinceServiceImpl::_draw_list.at(cid);
-    if(parent->area() < parent->area()){
-       throw ::PetitPrince::DrawService::UnexpectedDraw("L'aire du dessin est plus grande que celle du parent");
+    try {
+        if(parent->area() < parent->area()){
+            throw ::PetitPrince::DrawService::UnexpectedDraw("L'aire du dessin est plus grande que celle du parent");
+        }
+    } catch(::PetitPrince::DrawService::NonApplicable e) {
     }
     ::CORBA::ULong l = parent->inner_draws()->length();
     parent->inner_draws()->length(l+1);

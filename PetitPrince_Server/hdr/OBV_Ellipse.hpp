@@ -115,7 +115,10 @@ public:
      */
     char* toString() override {
         stringstream stream;
-        stream << Draw::toString() << "(Ellipse(center: (" << _center.x << "," << _center.y << "), long_ray: " << _long_ray << ", short_ray: " << _short_ray << "))";
+        stream << Draw::toString() << "Ellipse(center: (" << _center.x << "," << _center.y << "), long_ray: " << _long_ray << ", short_ray: " << _short_ray << ")";
+        if(Draw::inner_draws()->length() > 0) {
+            stream << "\n" << Draw::innerDrawsToString();
+        }
         return strcpy(new char[stream.str().size()+1], stream.str().c_str());
     }
 

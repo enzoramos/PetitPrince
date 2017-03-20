@@ -110,13 +110,29 @@ public:
      */
     char* toString() override {
         stringstream stream;
-        stream << "Draw(id: " << _id  <<  ", author: "  <<  _author  <<  ", mark: "  <<  _mark  <<  ")";
+        stream << "Draw(id: " << _id  <<  ", author: "  <<  _author  <<  ", mark: "  <<  _mark << ")";
         return strcpy(new char[stream.str().size()+1], stream.str().c_str());
     }
     
     void _add_ref() override {}
     ::CORBA::ULong _refcount_value() override {}
     void _remove_ref() override {}
+    
+protected:
+    string innerDrawsToString(int deep = 0) {
+        stringstream stream;
+        long l = _inner_draws.length();
+        if(l > 0) {
+            for(int i=0; i<deep+1; i++) {
+                stream << "\t";
+            }
+            stream << "(" << _inner_draws[0]->toString() << ")";
+            for(int i=1; i<l; i++) {
+                stream << ",(" << _inner_draws[i]->toString() << ")";
+            }
+        }
+        return stream.str();
+    }
 
 private:
     ::CORBA::Long _id;

@@ -151,7 +151,10 @@ public:
             stream << ",(" << (*points_list())[i].x << "," << (*points_list())[i].y << ")";
         }
         stringstream tmp;
-        tmp << Draw::toString() << "(Polygon(" << stream.str() << "))";
+        tmp << Draw::toString() << "Polygon(" << stream.str() << ")";
+        if(Draw::inner_draws()->length() > 0) {
+            stream << "\n" << Draw::innerDrawsToString();
+        }
         return strcpy(new char[tmp.str().size()+1], tmp.str().c_str());
     }
 

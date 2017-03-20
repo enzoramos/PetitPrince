@@ -114,7 +114,10 @@ public:
      */
     char* toString() override {
         stringstream stream;
-        stream << Draw::toString() << "(Circle(center: (" << _center.x << "," << _center.y << "), ray: " << _ray << "))";
+        stream << Draw::toString() << "Circle(center: (" << _center.x << "," << _center.y << "), ray: " << _ray << ")";
+        if(Draw::inner_draws()->length() > 0) {
+            stream << "\n" << Draw::innerDrawsToString();
+        }
         return strcpy(new char[stream.str().size()+1], stream.str().c_str());
     }
 
