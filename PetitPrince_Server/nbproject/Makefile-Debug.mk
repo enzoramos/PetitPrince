@@ -56,7 +56,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=`pkg-config --libs omniCOS4` `pkg-config --libs omniCOSDynamic4` `pkg-config --libs omniConnectionMgmt4` `pkg-config --libs omniDynamic4` `pkg-config --libs omniEvents` `pkg-config --libs omniORB4` `pkg-config --libs omnithread3`  
+LDLIBSOPTIONS=`pkg-config --libs omniCOS4` `pkg-config --libs omniCOSDynamic4` `pkg-config --libs omniConnectionMgmt4` `pkg-config --libs omniDynamic4` `pkg-config --libs omniEvents` `pkg-config --libs omniORB4` `pkg-config --libs omnithread3` -lpthread   
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

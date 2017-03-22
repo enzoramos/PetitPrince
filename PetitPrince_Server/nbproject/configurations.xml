@@ -1075,6 +1075,7 @@
             <linkerOptionItem>`pkg-config --libs omniEvents`</linkerOptionItem>
             <linkerOptionItem>`pkg-config --libs omniORB4`</linkerOptionItem>
             <linkerOptionItem>`pkg-config --libs omnithread3`</linkerOptionItem>
+            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

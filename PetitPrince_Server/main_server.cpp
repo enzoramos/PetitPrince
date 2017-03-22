@@ -13,6 +13,9 @@
 #include <cstdlib>
 #include <iostream>
 #include <sstream>
+#include <map>
+#include <functional>
+#include <thread>
 #include <omniORB4/CORBA.h>
 
 using namespace std;
@@ -39,6 +42,79 @@ string longSeqToString(::PetitPrince::LongSeq* s) {
         ss << ", " << (*s)[i];
     }
     return ss.str();
+}
+
+void teacherRunnable(::PetitPrinceServiceImpl& ppsImpl, ::DrawServiceImpl& dsImpl) {
+    bool exit = false;
+    map<char, string> services_commands_name = {
+        pair<char, string>('?', "Help"),
+        pair<char, string>('_', "---------------------"),
+        pair<char, string>('a', "Get draws by author"),
+        pair<char, string>('b', "Mark a draw"),
+        pair<char, string>('c', "---------------------"),
+        pair<char, string>('x', "Exit (also !)")
+    };
+    map<char, function<void()>> services_commands = {
+        //getDraws
+        pair<char, function<void()>>('a', [&ppsImpl, &dsImpl] () {
+            string author;
+            cout << "Author: "; cout.flush(); cin >> author; cout << endl;
+            ::PetitPrince::LongSeq* s = ppsImpl.getDraws(author.c_str());
+            for(int i=0; i<s->length(); i++) { cout << dsImpl.toString((*s)[i]) << endl; }}),
+        //area
+        pair<char, function<void()>>('b', [&ppsImpl, &dsImpl] () {
+            long id; double mark;
+            cout << "Id: "; cout.flush(); cin >> id;
+            cout << "Mark: "; cout.flush(); cin >> mark;
+            ppsImpl.markDraw(mark, id);
+            cout << endl << "Mark " << mark << " successfully given to draw (" << id << ")!" << endl; }),
+        //help
+        pair<char, function<void()>>('?', [] () {
+            cout << "--------------------------------------------" << endl
+                 << "------------------- HELP -------------------" << endl
+                 << "--------------------------------------------" << endl
+                 << "When you select an action, the command" << endl
+                 << "prompt will ask you to give the needed" << endl
+                 << "parameters for each functions." << endl
+                 << "Then, it will execute the function and" << endl
+                 << "print to you the result." << endl
+                 << "--------------------------------------------" << endl
+                 << "Parameters types and examples:" << endl
+                 << endl
+                 << "Author    -> string  (James Cameron)" << endl
+                 << "ID        -> long    (1)" << endl
+                 << "Mark     -> double" << endl
+                 << "--------------------------------------------" << endl;
+                cout << "Press a key then enter..." << endl; char _; cin >> _;cin.get(); }),
+        //exit
+        pair<char, function<void()>>('x', [&exit] () mutable -> void { exit = true; }),
+        pair<char, function<void()>>('!', [&exit] () mutable -> void { exit = true; }),
+        //empty
+        pair<char, function<void()>>('_', [] () {}),
+        pair<char, function<void()>>('c', [] () {})
+    };
+    // Loop to make a user command prompt
+    try {
+        cout << "PetitPrince service server (as teacher) started!" << endl;
+        cout << "-----------------------------------" << endl;
+        do {
+            try {
+                cout << endl << "Please select an operation and give needed parameters:" << endl;
+                for(auto e : services_commands_name) {
+                    cout << "(" << e.first << ") " << e.second << endl;
+                }
+                char c = '*';
+                cout << ": "; cout.flush(); cin >> c;
+                services_commands.at(c)();
+            } catch(const ::PetitPrince::DrawService::NonApplicable& e) {
+                cerr << e.msg << endl;
+            } catch(const ::PetitPrince::DrawService::UnexpectedDraw& e) {
+                cerr << e.msg << endl;
+            }
+        } while(!exit);
+    } catch(const std::exception& std_e) {
+        cerr << std_e.what() << endl;
+    }
 }
 
 int main(int argc, char** argv) {
@@ -99,18 +175,86 @@ int main(int argc, char** argv) {
         poamanager->activate();
         cout << "The server is ready. Awaiting for incoming requests..." << endl;
         
-        /*
-        ppsImpl->createLine("Batard1", {0, 0}, {7, 1});
-        ppsImpl->createLine("Batard2", {0, 0}, {7, 2});
-        ppsImpl->createLine("Batard3", {0, 0}, {7, 3});
-        ppsImpl->createLine("Batard1", {0, 1}, {7, 4});
-        ::PetitPrince::LongSeq* __s = ppsImpl->getDraws("Batard1");
-        cout << longSeqToString(__s) << endl;
-        cout << dsImpl->toString(0) << endl;
-        long l = __s->length();
-        for(int i=0; i<l; i++) {
-            cout << dsImpl->toString((*__s)[i]) << endl;
-        }*/
+        // start new thread routine for teacher
+        auto routine = [&ppsImpl, &dsImpl] () {
+            bool exit = false;
+            map<char, string> services_commands_name = {
+                pair<char, string>('?', "Help"),
+                pair<char, string>('_', "---------------------"),
+                pair<char, string>('a', "Get draws by author"),
+                pair<char, string>('b', "Mark a draw"),
+                pair<char, string>('c', "---------------------"),
+                pair<char, string>('x', "Exit (also !)")
+            };
+            map<char, function<void()>> services_commands = {
+                //getDraws
+                pair<char, function<void()>>('a', [&ppsImpl, &dsImpl] () {
+                    string author;
+                    cout << "Author: "; cout.flush(); cin >> author; cout << endl;
+                    ::PetitPrince::LongSeq* s = ppsImpl->getDraws(author.c_str());
+                    for(int i=0; i<s->length(); i++) { cout << dsImpl->toString((*s)[i]) << endl; }}),
+                //area
+                pair<char, function<void()>>('b', [&ppsImpl, &dsImpl] () {
+                    long id; double mark;
+                    cout << "Id: "; cout.flush(); cin >> id;
+                    cout << "Mark: "; cout.flush(); cin >> mark;
+                    ppsImpl->markDraw(mark, id);
+                    cout << endl << "Mark " << mark << " successfully given to draw (" << id << ")!" << endl; }),
+                //help
+                pair<char, function<void()>>('?', [] () {
+                    cout << "--------------------------------------------" << endl
+                         << "------------------- HELP -------------------" << endl
+                         << "--------------------------------------------" << endl
+                         << "When you select an action, the command" << endl
+                         << "prompt will ask you to give the needed" << endl
+                         << "parameters for each functions." << endl
+                         << "Then, it will execute the function and" << endl
+                         << "print to you the result." << endl
+                         << "--------------------------------------------" << endl
+                         << "Parameters types and examples:" << endl
+                         << endl
+                         << "Author    -> string  (James Cameron)" << endl
+                         << "ID        -> long    (1)" << endl
+                         << "Mark     -> double" << endl
+                         << "--------------------------------------------" << endl;
+                        cout << "Press a key then enter..." << endl; char _; cin >> _;cin.get(); }),
+                //exit
+                pair<char, function<void()>>('x', [&exit] () mutable -> void { exit = true; }),
+                pair<char, function<void()>>('!', [&exit] () mutable -> void { exit = true; }),
+                //empty
+                pair<char, function<void()>>('_', [] () {}),
+                pair<char, function<void()>>('c', [] () {})
+            };
+            // Loop to make a user command prompt
+            try {
+                cout << endl << endl;
+                cout << "----------------------------------------" << endl;
+                cout << "PetitPrince server (as teacher) started!" << endl;
+                cout << "----------------------------------------" << endl;
+                do {
+                    try {
+                        cout << endl << "Please select an operation and give needed parameters:" << endl;
+                        for(auto e : services_commands_name) {
+                            cout << "(" << e.first << ") " << e.second << endl;
+                        }
+                        char c = '*';
+                        cout << ": "; cout.flush(); cin >> c;
+                        services_commands.at(c)();
+                    } catch(const ::PetitPrince::DrawService::NonApplicable& e) {
+                        cerr << e.msg << endl;
+                    } catch(const ::PetitPrince::DrawService::UnexpectedDraw& e) {
+                        cerr << e.msg << endl;
+                    }
+                } while(!exit);
+                cout << endl << endl;
+                cout << "--------------------------------------" << endl;
+                cout << "PetitPrince server (as teacher) ended!" << endl;
+                cout << "--------------------------------------" << endl;
+            } catch(const std::exception& std_e) {
+                cerr << std_e.what() << endl;
+            }
+        };
+        thread teacher(routine);
         
         // Run the ORB
         orb->run();

@@ -218,6 +218,8 @@ int main(int argc, char** argv) {
         
         // Loop to make a user command prompt
         try {
+            cout << endl;
+            cout << "-----------------------------------" << endl;
             cout << "PetitPrince service client started!" << endl;
             cout << "-----------------------------------" << endl;
             do {
@@ -236,7 +238,10 @@ int main(int argc, char** argv) {
                     cerr << e.msg << endl;
                 }
             } while(!exit);
-            
+            cout << endl << endl;
+            cout << "---------------------------------" << endl;
+            cout << "PetitPrince service client ended!" << endl;
+            cout << "---------------------------------" << endl;
         } catch(const std::exception& std_e) {
             cerr << std_e.what() << endl;
         }
